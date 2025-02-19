@@ -9,6 +9,8 @@ const isActive = (routePath) => {
     return route.path === routePath
 }
 
+
+
 </script>
 
 <template>
@@ -24,7 +26,7 @@ const isActive = (routePath) => {
                     
                     <div class="">
                         <div class="navbarMenu">
-                            <RouterLink to="/" :class="[isActive('/') ? active : notActive]">
+                            <RouterLink to="/" :class="[isActive('/') ? 'active' : 'notActive']">
                                 Home
                             </RouterLink>
                         </div>
@@ -37,25 +39,30 @@ const isActive = (routePath) => {
 
 <style>
 .nav {
-    background-color: #1E90FF;
+    background-color: wheat;
     border-color: #1E90AA;
     border-bottom-width: 500px;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    border-radius: 10px;
+    
 }
 .navbar {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 87%;
     max-width: 80rem;
     padding-left: 8px;
-    padding-right: 8px
+    padding-right: 8px;
+    border-radius: 25px;
 }
 
 .navbarContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     height: 5rem;
 
 }
@@ -69,14 +76,20 @@ const isActive = (routePath) => {
 
 .navbarLogo {
     display: flex;
-    margin-right: 1rem;
-    align-items: center;
+    margin-right: 1.5rem;
+    align-items:flex-start;
+}
+
+.navbarLogo:hover {
+    background-color: rgba(173, 216, 230, 0.6);
+    border-radius: 15px;
 }
 
 .navbarLogoImg {
     width: auto;
     height: 2.5rem;
 }
+
 
 .navbarLogoTxt {
     display: none;
@@ -97,9 +110,20 @@ const isActive = (routePath) => {
 
 
 .active {
-    background-color: gray;
+    background-color: white;
+    border-radius: 15px;
+    color: black;
+    
 }
+.active:hover {
+    background-color: rgba(173, 216, 230, 0.6);
+    border-radius: 15px;
+    color: black;
+    
+}
+
 .notActive {
     background-color: aliceblue;
+    border-radius: 5px;
 }
 </style>
