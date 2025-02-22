@@ -39,18 +39,23 @@ import { RouterLink } from 'vue-router';
 .hc{
     padding-top: 1rem;
 padding-bottom: 1rem; 
+width: 85rem;
+margin: auto;
 }
 
 .hc-container {
-    width: 100%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;  
 }
-
 
 .hc-card{
     background-color: bisque;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+   
 }
 
 .hc-button {
@@ -58,4 +63,14 @@ padding-bottom: 1rem;
     font-weight: 700;
 }
 
+.hc-head{
+    text-align: center;
+}
+.hc-para {
+    text-align: center;
+}
+
+.hc-button {
+   padding-left: 50%;
+}
 </style>

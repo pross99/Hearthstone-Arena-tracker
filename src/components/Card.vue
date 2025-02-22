@@ -18,7 +18,10 @@ defineProps({
 <style>
 
 .c{
-    background-color: wheat;
+    background-color: bisque;
+    width: 30%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .c-card {

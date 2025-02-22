@@ -6,11 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch src/tattoos.json --port 8080"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "axios": "^1.7.9",
+    "json-server": "^1.0.0-beta.3",
+    "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
+    "vue-spinner": "^1.0.4",
     "vue-toast": "^3.1.0",
     "vue-toastification": "^2.0.0-rc.5"
   },

@@ -32,11 +32,13 @@ defineProps({
 
 <style>
 .h{
+    margin: auto;
     padding-top: 5rem;
     padding-bottom: 5rem;
     margin-bottom: 1rem;
-    background-color: lightblue; 
+    background-color: rgba(190, 190, 240, 0.4); 
     border-radius: 25px;
+    width: 800px;
 }
 
 .h-container {

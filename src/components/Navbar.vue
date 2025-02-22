@@ -111,13 +111,16 @@ const isActive = (routePath) => {
 
 .active {
     background-color: white;
-    border-radius: 15px;
+    width: 65px;
+    border-radius: 50px;
+    text-align: center;
     color: black;
+
     
 }
 .active:hover {
     background-color: rgba(173, 216, 230, 0.6);
-    border-radius: 15px;
+    border-radius: 5px;
     color: black;
     
 }
