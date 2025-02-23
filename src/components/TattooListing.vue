@@ -12,31 +12,35 @@ const props = defineProps({
 
     <div class="tas">
         <div class="tas-container">
-            <div class="tas-header">
+
+           
+            <div class="tas-header"> 
+                <h3 class="tas-header-title">{{ tattoo.title }}</h3>
                 <div class="tas-header-placement">
-                    <fa icon="child-reaching" />
-                    {{ tattoo.placement }}
+                    Placement:<fa icon="child-reaching" />
+                  {{ tattoo.placement }}
                    
                 </div>
-                    <h3 class="tas-header-title">{{ tattoo.title }}</h3>
+                   
             </div>
 
-            <div class="tas-wrapper">
+            <div class="tas-text-note">
+                <h6>
+                    Note:
+                </h6>
                 <div>
                     {{ tattoo.note }}
                 </div>
                 
             </div>
-            
                 <div class="tas-image-container">
                 <img :src="tattoo.imageLink" />
                 </div>
-            
-            
-                <h3 class="tas-price"> Estimated price {{ tattoo.priceGuess }} DKK</h3>
+                <div class="tas-price-wrapper">
 
-           
-
+               
+                <h3 class="tas-price"> Estimated price {{ tattoo.priceGuess }} DKK</h3> 
+            </div>
         </div>
     </div>
 
@@ -45,77 +49,97 @@ const props = defineProps({
 
 <style>
 
+h6{
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 .tas {
-    position: relative; 
-border-radius: 0.75rem; 
-background-color: #ffffff; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+border-radius: 8px; 
+background-color: rgb(251, 251, 251); 
 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+margin-bottom: 30px;
+
+
 }
 
 .tas-container {
-    padding: 2rem;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; 
 }
+
 
 .tas-header {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 15px; 
     text-align: center;
-    width: fit-content;
-   margin: auto;
-}
-
-.tas-header-placement {
-    margin-top: 0.5rem;
-margin-bottom: 0.5rem;  
-background-color: aliceblue;
-border-radius: 15px;
+    background-color: rgba(190,190, 190, 0.5);
+    border-radius: 8px;
 }
 
 .tas-header-title {
     font-size: 1.25rem;
-line-height: 1.75rem; 
-font-weight: 700;
-background-color:aliceblue ; 
-border-radius: 15px;
 }
 
-.tas-wrapper {
-    border-radius: 5px;
+.tas-header-placement {
+    font-size: 1rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.tas-text-note {
+    border-radius: 8px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 10px;
-    width: 900px;
-    background-color: rgba(190, 190, 240, 0.2);;
+    
+   
+    background-color: rgb(251, 251, 251);
     height: 100px;
    margin: auto;
    margin-bottom: 15px;
 }
 
  .tas-image-container {
-    background-color: rgba(190, 190, 240, 0.2);
-   border-radius: 20px;
-   width: 30%;
-   overflow: hidden;
-   margin: auto;
-   padding-top: 15px;
-   padding-bottom: 15px;
+   margin: 15px 0;
  }
 
  .tas-image-container img {
-    display: block;
-    margin: auto;
-    border-radius: 5px;
-    filter: drop-shadow(30px 10px 4px gray);
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+   max-height: 400px; 
  }
 
  .tas-image-container img:hover {
     transform: scale(1.1);
-    filter: drop-shadow(32px 12px 5px gray);
+    filter: drop-shadow(5px 3px 2px rgb(251, 251, 251));
+ }
+
+
+ .tas-price-wrapper {
+ background-color: rgb(251, 251, 251);
+ margin-top: 15px;
+ margin-top: 10px;
+ padding: 10px;
+ border-radius: 8px;
+ background-color: rgba(212, 72, 72, 0.2) ;
  }
 
  .tas-price {
-    margin-bottom: 0.5rem; 
-    color: lightcoral; 
-    text-align: right;
+    color: rgb(212, 72, 72); 
+    filter: drop-shadow(0 0 0.9rem rgb(251,251,251));
+    font-weight: bold;
  }
+
+ 
 </style>

@@ -39,7 +39,7 @@ const isActive = (routePath) => {
 
 <style>
 .nav {
-    background-color: wheat;
+    background-color: rgb(251, 251, 251);
     border-color: #1E90AA;
     border-bottom-width: 500px;
     width: 100%;
@@ -47,6 +47,7 @@ const isActive = (routePath) => {
     top: 0;
     left: 0;
     border-radius: 10px;
+    z-index: 99;
     
 }
 .navbar {

@@ -18,7 +18,6 @@ font-size:24px;
 line-height: 2rem;
 margin: 0;
 height: 40px;
-width: 1000px;
 text-align: center;
 }
 </style>

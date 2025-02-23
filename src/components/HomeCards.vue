@@ -8,26 +8,33 @@ import { RouterLink } from 'vue-router';
     <section class="hc">
         <div class="hc-container">
             <Card>
-                <h2 class="hc-head">
+
+                <div class="hc-head-container">
+                     <h2 class="hc-head">
                     View saved tattoos
                 </h2>
+                
+               
                 <p class="hc-para">
                    Browse your saved pics
-                </p>
-                <RouterLink to="/tattoos" class="hc-button">
-                   Browse tattoos
+                </p></div>
+                <RouterLink to="/tattoos" class="hc-routerlink">
+                    <button @click="navigate" class="hc-button">Browse Tattoos </button>
                 </RouterLink>
             </Card>
 
-            <Card bg='hc-card'>
-                <h2 class="hc-head">
+            <Card>
+
+                <div class="hc-head-container">
+                     <h2 class="hc-head">
                     New tattoos
                 </h2>
+               
                 <p class="hc-para">
                    List your new tattoo idea
-                </p>
-                <RouterLink to="/tattoos/add" class="hc-button">
-                    Add Tattoo
+                </p> </div>
+                <RouterLink to="/tattoos/add" class="hc-routerlink">
+                    <button @click="navigate" class="hc-button">Add A New Tattoo </button>
                 </RouterLink>
             </Card>
         </div>
@@ -39,17 +46,21 @@ import { RouterLink } from 'vue-router';
 .hc{
     padding-top: 1rem;
 padding-bottom: 1rem; 
-width: 85rem;
+width: 100%;
 margin: auto;
 }
 
 .hc-container {
   display: flex;  
+  background-color: rgba(196, 217, 255);
+  width: 100%;
 }
 
 .hc-card{
-    background-color: bisque;
-    width: 30%;
+    background-color:rgba(251, 251, 251);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
     padding: 1.5rem; 
@@ -57,20 +68,39 @@ margin: auto;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
    
 }
+.hc-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
 
 .hc-button {
-    color: black;
+    background-color: rgb(197, 186, 255);
     font-weight: 700;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border-color: rgb(197, 186, 255);
+    cursor: pointer;
+}
+
+.hc-routerlink {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hc-head{
     text-align: center;
-}
-.hc-para {
-    text-align: center;
+    
 }
 
-.hc-button {
-   padding-left: 50%;
+.hc-head-container {
+    width:auto;
+    background-color: rgb(232, 249, 255);
+    border-radius: 15px;
+}
+
+.hc-para {
+    text-align: center;
+  
 }
 </style>

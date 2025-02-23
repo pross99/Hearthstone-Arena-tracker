@@ -36,7 +36,7 @@ defineProps({
     padding-top: 5rem;
     padding-bottom: 5rem;
     margin-bottom: 1rem;
-    background-color: rgba(190, 190, 240, 0.4); 
+    background-color:#FBFBFB;
     border-radius: 25px;
     width: 800px;
 }
@@ -47,7 +47,7 @@ padding-left: 1rem;
 padding-right: 1rem; 
 flex-direction: column; 
 align-items: center; 
-max-width: 80rem; 
+ max-width: 80rem;  
 }
 
 </style>
