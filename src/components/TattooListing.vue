@@ -2,10 +2,41 @@
 import { defineProps, ref, computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import { IoBodySharp } from "oh-vue-icons/icons";
+import axios from 'axios'
+import Modal from './Modal.vue'
+
 const props = defineProps({
     tattoo: Object
-})
+});
 
+
+
+//reactive state for modal visibility
+const showModal = ref(false)
+const submittedeData = ref(null)
+
+const handleFormSubmit = async (formData) => {
+
+    if(!props.tattoo || !props.tattoo.id) {
+        console.error("Where is the ID")
+        return;
+    }
+    const updateTattoo = {
+        title: formData.title,
+        placement: formData.placement,
+        imageLink: formData.imageLink,
+        theme: formData.theme,
+        priceGuess: formData.priceGuess,
+        note: formData.note
+    }
+    try {
+        console.log(updateTattoo)
+        const response = await axios.put(`/api/tattoos/${props.tattoo.id}`, updateTattoo)
+        
+    } catch (error) {
+        console.log("ERROR", error)
+    }
+}
 </script>
 
 <template>
@@ -34,13 +65,18 @@ const props = defineProps({
                 
             </div>
                 <div class="tas-image-container">
-                <img :src="tattoo.imageLink" />
+                <img :src="tattoo.imageLink" @click="showModal = true" class="clickable-image" />
                 </div>
                 <div class="tas-price-wrapper">
 
                
                 <h3 class="tas-price"> Estimated price {{ tattoo.priceGuess }} DKK</h3> 
-            </div>
+
+               
+            </div> 
+            <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" :initialData="tattoo">
+                
+            </Modal>
         </div>
     </div>
 
@@ -48,7 +84,14 @@ const props = defineProps({
 
 
 <style>
+.clickable-image {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
 
+.clickable-image:hover {
+    transform: scale(1.05);
+}
 h6{
     margin-bottom: 10px;
     text-align: left;
@@ -141,5 +184,21 @@ margin-bottom: 30px;
     font-weight: bold;
  }
 
+
+ .tas-router {
+    display: flex; 
+padding-left: 5rem;
+padding-right: 5rem; 
+border-radius: 8px;
+flex-direction: column; 
+align-items: center; 
+ max-width: 80rem;  
+ background-color: rgb(251, 251, 251);
+ font-size:24px;
+line-height: 2rem;
+margin: 0;
+height: 40px;
+text-align: center;
+ }
  
 </style>

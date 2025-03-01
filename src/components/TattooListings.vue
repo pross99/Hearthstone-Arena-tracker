@@ -14,7 +14,7 @@ defineProps({
     limit: Number,
     showButton: {
         type:Boolean,
-        default: false
+        default: true
     }
 })
 
@@ -101,10 +101,32 @@ align-items: center;
 
 }
 .tl-expand {
-
+    margin-top: 5px;
+    padding-left: 2rem;
+padding-right: 2rem;
+padding-top:2.5rem;
+padding-bottom: 2.5rem;
+background-color: rgb(196, 217, 255);
+width: 70vh;
+margin-left: 0;
+margin-right: 0;
+z-index: 0;
+border-radius: 8px;
 }
 .tl-button {
-
+    display: flex; 
+padding-left: 5rem;
+padding-right: 5rem; 
+border-radius: 8px;
+flex-direction: column; 
+align-items: center; 
+ max-width: 80rem;  
+ background-color: rgb(251, 251, 251);
+ font-size:24px;
+line-height: 2rem;
+margin: 0;
+height: 40px;
+text-align: center;
 }
 </style>
 
