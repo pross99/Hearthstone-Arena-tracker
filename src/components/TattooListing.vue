@@ -1,27 +1,30 @@
 <script setup>
-import { defineProps, ref, computed } from 'vue';
+import { defineProps, ref, computed,defineEmits } from 'vue';
 import { RouterLink } from 'vue-router';
 import { IoBodySharp } from "oh-vue-icons/icons";
 import axios from 'axios'
 import Modal from './Modal.vue'
+import { useToast } from 'vue-toastification';
 
 const props = defineProps({
     tattoo: Object
 });
 
-
-
+const emit = defineEmits(['update'])
 //reactive state for modal visibility
 const showModal = ref(false)
 const submittedeData = ref(null)
-
+const showToast = useToast()
 const handleFormSubmit = async (formData) => {
 
     if(!props.tattoo || !props.tattoo.id) {
         console.error("Where is the ID")
         return;
     }
-    const updateTattoo = {
+
+
+    const updateTattoo =  {
+        id: props.tattoo.id,
         title: formData.title,
         placement: formData.placement,
         imageLink: formData.imageLink,
@@ -31,12 +34,19 @@ const handleFormSubmit = async (formData) => {
     }
     try {
         console.log(updateTattoo)
-        const response = await axios.put(`/api/tattoos/${props.tattoo.id}`, updateTattoo)
-        
+        await axios.put(`/api/tattoos/${props.tattoo.id}`, updateTattoo)
+        showToast.success("Listing updated successfully")
+        emit('update', props.tattoo.id, updateTattoo)
+        showModal.value=false;
+       
     } catch (error) {
         console.log("ERROR", error)
-    }
+        showToast.error("Error updating listing")
+    } 
 }
+
+
+
 </script>
 
 <template>
@@ -74,8 +84,7 @@ const handleFormSubmit = async (formData) => {
 
                
             </div> 
-            <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" :initialData="tattoo">
-                
+            <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit"  :initialData="tattoo">
             </Modal>
         </div>
     </div>

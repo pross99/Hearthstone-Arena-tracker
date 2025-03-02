@@ -1,16 +1,18 @@
 <script>
-
+import { defineProps, defineEmits } from 'vue';
 
 export default {
     props: {
         isOpen: Boolean,
-        initialData: Object // new Prop for passing initial tattooo data
+        initialData: Object, // new Prop for passing initial tattooo data
+        item: []
     },
-    emits: ["close", "submit"],
+    emits: ["close", "submit", "update-item"],
     data() {
         return {
             
-            formData: { ...this.initialData} // Clone InitialData into local state
+            formData: { ...this.initialData}, // Clone InitialData into local state
+            showModal: false
         }
     },
     watch: {
@@ -30,6 +32,7 @@ export default {
         submitForm() {
             this.$emit("submit", this.formData);
             this.close; //
+
         }
     }
 
@@ -83,7 +86,7 @@ export default {
 
               
 
-                <button type="submit">Submit</button>
+                <button type="submit">Save Changes</button>
             </form>
         </div>
     </div>
@@ -100,6 +103,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .m-content {
@@ -108,6 +112,7 @@ export default {
     border-radius: 8px;
     min-width: 300px;
     position: relative;
+    width: 800px;
 }
 
 .m-close {
@@ -118,6 +123,7 @@ export default {
     border: none;
     font-size: 18px;
     cursor: pointer;
+    color: red;
 }
 
 
@@ -136,7 +142,7 @@ input, textarea {
 }
 
 button[type="submit"] {
-    background-color: #C4D9FF;
+    background-color: #0056b3;
     color: white;
     border: none;
     padding: 10px;

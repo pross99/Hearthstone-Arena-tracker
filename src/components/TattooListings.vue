@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, defineProps, onMounted } from 'vue';
+import { ref, reactive, defineProps, onMounted, onUpdated } from 'vue';
 import { RouterLink } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
@@ -32,6 +32,13 @@ onMounted(async () => {
     }
 })
 
+
+function updateItem(id, newData) {
+const index = state.tattoos.findIndex(tattoo => tattoo.id === id)
+if(index !== -1) {
+    Object.assign(state.tattoos[index], newData)
+}
+}
 </script>
 
 <template>
@@ -48,7 +55,7 @@ onMounted(async () => {
 
              <!-- Show tats when done loading -->
               <div v-else class="tl-tattoos">
-                <TattooListing v-for="tattoo in state.tattoos.slice(0, limit || state.tattoos.length)" :key="tattoo.id" :tattoo="tattoo" />
+                <TattooListing v-for="tattoo in state.tattoos.slice(0, limit || state.tattoos.length)" :key="tattoo.id" :tattoo="tattoo" @update="updateItem" />
               </div>
         </div>
     </section>
