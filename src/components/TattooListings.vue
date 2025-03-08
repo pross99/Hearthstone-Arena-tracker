@@ -60,11 +60,6 @@ if(index !== -1) {
         </div>
     </section>
 
-    <section v-if="showButton" class="tl-expand">
-        <RouterLink to="/tattoos" class="tl-button">
-           View all saved tats
-        </RouterLink>
-    </section>
 
 
 </template>

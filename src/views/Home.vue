@@ -2,12 +2,18 @@
 import Hero from '@/components/Hero.vue';
 import HomeCards from '@/components/HomeCards.vue';
 import TattooListings from '@/components/TattooListings.vue';
+import Map from '@/components/Map.vue';
 </script>
 
 <template>
     <Hero title = "Hey Peter" subtitle ="Your Tattoo Project!" /> 
     <HomeCards /> 
+    <div class="container-component">
     <TattooListings />
+    <Map />
+
+    </div>
+   
 </template>
 
 
@@ -18,6 +24,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #333; /* Dark gray */
   text-align: center;
   margin-bottom: 10px;
+}
+
+.container-component{
+  display: grid;
+  grid-template-columns: auto auto; /* Creates two columns */
+  gap: 10px; /* Adds spacing between components */
 }
 
 p {

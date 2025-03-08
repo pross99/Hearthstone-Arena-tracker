@@ -29,6 +29,9 @@ const isActive = (routePath) => {
                             <RouterLink to="/" :class="[isActive('/') ? 'active' : 'notActive']">
                                 Home
                             </RouterLink>
+                            <RouterLink to="/test" :class="[isActive('/test') ? 'active' : 'notActive']">
+                                Testing Page
+                            </RouterLink>
                         </div>
                     </div>
                 </div>
@@ -67,7 +70,6 @@ const isActive = (routePath) => {
     height: 5rem;
 
 }
-
 .navbarItems {
     display: flex;
     flex: 110%;
@@ -103,7 +105,8 @@ const isActive = (routePath) => {
 
 .navbarMenu {
     display: flex;
-    margin-left: 0.5rem;
+    margin-left: 0.8rem;
+    padding-left: 10px;
 }
 
 
@@ -111,23 +114,25 @@ const isActive = (routePath) => {
 
 
 .active {
-    background-color: white;
-    width: 65px;
+    background-color:rgb(196, 217, 255);
+    width: 300px;
     border-radius: 50px;
     text-align: center;
     color: black;
+    padding-right: 8px;
 
     
 }
 .active:hover {
-    background-color: rgba(173, 216, 230, 0.6);
+    background-color: rgba(196, 217, 255, 0.6);
     border-radius: 5px;
     color: black;
     
 }
 
 .notActive {
-    background-color: aliceblue;
+    background-color: rgba(251, 251, 251, 0.2);
     border-radius: 5px;
+    width: 300px;
 }
 </style>
