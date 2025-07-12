@@ -1,40 +1,36 @@
 {
-  "tattoos": [
+  "runs": [
     {
       "id": "1",
-      "title": "Test tattoo TEST234567891111111111",
-      "placement": "Shoulder TEST2",
-      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSALlPObRPyQLnJlPwKzjQ61Wa0I7yhC8mlaA&s",
-      "theme": "Gritty, dark",
-      "priceGuess": "30001",
-      "note": "This is a test tattoo"
+      "class": "Druid",
+      "placement": "2",
+      "legendaryBracket": "Gidion",
+      "priceWinnings": "50",
+      "note": "Unlucky runs"
     },
     {
-      "title": "Test tattoo",
-      "placement": "Shoulder",
-      "theme": "Gritty, dark",
-      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSALlPObRPyQLnJlPwKzjQ61Wa0I7yhC8mlaA&s",
+      "class": "Test tattoo",
+      "placement": 2,
+      "legendaryBracket": "Gritty, dark",
       "note": "This is a test tattoo",
-      "priceGuess": "3000",
+      "priceWinnings": "3000",
       "id": "2"
     },
     {
-      "title": "Test tattoo",
-      "placement": "Shoulder",
-      "theme": "Gritty, dark",
-      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSALlPObRPyQLnJlPwKzjQ61Wa0I7yhC8mlaA&s",
+      "class": "Test tattoo",
+      "placement": 4,
+      "legendaryBracket": "Gritty, dark",
       "note": "This is a test tattoo",
-      "priceGuess": "3000",
+      "priceWinnings": "3000",
       "id": "3"
     },
     {
       "id": "4",
-      "title": "Test tattoo",
-      "placement": "Shoulder",
-      "theme": "Gritty, dark",
-      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSALlPObRPyQLnJlPwKzjQ61Wa0I7yhC8mlaA&s",
+      "class": "Test tattoo",
+      "placement": 6,
+      "legendaryBracket": "Gritty, dark",
       "note": "This is a test tattoo",
-      "priceGuess": "3000"
+      "priceWinnings": "3000"
     }
   ]
 }

@@ -3,10 +3,10 @@ import { ref, reactive, defineProps, onMounted, onUpdated } from 'vue';
 import { RouterLink } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
-import TattooListing from './TattooListing.vue';
+import RunListing from './RunListing.vue';
 
 const state = reactive({
-    tattoos: [],
+    runs: [],
     isLoading: true
 })
 
@@ -21,8 +21,8 @@ defineProps({
 
 onMounted(async () => {
     try {
-        const response = await axios.get('api/tattoos');
-        state.tattoos = response.data;
+        const response = await axios.get('api/runs');
+        state.runs = response.data;
         console.log(response)
     } catch (error) {
         console.log("ERROR", error)
@@ -34,9 +34,9 @@ onMounted(async () => {
 
 
 function updateItem(id, newData) {
-const index = state.tattoos.findIndex(tattoo => tattoo.id === id)
+const index = state.runs.findIndex(run => run.id === id)
 if(index !== -1) {
-    Object.assign(state.tattoos[index], newData)
+    Object.assign(state.runs[index], newData)
 }
 }
 </script>
@@ -45,7 +45,7 @@ if(index !== -1) {
     <section class="tl">
         <div class="tl-container">
             <h2 class="tl-title">
-                Browse Tattoos
+                Previous runs
             </h2>
 
             <!-- Show spinner when fetching saved tattoos -->
@@ -55,7 +55,7 @@ if(index !== -1) {
 
              <!-- Show tats when done loading -->
               <div v-else class="tl-tattoos">
-                <TattooListing v-for="tattoo in state.tattoos.slice(0, limit || state.tattoos.length)" :key="tattoo.id" :tattoo="tattoo" @update="updateItem" />
+                <RunListing v-for="run in state.runs.slice(0, limit || state.runs.length)" :key="run.id" :run="run" @update="updateItem" />
               </div>
         </div>
     </section>

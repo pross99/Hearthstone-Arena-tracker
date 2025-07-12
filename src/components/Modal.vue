@@ -4,7 +4,7 @@ import { defineProps, defineEmits } from 'vue';
 export default {
     props: {
         isOpen: Boolean,
-        initialData: Object, // new Prop for passing initial tattooo data
+        initialData: Object, // new Prop for passing initial data
         item: []
     },
     emits: ["close", "submit", "update-item"],
@@ -47,41 +47,37 @@ export default {
             <slot></slot>
             <form @submit.prevent="submitForm">
                 <label>
-                    Name:
-                    <input type="text" v-model="formData.title"
+                    Class:
+                    <input type="text" v-model="formData.class"
                     />
                 </label>
 
                 <label>
-                    Placement:
-                    <input type="text" v-model="formData.placement"
+                    Wins:
+                    <input type="number" v-model="formData.placement"
                     />
                 </label>
 
+                
+                <label>
+                    Legendary Bucket:
+                    <input v-model="formData.legendaryBracket" 
+                    :placeholder="initialData.legendaryBracket"
+                    ></input>
+                </label>
+
                  <label>
-                    Theme:
+                    Note About run:
                     <input v-model="formData.note" 
                    
                     ></input>
                 </label>
 
-                <label>
-                    Price Estimate:
-                    <input v-model="formData.priceGuess" 
-                    :placeholder="initialData.priceGuess"
-                    ></input>
-                </label>
 
 
                 <label>
-                    ImageLink:
-                    <input  v-model="formData.imageLink"
-                    ></input>
-                </label>
-
-                <label>
-                    Note:
-                    <textarea v-model="formData.note" ></textarea>
+                    Gold won:
+                    <textarea v-model="formData.priceWinnings" ></textarea>
                 </label>
 
               

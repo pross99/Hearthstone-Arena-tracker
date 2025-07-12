@@ -1,17 +1,14 @@
 <script setup>
 import Hero from '@/components/Hero.vue';
 import HomeCards from '@/components/HomeCards.vue';
-import TattooListings from '@/components/TattooListings.vue';
-import Map from '@/components/Map.vue';
+import RunListings from '@/components/RunListings.vue';
 </script>
 
 <template>
-    <Hero title = "Hey Peter" subtitle ="Your Tattoo Project!" /> 
+    <Hero title = "Arena Tracker" subtitle ="Collect your arena runs here!" /> 
     <HomeCards /> 
     <div class="container-component">
-    <TattooListings />
-    <Map />
-
+    <RunListings />
     </div>
    
 </template>
@@ -27,9 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-component{
-  display: grid;
-  grid-template-columns: auto auto; /* Creates two columns */
-  gap: 10px; /* Adds spacing between components */
+  display: flex;
+ 
+  gap: 30px; /* Adds spacing between components */
 }
 
 p {

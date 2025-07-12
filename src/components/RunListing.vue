@@ -7,7 +7,7 @@ import Modal from './Modal.vue'
 import { useToast } from 'vue-toastification';
 
 const props = defineProps({
-    tattoo: Object
+    run: Object
 });
 
 const emit = defineEmits(['update'])
@@ -17,26 +17,25 @@ const submittedeData = ref(null)
 const showToast = useToast()
 const handleFormSubmit = async (formData) => {
 
-    if(!props.tattoo || !props.tattoo.id) {
+    if(!props.run || !props.run.id) {
         console.error("Where is the ID")
         return;
     }
 
 
-    const updateTattoo =  {
-        id: props.tattoo.id,
-        title: formData.title,
+    const updateRun =  {
+        id: props.run.id,
+        class: formData.class,
         placement: formData.placement,
-        imageLink: formData.imageLink,
-        theme: formData.theme,
-        priceGuess: formData.priceGuess,
+        legendaryBracket: formData.legendaryBracket,
+        priceWinnings: formData.priceWinnings,
         note: formData.note
     }
     try {
-        console.log(updateTattoo)
-        await axios.put(`/api/tattoos/${props.tattoo.id}`, updateTattoo)
+        console.log(updateRun)
+        const response = await axios.put(`/api/runs/${props.run.id}`, updateRun)
         showToast.success("Listing updated successfully")
-        emit('update', props.tattoo.id, updateTattoo)
+        emit('update', props.run.id, updateRun)
         showModal.value=false;
        
     } catch (error) {
@@ -47,6 +46,16 @@ const handleFormSubmit = async (formData) => {
 
 
 
+function checkScore() {
+    const result = props.run.placement >= 7;
+    return result
+  
+}
+
+let goodScore = checkScore()
+
+console.log(typeof props.run.placement)
+
 </script>
 
 <template>
@@ -56,35 +65,36 @@ const handleFormSubmit = async (formData) => {
 
            
             <div class="tas-header"> 
-                <h3 class="tas-header-title">{{ tattoo.title }}</h3>
+                <h3 class="tas-header-title">{{ run.class }}</h3>
                 <div class="tas-header-placement">
-                    Placement:<fa icon="child-reaching" />
-                  {{ tattoo.placement }}
-                   
                 </div>
-                   
+                   Legendary Bracket{{ run.legendaryBracket }} 
             </div>
 
             <div class="tas-text-note">
-                <h6>
-                    Note:
-                </h6>
+                <h4>
+                    Note and Winnings
+                </h4>
                 <div>
-                    {{ tattoo.note }}
+                    <p> Note {{ run.note }} </p>
+                    <p> Gold: {{ run.priceWinnings }} <fa icon="coins" /> </p>
                 </div>
                 
             </div>
                 <div class="tas-image-container">
-                <img :src="tattoo.imageLink" @click="showModal = true" class="clickable-image" />
+                <img :src="run.imageLink" @click="showModal = true" class="clickable-image" />
                 </div>
-                <div class="tas-price-wrapper">
+                <div  :class="{ 'tas-run-wrapper-high': !goodScore, 'tas-run-wrapper-low': goodScore }" @click="showModal = true" >
 
                
-                <h3 class="tas-price"> Estimated price {{ tattoo.priceGuess }} DKK</h3> 
+                <h5 :class="{ 'tas-high': goodScore, 'tas-low': !goodScore }" > 
+                         Placement:{{ run.placement }}-3
+
+                </h5> 
 
                
             </div> 
-            <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit"  :initialData="tattoo">
+            <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit"  :initialData="run">
             </Modal>
         </div>
     </div>
@@ -178,7 +188,7 @@ margin-bottom: 30px;
  }
 
 
- .tas-price-wrapper {
+ .tas-run-wrapper-high {
  background-color: rgb(251, 251, 251);
  margin-top: 15px;
  margin-top: 10px;
@@ -187,8 +197,23 @@ margin-bottom: 30px;
  background-color: rgba(212, 72, 72, 0.2) ;
  }
 
- .tas-price {
+  .tas-run-wrapper-low {
+ background-color: rgb(251, 251, 251);
+ margin-top: 15px;
+ margin-top: 10px;
+ padding: 10px;
+ border-radius: 8px;
+ background-color: #4dd44833 ;
+ }
+
+ .tas-low {
     color: rgb(212, 72, 72); 
+    filter: drop-shadow(0 0 0.9rem rgb(251,251,251));
+    font-weight: bold;
+ }
+
+  .tas-high {
+    color: #70d448; 
     filter: drop-shadow(0 0 0.9rem rgb(251,251,251));
     font-weight: bold;
  }
