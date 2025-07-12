@@ -2,35 +2,94 @@
   "runs": [
     {
       "id": "1",
-      "class": "Druid",
-      "placement": "2",
+      "classId": 4,
+      "placement": 8,
       "legendaryBracket": "Gidion",
       "priceWinnings": "50",
       "note": "Unlucky runs"
     },
     {
-      "class": "Test tattoo",
       "placement": 2,
       "legendaryBracket": "Gritty, dark",
-      "note": "This is a test tattoo",
+      "note": "Fun Run",
       "priceWinnings": "3000",
-      "id": "2"
+      "id": "2",
+      "classId": 1
     },
     {
-      "class": "Test tattoo",
       "placement": 4,
       "legendaryBracket": "Gritty, dark",
-      "note": "This is a test tattoo",
+      "note": "Boring",
       "priceWinnings": "3000",
-      "id": "3"
+      "id": "3",
+      "classId": 3
     },
     {
       "id": "4",
-      "class": "Test tattoo",
+      "classId": 4,
       "placement": 6,
       "legendaryBracket": "Gritty, dark",
-      "note": "This is a test tattoo",
-      "priceWinnings": "3000"
+      "note": "Meh",
+      "priceWinnings": "200"
     }
+  ],
+
+  "classes": [
+    {
+      "id" : 1,
+      "className": "Warrior"
+      
+    },
+    {
+      "id" : 2,
+      "className": "Warlock"
+      
+    },
+    {
+      "id" : 3,
+      "className": "Rouge"
+      
+    },
+    {
+      "id" : 4,
+      "className": "Druid"
+      
+    },
+    {
+      "id" : 5,
+      "className": "Mage"
+      
+    },
+    {
+      "id" : 6,
+      "className": "Hunter"
+      
+    },
+    {
+      "id" : 7,
+      "className": "Shaman"
+      
+    },
+    {
+      "id" : 8,
+      "className": "DemonHunter"
+      
+    },
+    {
+      "id" : 9,
+      "className": "DeathKnight"
+      
+    },
+    {
+      "id" : 10,
+      "className": "Priest"
+      
+    },
+    {
+      "id" : 11,
+      "className": "Paladin"
+      
+    }
+   
   ]
 }

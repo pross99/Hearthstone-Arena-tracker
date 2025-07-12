@@ -7,6 +7,7 @@ import RunListing from './RunListing.vue';
 
 const state = reactive({
     runs: [],
+    classes: [],
     isLoading: true
 })
 
@@ -24,6 +25,11 @@ onMounted(async () => {
         const response = await axios.get('api/runs');
         state.runs = response.data;
         console.log(response)
+
+        const classResponse = await axios.get('api/classes')
+        state.classes = classResponse.data
+        console.log(classResponse)
+
     } catch (error) {
         console.log("ERROR", error)
         
@@ -48,14 +54,14 @@ if(index !== -1) {
                 Previous runs
             </h2>
 
-            <!-- Show spinner when fetching saved tattoos -->
+            <!-- Show spinner when fetching saved runs -->
              <div v-if="state.isLoading" class="tl-spinner">
                 <PulseLoader /> 
              </div>
 
-             <!-- Show tats when done loading -->
+             <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
-                <RunListing v-for="run in state.runs.slice(0, limit || state.runs.length)" :key="run.id" :run="run" @update="updateItem" />
+                <RunListing v-for="run in state.runs.slice(0, limit || state.runs.length)" :key="run.id" :run="run" :className="className" @update="updateItem" />
               </div>
         </div>
     </section>

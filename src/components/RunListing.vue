@@ -1,13 +1,13 @@
 <script setup>
 import { defineProps, ref, computed,defineEmits } from 'vue';
 import { RouterLink } from 'vue-router';
-import { IoBodySharp } from "oh-vue-icons/icons";
 import axios from 'axios'
 import Modal from './Modal.vue'
 import { useToast } from 'vue-toastification';
 
 const props = defineProps({
-    run: Object
+    run: Object,
+    className : Object
 });
 
 const emit = defineEmits(['update'])
@@ -21,7 +21,6 @@ const handleFormSubmit = async (formData) => {
         console.error("Where is the ID")
         return;
     }
-
 
     const updateRun =  {
         id: props.run.id,
@@ -54,7 +53,6 @@ function checkScore() {
 
 let goodScore = checkScore()
 
-console.log(typeof props.run.placement)
 
 </script>
 
@@ -63,9 +61,9 @@ console.log(typeof props.run.placement)
     <div class="tas">
         <div class="tas-container">
 
-           
+           <h1>{{  }}</h1>
             <div class="tas-header"> 
-                <h3 class="tas-header-title">{{ run.class }}</h3>
+                <h3 class="tas-header-title">{{ }}</h3>
                 <div class="tas-header-placement">
                 </div>
                    Legendary Bracket{{ run.legendaryBracket }} 
@@ -88,7 +86,7 @@ console.log(typeof props.run.placement)
 
                
                 <h5 :class="{ 'tas-high': goodScore, 'tas-low': !goodScore }" > 
-                         Placement:{{ run.placement }}-3
+                         Score: {{ run.placement }}-3
 
                 </h5> 
 
@@ -233,6 +231,41 @@ line-height: 2rem;
 margin: 0;
 height: 40px;
 text-align: center;
+ }
+
+ .c-warrior {
+    background-image: url("/images/Warrior.webp");
+ }
+
+ .c-warlock {
+    background-image: url("/images/Warlock.webp");
+ }
+ .c-rouge {
+    background-image: url("/images/Rouge.webp");
+ }
+ .c-druid {
+    background-image: url("/images/Druid.webp");
+ }
+ .c-mage {
+    background-image: url("/images/Mage.webp");
+ }
+ .c-hunter {
+    background-image: url("/images/Hunter.webp");
+ }
+ .c-shaman {
+    background-image: url("/images/Shaman.webp");
+ }
+ .c-dh {
+    background-image: url("/images/DH.webp");
+ }
+ .c-dk {
+    background-image: url("/images/DK.webp");
+ }
+ .c-priest {
+    background-image: url("/images/Priest.webp");
+ }
+ .c-paladin {
+    background-image: url("/images/Paladin.webp");
  }
  
 </style>
