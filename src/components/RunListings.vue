@@ -43,7 +43,7 @@ function combineRunWithClass(run) {
  const cls = state.classes.find(e => String(e.id) === String(run.classId)) ?? {};
     return {
         ...run,
-        ...cls
+        className: cls.className // only return className to not clash ids..
     }
     }
 
@@ -75,6 +75,7 @@ if(index !== -1) {
 
              <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
+    
                 <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length)"
                  :key="run.id" 
                  :run="run"  

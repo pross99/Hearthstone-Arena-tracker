@@ -4,36 +4,36 @@
       "id": "1",
       "classId": 1,
       "placement": 8,
+      "legendaryBracket": "Gidiondwwd",
+      "priceWinnings": "500",
+      "note": "Unlucky runs"
+    },
+    {
+      "id": "2",
+      "classId": 8,
+      "placement": 8,
       "legendaryBracket": "Gidion",
       "priceWinnings": "50",
       "note": "Unlucky runs"
     },
     {
-      "placement": 2,
-      "legendaryBracket": "Fan of knvifes",
-      "note": "Fun Run",
-      "priceWinnings": "3000",
-      "id": "2",
-      "classId": 2
-    },
-    {
+      "id": "3",
+      "classId": 4,
       "placement": 4,
       "legendaryBracket": "Pulp of madness",
-      "note": "Boring",
       "priceWinnings": "3000",
-      "id": "3",
-      "classId": 3
+      "note": "Boring"
     },
     {
       "id": "4",
-      "classId": 2,
-      "placement": 6,
-      "legendaryBracket": "Tiger king",
-      "note": "Meh",
-      "priceWinnings": "200"
+      "classId": 8,
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "priceWinnings": "3000",
+      "note": "Boring"
     },
     {
-      "placement": 4,
+      "placement": "4",
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -41,7 +41,7 @@
       "classId": 7
     },
     {
-      "placement": 4,
+      "placement": "4",
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -49,7 +49,7 @@
       "classId": 8
     },
     {
-      "placement": 4,
+      "placement": "4",
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -57,7 +57,7 @@
       "classId": 9
     },
     {
-      "placement": 4,
+      "placement": "4",
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -65,7 +65,7 @@
       "classId": 10
     },
     {
-      "placement": 4,
+      "placement": "4",
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -73,63 +73,50 @@
       "classId": 11
     }
   ],
-
   "classes": [
     {
-      "id" : 1,
+      "id": "1",
       "className": "Warrior"
-      
     },
     {
-      "id" : 2,
+      "id": "2",
       "className": "Warlock"
-      
     },
     {
-      "id" : 3,
+      "id": "3",
       "className": "Rouge"
-      
     },
     {
-      "id" : 4,
+      "id": "4",
       "className": "Druid"
-      
     },
     {
-      "id" : 5,
+      "id": "5",
       "className": "Mage"
-      
     },
     {
-      "id" : 6,
+      "id": "6",
       "className": "Hunter"
-      
     },
     {
-      "id" : 7,
+      "id": "7",
       "className": "Shaman"
-      
     },
     {
-      "id" : 8,
+      "id": "8",
       "className": "DemonHunter"
-      
     },
     {
-      "id" : 9,
+      "id": "9",
       "className": "DeathKnight"
-      
     },
     {
-      "id" : 10,
+      "id": "10",
       "className": "Priest"
-      
     },
     {
-      "id" : 11,
+      "id": "11",
       "className": "Paladin"
-      
     }
-   
   ]
 }

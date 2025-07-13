@@ -11,12 +11,12 @@ import { RouterLink } from 'vue-router';
 
                 <div class="hc-head-container">
                      <h2 class="hc-head">
-                    View saved tattoos
+                    View saved Runs
                 </h2>
                 
                
                 <p class="hc-para">
-                   Browse your saved pics
+                   Browse your saved Runs
                 </p></div>
                 <RouterLink to="/tattoos" class="hc-routerlink">
                     <button @click="navigate" class="hc-button">Browse Tattoos </button>
@@ -27,11 +27,11 @@ import { RouterLink } from 'vue-router';
 
                 <div class="hc-head-container">
                      <h2 class="hc-head">
-                    New tattoos
+                    New Runs
                 </h2>
                
                 <p class="hc-para">
-                   List your new tattoo idea
+                   List your new Run
                 </p> </div>
                 <RouterLink to="/tattoos/add" class="hc-routerlink">
                     <button @click="navigate" class="hc-button">Add A New Tattoo </button>

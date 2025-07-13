@@ -34,8 +34,8 @@ const handleFormSubmit = async (formData) => {
 
 
     const updateRun =  {
-        id: props.run.id,
-        class: formData.class,
+        id: Number(props.run.id),
+        classId: Number(formData.classId),
         placement: formData.placement,
         legendaryBracket: formData.legendaryBracket,
         priceWinnings: formData.priceWinnings,
@@ -44,6 +44,7 @@ const handleFormSubmit = async (formData) => {
     try {
         console.log(updateRun)
         const response = await axios.put(`/api/runs/${props.run.id}`, updateRun)
+        console.log(response)
         showToast.success("Listing updated successfully")
         emit('update', props.run.id, updateRun)
         showModal.value=false;
@@ -79,7 +80,7 @@ let goodScore = checkScore()
             <div class="tas-header"  :class="
                                     props.run.classId === 1
                                     ? 'c-warrior'
-                                    : props.run.classId === 2 
+                                    : props.run.classId === 2  
                                     ? 'c-warlock'
                                     : props.run.classId === 3 
                                     ? 'c-rouge'
@@ -104,11 +105,6 @@ let goodScore = checkScore()
 
             <div class="tas-text-note">
                 <div class="tas-text-header-container">
-                <h4>
-                    Note, gold and legendary
-                </h4>
-                </div>
-                <div>
                     <p> <fa icon="note-sticky" /> {{ run.note }} </p>
                     <p> <fa icon="coins" />  {{ run.priceWinnings }}  </p>
                     <p> <fa icon="skull" /> {{ run.legendaryBracket }}</p>
@@ -154,8 +150,9 @@ h6{
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 500px;
    margin: 10px;
-border-radius: 8px; 
+border-radius: 20px; 
 background-color: rgb(251, 251, 251); 
 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
 margin-bottom: 30px;
@@ -168,9 +165,9 @@ margin-bottom: 30px;
 .tas-container {
     margin-top: 10px;
     padding: 20px;
-    
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px; 
+    width: 450px; 
+    border-radius: 20px;
 }
 
 
@@ -178,8 +175,12 @@ margin-bottom: 30px;
     margin-bottom: 15px; 
     text-align: center;
     background-color: rgba(190,190, 190, 0.5);
-    border-radius: 8px;
-    height: 200px;
+    border-radius: 30px 30px 8px 8px;
+    height: 150px;
+}
+.tas-header:hover {
+   transform: scale(1.01);
+    filter: drop-shadow(5px 3px 2px rgb(251, 251, 251));
 }
 
 .tas-header-title {
@@ -209,26 +210,26 @@ margin-bottom: 30px;
 }
 
 .tas-text-header-container {
-    background-color: rgba(190,190, 190, 0.5);
+    margin-top: 50px;
+    
     border-radius: 5px
+}
+
+.tas-text-header-container p {
+    margin-top: 30px ;
+    text-align: left;
 }
 
  .tas-image-container {
    margin: 15px 0;
  }
 
- .tas-image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-   max-height: 400px; 
- }
 
- .tas-image-container img:hover {
-    transform: scale(1.1);
+
+ /* .tas-container:hover {
+    transform: scale(1.01);
     filter: drop-shadow(5px 3px 2px rgb(251, 251, 251));
- }
+ } */
 
 
  .tas-run-wrapper-high {
@@ -262,7 +263,7 @@ margin-bottom: 30px;
  }
 
 
- .tas-router {
+/* used for??  .tas-router {
     display: flex; 
 padding-left: 5rem;
 padding-right: 5rem; 
@@ -276,64 +277,73 @@ line-height: 2rem;
 margin: 0;
 height: 40px;
 text-align: center;
- }
+ } */
 
  .c-warrior {
     background-image: url("/images/Warrior.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
-
+    background-position: 50% -0%;
  }
 
  .c-warlock {
     background-image: url("/images/Warlock.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-rouge {
     background-image: url("/images/Rouge.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-druid {
     background-image: url("/images/Druid.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-mage {
     background-image: url("/images/Mage.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-hunter {
     background-image: url("/images/Hunter.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-shaman {
     background-image: url("/images/Shaman.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-dh {
     background-image: url("/images/DH.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-dk {
     background-image: url("/images/DK.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-priest {
     background-image: url("/images/Priest.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  .c-paladin {
     background-image: url("/images/Paladin.webp");
     background-repeat: no-repeat;
-    background-position: -20px 30px;
+    
+    background-position: 50% -0%;
  }
  
 </style>

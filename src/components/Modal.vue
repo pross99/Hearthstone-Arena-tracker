@@ -46,10 +46,26 @@ export default {
             <button class="m-close" @click="close"> X</button>
             <slot></slot>
             <form @submit.prevent="submitForm">
+                <label> ID {{ formData }}
+                    <input type="number" v-model="formData.id"
+                    /> 
+                </label>
                 <label>
                     Class:
-                    <input type="text" v-model="formData.class"
-                    />
+                    <select v-model="formData.classId">
+                        <option label="Warrior" value="1"></option>
+                        <option label="Warlock" value="2"></option>
+                        <option label="Rouge" value="3"></option>
+                        <option label="Druid" value="4"></option>
+                        <option label="Mage" value="5"></option>
+                        <option label="Hunter" value="6"></option>
+                        <option label="Shaman" value="7"></option>
+                        <option label="Demon Hunter" value="8"></option>
+                        <option label="Death Knight" value="9"></option>
+                        <option label="Priest" value="10"></option>
+                        <option label="Paladin" value="11"></option>
+                        
+                    </select>
                 </label>
 
                 <label>
@@ -63,6 +79,12 @@ export default {
                     Legendary Bucket:
                     <input v-model="formData.legendaryBracket" 
                     :placeholder="initialData.legendaryBracket"
+                    ></input>
+                </label>
+                <label>
+                    Price Winnings:
+                    <input v-model="formData.priceWinnings" 
+                    :placeholder="initialData.priceWinnings"
                     ></input>
                 </label>
 
