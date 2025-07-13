@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, defineProps, onMounted, onUpdated } from 'vue';
+import { ref, reactive, defineProps, onMounted, onUpdated, computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
@@ -39,6 +39,20 @@ onMounted(async () => {
 })
 
 
+function combineRunWithClass(run) {
+ const cls = state.classes.find(e => String(e.id) === String(run.classId)) ?? {};
+    return {
+        ...run,
+        ...cls
+    }
+    }
+
+
+const runsWithClass = computed(() => {
+    return state.runs.map(combineRunWithClass);
+});
+
+
 function updateItem(id, newData) {
 const index = state.runs.findIndex(run => run.id === id)
 if(index !== -1) {
@@ -61,7 +75,10 @@ if(index !== -1) {
 
              <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
-                <RunListing v-for="run in state.runs.slice(0, limit || state.runs.length)" :key="run.id" :run="run" :className="className" @update="updateItem" />
+                <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length)"
+                 :key="run.id" 
+                 :run="run"  
+                 @update="updateItem" />
               </div>
         </div>
     </section>

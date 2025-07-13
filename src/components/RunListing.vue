@@ -7,8 +7,14 @@ import { useToast } from 'vue-toastification';
 
 const props = defineProps({
     run: Object,
-    className : Object
 });
+
+
+
+// Combine the two tables in order to show className from "classes", while showing data from the "runs" table
+// moved to parent component
+
+
 
 const emit = defineEmits(['update'])
 //reactive state for modal visibility
@@ -21,6 +27,11 @@ const handleFormSubmit = async (formData) => {
         console.error("Where is the ID")
         return;
     }
+
+
+
+
+
 
     const updateRun =  {
         id: props.run.id,
@@ -54,6 +65,9 @@ function checkScore() {
 let goodScore = checkScore()
 
 
+
+
+
 </script>
 
 <template>
@@ -61,21 +75,43 @@ let goodScore = checkScore()
     <div class="tas">
         <div class="tas-container">
 
-           <h1>{{  }}</h1>
-            <div class="tas-header"> 
-                <h3 class="tas-header-title">{{ }}</h3>
-                <div class="tas-header-placement">
-                </div>
-                   Legendary Bracket{{ run.legendaryBracket }} 
+           <h1 id="tas-header-container">{{ run.className}}</h1>
+            <div class="tas-header"  :class="
+                                    props.run.classId === 1
+                                    ? 'c-warrior'
+                                    : props.run.classId === 2 
+                                    ? 'c-warlock'
+                                    : props.run.classId === 3 
+                                    ? 'c-rouge'
+                                    :props.run.classId === 4 
+                                    ? 'c-druid'
+                                    :props.run.classId === 5 
+                                    ? 'c-mage'
+                                    :props.run.classId === 6 
+                                    ? 'c-hunter'
+                                    :props.run.classId === 7 
+                                    ? 'c-shaman'
+                                    :props.run.classId === 8 
+                                    ? 'c-dh'
+                                    :props.run.classId === 9 
+                                    ? 'c-dk'
+                                    :props.run.classId === 10 
+                                    ? 'c-priest'
+                                    :props.run.classId === 11 
+                                    ? 'c-paladin'
+                                    :errorClass "> 
             </div>
 
             <div class="tas-text-note">
+                <div class="tas-text-header-container">
                 <h4>
-                    Note and Winnings
+                    Note, gold and legendary
                 </h4>
+                </div>
                 <div>
-                    <p> Note {{ run.note }} </p>
-                    <p> Gold: {{ run.priceWinnings }} <fa icon="coins" /> </p>
+                    <p> <fa icon="note-sticky" /> {{ run.note }} </p>
+                    <p> <fa icon="coins" />  {{ run.priceWinnings }}  </p>
+                    <p> <fa icon="skull" /> {{ run.legendaryBracket }}</p>
                 </div>
                 
             </div>
@@ -127,6 +163,8 @@ margin-bottom: 30px;
 
 }
 
+
+
 .tas-container {
     margin-top: 10px;
     padding: 20px;
@@ -141,11 +179,13 @@ margin-bottom: 30px;
     text-align: center;
     background-color: rgba(190,190, 190, 0.5);
     border-radius: 8px;
+    height: 200px;
 }
 
 .tas-header-title {
     font-size: 1.25rem;
 }
+
 
 .tas-header-placement {
     font-size: 1rem;
@@ -165,7 +205,12 @@ margin-bottom: 30px;
     background-color: rgb(251, 251, 251);
     height: 100px;
    margin: auto;
-   margin-bottom: 15px;
+   margin-bottom: 40px;
+}
+
+.tas-text-header-container {
+    background-color: rgba(190,190, 190, 0.5);
+    border-radius: 5px
 }
 
  .tas-image-container {
@@ -235,37 +280,60 @@ text-align: center;
 
  .c-warrior {
     background-image: url("/images/Warrior.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
+
  }
 
  .c-warlock {
     background-image: url("/images/Warlock.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-rouge {
     background-image: url("/images/Rouge.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-druid {
     background-image: url("/images/Druid.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-mage {
     background-image: url("/images/Mage.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-hunter {
     background-image: url("/images/Hunter.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-shaman {
     background-image: url("/images/Shaman.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-dh {
     background-image: url("/images/DH.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-dk {
     background-image: url("/images/DK.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-priest {
     background-image: url("/images/Priest.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  .c-paladin {
     background-image: url("/images/Paladin.webp");
+    background-repeat: no-repeat;
+    background-position: -20px 30px;
  }
  
 </style>

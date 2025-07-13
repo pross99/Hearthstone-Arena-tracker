@@ -2,7 +2,7 @@
   "runs": [
     {
       "id": "1",
-      "classId": 4,
+      "classId": 1,
       "placement": 8,
       "legendaryBracket": "Gidion",
       "priceWinnings": "50",
@@ -10,15 +10,15 @@
     },
     {
       "placement": 2,
-      "legendaryBracket": "Gritty, dark",
+      "legendaryBracket": "Fan of knvifes",
       "note": "Fun Run",
       "priceWinnings": "3000",
       "id": "2",
-      "classId": 1
+      "classId": 2
     },
     {
       "placement": 4,
-      "legendaryBracket": "Gritty, dark",
+      "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
       "id": "3",
@@ -26,11 +26,51 @@
     },
     {
       "id": "4",
-      "classId": 4,
+      "classId": 2,
       "placement": 6,
-      "legendaryBracket": "Gritty, dark",
+      "legendaryBracket": "Tiger king",
       "note": "Meh",
       "priceWinnings": "200"
+    },
+    {
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "note": "Boring",
+      "priceWinnings": "3000",
+      "id": "3",
+      "classId": 7
+    },
+    {
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "note": "Boring",
+      "priceWinnings": "3000",
+      "id": "3",
+      "classId": 8
+    },
+    {
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "note": "Boring",
+      "priceWinnings": "3000",
+      "id": "3",
+      "classId": 9
+    },
+    {
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "note": "Boring",
+      "priceWinnings": "3000",
+      "id": "3",
+      "classId": 10
+    },
+    {
+      "placement": 4,
+      "legendaryBracket": "Pulp of madness",
+      "note": "Boring",
+      "priceWinnings": "3000",
+      "id": "3",
+      "classId": 11
     }
   ],
 
