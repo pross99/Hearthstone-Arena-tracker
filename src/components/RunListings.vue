@@ -4,6 +4,7 @@ import { RouterLink } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
 import RunListing from './RunListing.vue';
+import StatListing from './StatListing.vue';
 import { useToast } from 'vue-toastification';
 import Modal from './Modal.vue'
 
@@ -120,16 +121,18 @@ const handleFormSubmit = async (formData) => {
 
              <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
-                
-                <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length)"
+                <!-- REVERSE order to show latest entry first -->
+                <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length).reverse()"
                  :key="run.id" 
                  :run="run"  
                  @update="updateItem" />
+
+                
               </div>
         </div>
     </section>
 
-
+ <StatListing />
 
 </template>
 

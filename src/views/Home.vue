@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .container-component{
   display: flex;
- 
-  gap: 30px; /* Adds spacing between components */
+ gap: 50px;
+  width: 95vw;
 }
 
 p {
