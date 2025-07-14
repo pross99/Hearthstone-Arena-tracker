@@ -4,6 +4,8 @@ import { RouterLink } from 'vue-router';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import axios from 'axios';
 import RunListing from './RunListing.vue';
+import { useToast } from 'vue-toastification';
+import Modal from './Modal.vue'
 
 const state = reactive({
     runs: [],
@@ -11,7 +13,7 @@ const state = reactive({
     isLoading: true
 })
 
-defineProps({
+const props = defineProps({
     limit: Number,
     showButton: {
         type:Boolean,
@@ -59,11 +61,54 @@ if(index !== -1) {
     Object.assign(state.runs[index], newData)
 }
 }
+
+
+
+
+
+
+// Add a new run:
+
+const emit = defineEmits(['add'])
+
+//reactive state for modal visability
+
+const showModal = ref(false)
+const submittedData = ref(null)
+const showToast = useToast()
+
+const handleFormSubmit = async (formData) => {
+
+    const addRun = {
+        classId: Number(formData.classId),
+        placement: formData.placement,
+        legendaryBracket: formData.legendaryBracket,
+        priceWinnings: formData.priceWinnings,
+        note: formData.note
+
+    }
+         try {
+        console.log(addRun)
+        const response = await axios.post(`/api/runs/`, addRun)
+        console.log(response)
+        showToast.success("Listing added successfully")
+        emit('add', addRun)
+        showModal.value=false;
+       
+    } catch (error) {
+        console.log("ERROR", error)
+        showToast.error("Error updating listing")
+    }
+}
 </script>
 
 <template>
     <section class="tl">
         <div class="tl-container">
+
+            <button @click="showModal = true">Add a new run</button>
+             <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
+            </Modal>
             <h2 class="tl-title">
                 Previous runs
             </h2>
@@ -75,7 +120,7 @@ if(index !== -1) {
 
              <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
-    
+                
                 <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length)"
                  :key="run.id" 
                  :run="run"  
@@ -123,9 +168,6 @@ align-items: center;
     color: burlywood;
 }
 
-.tl-tattoos {
-
-}
 .tl-expand {
     margin-top: 5px;
     padding-left: 2rem;

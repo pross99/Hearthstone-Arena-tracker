@@ -10,12 +10,6 @@ const props = defineProps({
 });
 
 
-
-// Combine the two tables in order to show className from "classes", while showing data from the "runs" table
-// moved to parent component
-
-
-
 const emit = defineEmits(['update'])
 //reactive state for modal visibility
 const showModal = ref(false)
@@ -27,10 +21,6 @@ const handleFormSubmit = async (formData) => {
         console.error("Where is the ID")
         return;
     }
-
-
-
-
 
 
     const updateRun =  {

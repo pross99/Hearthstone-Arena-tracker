@@ -46,10 +46,7 @@ export default {
             <button class="m-close" @click="close"> X</button>
             <slot></slot>
             <form @submit.prevent="submitForm">
-                <label> ID {{ formData }}
-                    <input type="number" v-model="formData.id"
-                    /> 
-                </label>
+             
                 <label>
                     Class:
                     <select v-model="formData.classId">
@@ -71,6 +68,7 @@ export default {
                 <label>
                     Wins:
                     <input type="number" v-model="formData.placement"
+                    :placeholder="initialData.placement || '0 to 12'"
                     />
                 </label>
 
@@ -78,20 +76,20 @@ export default {
                 <label>
                     Legendary Bucket:
                     <input v-model="formData.legendaryBracket" 
-                    :placeholder="initialData.legendaryBracket"
+                    :placeholder="initialData.legendaryBracket || 'Input your first legendary picked'"
                     ></input>
                 </label>
                 <label>
                     Price Winnings:
                     <input v-model="formData.priceWinnings" 
-                    :placeholder="initialData.priceWinnings"
+                    :placeholder="initialData.priceWinnings || 'Gold won'"
                     ></input>
                 </label>
 
                  <label>
                     Note About run:
                     <input v-model="formData.note" 
-                   
+                    :placeholder="initialData.note || 'Any notes for this run?'"
                     ></input>
                 </label>
 

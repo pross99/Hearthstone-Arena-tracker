@@ -18,9 +18,9 @@
     },
     {
       "id": "3",
-      "classId": 4,
-      "placement": 4,
-      "legendaryBracket": "Pulp of madness",
+      "classId": 7,
+      "placement": "4",
+      "legendaryBracket": "",
       "priceWinnings": "3000",
       "note": "Boring"
     },
@@ -71,6 +71,14 @@
       "priceWinnings": "3000",
       "id": "3",
       "classId": 11
+    },
+    {
+      "id": "b83b",
+      "classId": 5,
+      "placement": 4,
+      "legendaryBracket": "Trogg the destoryer",
+      "priceWinnings": "2000",
+      "note": "Was fun run!"
     }
   ],
   "classes": [
@@ -104,11 +112,11 @@
     },
     {
       "id": "8",
-      "className": "DemonHunter"
+      "className": "Demon Hunter"
     },
     {
       "id": "9",
-      "className": "DeathKnight"
+      "className": "Death Knight"
     },
     {
       "id": "10",
