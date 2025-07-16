@@ -5,7 +5,6 @@ import {RouterView} from 'vue-router'
 </script>
 
 <template>
-<h1 class="appTxt"> View Arena Runs</h1>
 <Navbar /> 
 <RouterView /> 
 </template>

@@ -35,7 +35,7 @@ const statsArray = computed(() => {
       <thead>
         <tr>
           <th sameClass>Class</th>
-          <th sameClass>Runs</th>
+          <th sameClass>Runs Completed</th>
           <th sameClass>Wins</th>
           <th sameClass>Matches</th>
           <th sameClass>Winrate</th>
