@@ -68,6 +68,8 @@ if(index !== -1) {
 
 
 
+
+
 // Add a new run:
 
 const emit = defineEmits(['add'])
@@ -101,6 +103,57 @@ const handleFormSubmit = async (formData) => {
         showToast.error("Error updating listing")
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+// Prepare stats for child component
+
+const statsByClass = computed (() => {
+    const stats = {}
+    const runsArray = runsWithClass.value
+
+    runsArray.forEach(run => {
+        const clsId = run.classId
+        const clsName = run.className
+
+        if (!stats[clsId]) {
+        stats[clsId] = {
+          className : clsName,
+          totalRuns: 0,
+          totalWins: 0,
+          totalMatches: 0,
+        };
+      }
+
+      const placement = Number(run.placement) // convert to number
+      const matchesPlayed = placement + 3;
+
+      stats[clsId].totalRuns++;
+      stats[clsId].totalWins += placement
+      stats[clsId].totalMatches += matchesPlayed
+    });
+
+
+      //calc winrate
+   Object.keys(stats).forEach(cls => {
+      const s = stats[cls];
+      s.winrate = s.totalMatches > 0
+        ? (s.totalWins / s.totalMatches) * 100
+        : 0;
+    });
+
+    return stats;
+  
+})
+
 </script>
 
 <template>
@@ -111,7 +164,7 @@ const handleFormSubmit = async (formData) => {
              <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
             </Modal>
             <h2 class="tl-title">
-                Previous runs
+                Recent Runs
             </h2>
 
             <!-- Show spinner when fetching saved runs -->
@@ -132,7 +185,7 @@ const handleFormSubmit = async (formData) => {
         </div>
     </section>
 
- <StatListing />
+ <StatListing  :stats="statsByClass"/>
 
 </template>
 

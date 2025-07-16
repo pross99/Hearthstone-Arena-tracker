@@ -79,6 +79,14 @@
       "legendaryBracket": "Trogg the destoryer",
       "priceWinnings": "2000",
       "note": "Was fun run!"
+    },
+    {
+      "id": "ae76",
+      "classId": 4,
+      "placement": 6,
+      "legendaryBracket": "Trogg",
+      "priceWinnings": "200",
+      "note": "FUN!"
     }
   ],
   "classes": [
