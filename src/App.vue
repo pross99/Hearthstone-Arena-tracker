@@ -16,6 +16,7 @@ rgb(151,101,36);
 <template>
 <Navbar /> 
 <RouterView /> 
+
 </template>
 
 <style scoped>
@@ -28,4 +29,6 @@ margin: 0;
 height: 40px;
 text-align: center;
 }
+
+
 </style>

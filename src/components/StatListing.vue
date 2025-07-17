@@ -61,14 +61,15 @@ const statsArray = computed(() => {
 .stat {
 
     height: 800px;
-    width: 100%;
-    background-color: black;
+    width: 45%;
     padding-left: 2rem;
 padding-right: 2rem;
 padding-top:2.5rem;
 padding-bottom: 2.5rem;
-background-color: rgb(196, 217, 255);
+background-color: rgb(76,86,111);
 border-radius: 8px;
+margin-left: 0;
+margin-right: 0;
 }
 
 .s-container{
@@ -89,7 +90,7 @@ align-items: center;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 40px;
-  color: #080808;
+  color: rgb(151,101,36);
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -105,7 +106,7 @@ align-items: center;
   margin-top: 25px;
   left: 50%;
   margin-left: -50px;
-  background-color: rgb(196, 217, 255);
+  background-color:rgb(38,37,48);
 }
 
 .s-table {
@@ -118,7 +119,7 @@ align-items: center;
     height: 800px;
 }
 .s-table thead tr {
- background-color:rgb(196, 217, 255);
+ background-color:rgb(38,37,48);
     color: #ffffff;
     text-align: left;
 

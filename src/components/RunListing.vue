@@ -229,6 +229,7 @@ margin-bottom: 30px;
  padding: 10px;
  border-radius: 8px;
  background-color: rgba(212, 72, 72, 0.2) ;
+ cursor: pointer;
  }
 
   .tas-run-wrapper-low {
@@ -238,6 +239,7 @@ margin-bottom: 30px;
  padding: 10px;
  border-radius: 8px;
  background-color: #4dd44833 ;
+ cursor: pointer;
  }
 
  .tas-low {

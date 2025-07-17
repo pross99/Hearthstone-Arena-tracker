@@ -200,11 +200,11 @@ padding-bottom: 2.5rem;
     box-shadow: 
     inset -5px 5px hsl(34 61.5 36.7% / 0.1),
     -20px 20px 40px hsla(0, 0%, 99%, 0.92) ;
-width: 70vh;
+width: 45%;
 margin-left: 0;
 margin-right: 0;
 z-index: 0;
-border-radius: 8px;
+border-radius: 20px;
 
 }
 
@@ -253,7 +253,6 @@ border-radius: 8px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
- background-color: rgb(251, 251, 251);
  font-size:24px;
 line-height: 2rem;
 margin: 0;
@@ -267,7 +266,7 @@ text-align: center;
     margin-top: 20px;
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image: radial-gradient(100% 100% at 100% 0, rgb(76,86,111) 0, rgb(151,101,36) 100%);
   border: 0;
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
@@ -297,16 +296,16 @@ text-align: center;
 }
 
 .button-29:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgb(151,101,36) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
 .button-29:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(151,101,36) 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 .button-29:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
+  box-shadow: rgb(151,101,36) 0 3px 7px inset;
   transform: translateY(2px);
 }
 </style>

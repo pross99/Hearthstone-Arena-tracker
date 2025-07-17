@@ -34,8 +34,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .container-component{
   display: flex;
- gap: 50px;
-  width: 95vw;
+ gap: 0;
+  width: 100vw;
 }
 
 p {
