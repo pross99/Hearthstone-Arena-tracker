@@ -18,7 +18,7 @@ defineProps({
 <style>
 
 .c{
-    background-color: rgba(251, 251, 251);
+    background-color: rgba(196, 217, 255, 0.9);
     width: 20%;
   margin-left: auto;
   margin-top: 10px;

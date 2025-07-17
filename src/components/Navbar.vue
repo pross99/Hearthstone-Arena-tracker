@@ -21,7 +21,7 @@ const isActive = (routePath) => {
                     <!--Logo-->
                     <RouterLink class="navbarLogo" to="/">
                         
-                    <span class="navbarLogoTxt"> Arena tracker</span>
+                    <span class="navbarLogoTxt" :class="[isActive('/') ? 'active' : 'notActive']"> Arena tracker</span>
                     </RouterLink>
                     
                     
@@ -41,20 +41,15 @@ const isActive = (routePath) => {
 
 <style>
 .nav {
-    background-color: rgb(251, 251, 251);
+    background-color: rgba(38,37,48, 0.95);
     border-color: #1E90AA;
     border-bottom-width: 500px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    border-radius: 10px;
     z-index: 99;
-    background-image: url('/images/key.png');
-    background-repeat: repeat;
-    background-size: 30px;
-    background-position: center;
-    background-color: rgba(196, 217, 255, 0.5);
+    
     
 }
 .navbar {
@@ -73,16 +68,19 @@ const isActive = (routePath) => {
     justify-content: space-between;
     align-items: center;
     height: 5rem;
+    width: 95vw;
 
 }
 .navbarItems {
     display: flex;
     flex: 1;
-    gap: 50px;
-    flex: 430%;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(173, 216, 230, 0.9);
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+  
 }
 
 .navbarLogo {
@@ -91,23 +89,12 @@ const isActive = (routePath) => {
     align-items: center;
 }
 
-.navbarLogo:hover {
-    background-color: rgba(173, 216, 230, 0.6);
-    border-radius: 15px;
-}
-
-.navbarLogoImg {
-    width: auto;
-    height: 2.5rem;
-}
-
-
 .navbarLogoTxt {
     font-size: 1.4rem;
     line-height: 1;
     white-space: nowrap;
     font-weight: 700;
-    color: black
+    color: rgb(38,37,48);
 }
 
 .navbarMenu {
@@ -125,7 +112,7 @@ const isActive = (routePath) => {
     justify-content: center;
     padding: 0.5rem 1.5rem;
     white-space: nowrap;
-    border-radius: 25px;
+    
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
@@ -138,21 +125,21 @@ const isActive = (routePath) => {
 
 
 .active {
-    color: blue
+   color: rgb(38,37,48);
 }
 .active:hover {
-    background-color: rgba(173, 216, 230, 0.9);
-    color: black;
+    background-color: rgba(173, 216, 230, 0.1);
+    color: rgb(151,101,36);
     
 }
 
 .notActive {
     background-color: transparent;
-    color: black;
+    color: rgba(151,101,36, 0.5);
 }
 
 .notActive:hover {
-    background-color: rgba(173, 216, 230, 0.5);
+    background-color: white;
     color: black;
 }
 </style>

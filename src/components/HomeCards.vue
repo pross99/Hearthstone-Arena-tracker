@@ -5,102 +5,85 @@ import { RouterLink } from 'vue-router';
 
 
 <template>
-    <section class="hc">
-        <div class="hc-container">
-            <Card>
+   <section class="hc">
+    <div class="hc-container">
+        <Card class="hc-card">
+            <div class="hc-head-container">
+                 <p class="hc-para">Browse Runs</p>
+            </div>
+            <RouterLink to="/runs" class="hc-routerlink">
+                <button @click="navigate" class="hc-button">Browse</button>
+            </RouterLink>
+        </Card>
 
-                <div class="hc-head-container">
-                     <h2 class="hc-head">
-                    View saved Runs
-                </h2>
-                
-               
-                <p class="hc-para">
-                   Browse your saved Runs
-                </p></div>
-                <RouterLink to="/tattoos" class="hc-routerlink">
-                    <button @click="navigate" class="hc-button">Browse Tattoos </button>
-                </RouterLink>
-            </Card>
+        <Card class="hc-card">
+            <div class="hc-head-container">
+                <p class="hc-para">Add new run</p>
+            </div>
+            <RouterLink to="/runs/add" class="hc-routerlink">
+                <button @click="navigate" class="hc-button">Add</button>
+            </RouterLink>
+        </Card>
+    </div>
+</section>
 
-            <Card>
-
-                <div class="hc-head-container">
-                     <h2 class="hc-head">
-                    New Runs
-                </h2>
-               
-                <p class="hc-para">
-                   List your new Run
-                </p> </div>
-                <RouterLink to="/tattoos/add" class="hc-routerlink">
-                    <button @click="navigate" class="hc-button">Add A New Tattoo </button>
-                </RouterLink>
-            </Card>
-        </div>
-    </section>
 </template>
 
 <style>
-
-.hc{
-    padding-top: 1rem;
-padding-bottom: 1rem; 
-width: 100%;
-margin: auto;
+.hc {
+    background-color: rgb(38,37,48);
+    padding: 2rem;
 }
 
 .hc-container {
-  display: flex;  
-  background-color: rgba(196, 217, 255);
-  width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.hc-card{
-    background-color:rgba(251, 251, 251);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem; 
-    border-radius: 0.5rem; 
-    box-shadow: 0 4px 6px -1px rgba(197, 186, 255, 0.1), 0 2px 4px -1px rgba(197, 186, 255, 0.06); 
-   
-}
-.hc-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-.hc-button {
-    background-color: rgb(197, 186, 255);
-    font-weight: 700;
-    color: white;
-    padding: 10px 20px;
+.hc-card {
+    background-color: rgb(76,86,111);
     border-radius: 12px;
-    border-color: rgb(197, 186, 255);
-    cursor: pointer;
+    padding: 1.5rem;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hc-routerlink {
-    display: flex;
-    justify-content: flex-end;
+.hc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
 }
 
-.hc-head{
-    text-align: center;
-    
-}
-
-.hc-head-container {
-    width:auto;
-    background-color: rgb(232, 249, 255);
-    border-radius: 15px;
+.hc-head {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .hc-para {
-    text-align: center;
-  
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
 }
+
+.hc-routerlink {
+    text-decoration: none;
+}
+
+.hc-button {
+    background-color: rgb(151,101,36);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.hc-button:hover {
+    background-color: rgb(131, 88, 32);
+}
+
+
 </style>

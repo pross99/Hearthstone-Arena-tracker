@@ -2,10 +2,19 @@
 import Hero from '@/components/Hero.vue';
 import HomeCards from '@/components/HomeCards.vue';
 import RunListings from '@/components/RunListings.vue';
+
+const rules = `
+✅ Draft a 30-card deck by picking 1 of 3 random cards, repeated 30 times.
+✅ Face off against other Arena players with similar records.
+✅ Play until you reach 12 wins or 3 losses, whichever comes first.
+✅ The more wins, the better your reward (gold, packs, dust, etc).
+✅ Add each completed run below and keep track of your winrates, best classes e.t.c`
 </script>
 
+
+
 <template>
-    <Hero title = "Arena Tracker" subtitle ="Collect your arena runs here!" /> 
+    <Hero title = "Arena Tracker" subtitle ="Unsure how Hearhtstone Arena works?" :paragraph="rules" /> 
     <HomeCards /> 
     <div class="container-component">
     <RunListings />
@@ -18,7 +27,7 @@ import RunListings from '@/components/RunListings.vue';
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Arial', sans-serif;
   font-weight: bold;
-  color: #333; /* Dark gray */
+  color:rgb(151,101,36);
   text-align: center;
   margin-bottom: 10px;
 }

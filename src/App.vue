@@ -2,6 +2,15 @@
 import Navbar from './components/Navbar.vue';
 import {RouterView} from 'vue-router'
 
+
+/* 
+3 COLORS 
+
+rgb(38,37,48);
+rgb(76,86,111);
+rgb(151,101,36);
+*/
+
 </script>
 
 <template>

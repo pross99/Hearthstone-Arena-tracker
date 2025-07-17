@@ -195,7 +195,11 @@ padding-left: 2rem;
 padding-right: 2rem;
 padding-top:2.5rem;
 padding-bottom: 2.5rem;
-background-color: rgb(196, 217, 255);
+ background-color:rgba(76,86,111, 0.7);
+  text-shadow: -1px -1px -1px #ffffff, 0.1px 0.1px 0.1px #ffffff;
+    box-shadow: 
+    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
+    -20px 20px 40px hsla(0, 0%, 99%, 0.92) ;
 width: 70vh;
 margin-left: 0;
 margin-right: 0;
@@ -212,7 +216,11 @@ border-radius: 8px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
- background-color: rgb(251, 251, 251);
+  background-color:rgba(251,251,251, 0.7);
+  text-shadow: -1px -1px -1px #ffffff, 0.9px 0.9px 0.9px #ffffff;
+    box-shadow: 
+    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
+    -20px 20px 40px hsla(0, 0%, 99%, 0.95) ;
 }
 
 .tl-title {
@@ -285,6 +293,7 @@ text-align: center;
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 18px;
+  
 }
 
 .button-29:focus {
