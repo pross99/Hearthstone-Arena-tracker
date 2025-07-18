@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, computed,defineEmits } from 'vue';
+import { defineProps, ref, computed, watch, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import axios from 'axios'
 import { useToast } from 'vue-toastification';
@@ -22,6 +22,52 @@ const statsArray = computed(() => {
 })
 
 
+//Looks ugly. Need to rethink
+const headerItems = computed(() => {
+   const firstEntry = Object.values(props.stats || {})[0];
+  return firstEntry ? Object.keys(firstEntry) : [];
+})
+
+
+const shallowRows = ref([])
+
+onMounted(() => {
+  shallowRows.value = [...statsArray.value]
+})
+
+watch(statsArray, (newValue) => {
+  shallowRows.value = [...newValue]
+})
+
+
+const sortData = (sortBy, direction) => {
+
+  let sortedArray = [...shallowRows.value]
+
+switch(sortBy) {
+  case 'className':
+      sortedArray = sortedArray.sort((a, b) => {
+        if (direction === 'ASC') {
+          return a[sortBy].localeCompare(b[sortBy])
+        } else {
+          return b[sortBy].localeCompare(a[sortBy])
+        }
+      })
+      break
+    default:
+      sortedArray = sortedArray.sort((a, b) => {
+        if (direction === 'ASC') {
+          return a[sortBy] - b[sortBy]
+        } else {
+          return b[sortBy] - a[sortBy]
+        }
+      })
+  }
+
+  shallowRows.value = sortedArray
+
+}
+
 </script>
 
 <template>
@@ -34,15 +80,16 @@ const statsArray = computed(() => {
     <table class="s-table">
       <thead>
         <tr>
-          <th sameClass>Class</th>
-          <th sameClass>Runs Completed</th>
-          <th sameClass>Wins</th>
-          <th sameClass>Matches</th>
-          <th sameClass>Winrate</th>
+           <th v-for="header in headerItems" :key="header">{{ header.toUpperCase() }}
+               <button @click="sortData(header, 'ASC')">Asc</button>
+           <button @click="sortData(header, 'DESC')">Desc</button>
+           </th>
+        
+          
         </tr>
       </thead>
       <tbody>
-        <tr v-for="cls in statsArray" :key="cls.classId">
+        <tr v-for="cls in shallowRows" :key="cls.classId">
           <td sameClass>{{ cls.className }}</td>
           <td sameClass>{{ cls.totalRuns }}</td>
           <td sameClass>{{ cls.totalWins }}</td>
@@ -66,7 +113,11 @@ const statsArray = computed(() => {
 padding-right: 2rem;
 padding-top:2.5rem;
 padding-bottom: 2.5rem;
-background-color: rgb(76,86,111);
+ background-color:rgba(76,86,111, 0.7);
+  text-shadow: -1px -1px -1px #ffffff, 0.1px 0.1px 0.1px #ffffff;
+    box-shadow: 
+    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
+    -20px 20px 40px hsla(0, 0%, 99%, 0.92) ;
 border-radius: 8px;
 margin-left: 0;
 margin-right: 0;

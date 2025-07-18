@@ -33,8 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-component{
+  margin-top: 30px;
   display: flex;
- gap: 0;
+ gap: 30px;
   width: 100vw;
 }
 
