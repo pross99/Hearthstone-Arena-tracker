@@ -51,6 +51,7 @@ function combineRunWithClass(run) {
     }
 
 
+    // uses the function above and returns a new object with classes linked to the runs
 const runsWithClass = computed(() => {
     return state.runs.map(combineRunWithClass);
 });
@@ -115,6 +116,7 @@ const handleFormSubmit = async (formData) => {
 
 
 // Prepare stats for child component
+// computed so it knows if new runs are added or updated.
 
 const statsByClass = computed (() => {
     const stats = {}
@@ -142,7 +144,7 @@ const statsByClass = computed (() => {
     });
 
 
-      //calc winrate
+      // After all runs are proccessed, i loop through each class in the stats obejct and calc the winrate. If no matches have been played it can be set to 0
    Object.keys(stats).forEach(cls => {
       const s = stats[cls];
       s.winrate = s.totalMatches > 0

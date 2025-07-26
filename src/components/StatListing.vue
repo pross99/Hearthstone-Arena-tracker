@@ -81,8 +81,8 @@ switch(sortBy) {
       <thead>
         <tr>
            <th v-for="header in headerItems" :key="header">{{ header.toUpperCase() }}
-               <button @click="sortData(header, 'ASC')">Asc</button>
-           <button @click="sortData(header, 'DESC')">Desc</button>
+               <button @click="sortData(header, 'ASC')" class="sort-btn">↑</button>
+           <button @click="sortData(header, 'DESC')" class="sort-btn">↓</button>
            </th>
         
           
@@ -196,6 +196,10 @@ align-items: center;
 .s-table tbody tr.active-row {
     font-weight: bold;
     color: rgb(196, 217, 255);
+}
+
+.sort-btn {
+  color: rgb(38, 37, 48);
 }
    
 </style>
