@@ -93,13 +93,6 @@ export default {
                     ></input>
                 </label>
 
-
-
-                <label>
-                    Gold won:
-                    <textarea v-model="formData.priceWinnings" ></textarea>
-                </label>
-
               
 
                 <button type="submit">Save Changes</button>

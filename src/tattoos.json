@@ -2,7 +2,7 @@
   "runs": [
     {
       "id": "1",
-      "classId": 1,
+      "classId": 9,
       "placement": 8,
       "legendaryBracket": "Gidiondwwd",
       "priceWinnings": "500",
@@ -10,17 +10,17 @@
     },
     {
       "id": "2",
-      "classId": 8,
+      "classId": 9,
       "placement": 8,
       "legendaryBracket": "Gidion",
-      "priceWinnings": "50",
+      "priceWinnings": "500",
       "note": "Unlucky runs"
     },
     {
       "id": "3",
       "classId": 7,
-      "placement": "4",
-      "legendaryBracket": "",
+      "placement": 8,
+      "legendaryBracket": "Pulp of madness",
       "priceWinnings": "3000",
       "note": "Boring"
     },
@@ -41,7 +41,7 @@
       "classId": 7
     },
     {
-      "placement": "4",
+      "placement": 4,
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -49,7 +49,7 @@
       "classId": 8
     },
     {
-      "placement": "4",
+      "placement": 4,
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -57,7 +57,7 @@
       "classId": 9
     },
     {
-      "placement": "4",
+      "placement": 4,
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -65,7 +65,7 @@
       "classId": 10
     },
     {
-      "placement": "4",
+      "placement": 4,
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -82,11 +82,59 @@
     },
     {
       "id": "12",
-      "classId": 4,
-      "placement": 6,
+      "classId": 1,
+      "placement": 7,
       "legendaryBracket": "Trogg",
       "priceWinnings": "200",
       "note": "FUN!"
+    },
+    {
+      "id": "0133",
+      "classId": 5,
+      "placement": 5,
+      "legendaryBracket": "Killrog",
+      "priceWinnings": "200",
+      "note": "Fun, unlucky"
+    },
+    {
+      "id": "9911",
+      "classId": 4,
+      "placement": 2,
+      "legendaryBracket": "Sylvanas",
+      "priceWinnings": "50",
+      "note": "Tough matches"
+    },
+    {
+      "id": "58db",
+      "classId": 5,
+      "placement": 12,
+      "legendaryBracket": "Alexandros Mograine",
+      "priceWinnings": "175",
+      "note": "FUN"
+    },
+    {
+      "id": 0,
+      "classId": 3,
+      "placement": 5,
+      "legendaryBracket": "Rouge legendary",
+      "priceWinnings": "200",
+      "note": "Fun times"
+    },
+    {
+      "id": "1480",
+      "classId": 8,
+      "placement": 5,
+      "legendaryBracket": "Rouge legendary",
+      "priceWinnings": "200",
+      "note": "Fun times"
+    },
+    {
+      "id": "ec7e",
+      "classId": 6,
+      "placement": 2,
+      "legendaryBracket": "Boar stampede",
+      "priceWinnings": "225",
+      "note": "Hunter sucks"
     }
   ],
   "classes": [

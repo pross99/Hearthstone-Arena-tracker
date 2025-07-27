@@ -24,7 +24,7 @@ const handleFormSubmit = async (formData) => {
 
 
     const updateRun =  {
-        id: Number(props.run.id),
+        id: props.run.id,
         classId: Number(formData.classId),
         placement: formData.placement,
         legendaryBracket: formData.legendaryBracket,
@@ -53,7 +53,9 @@ function checkScore() {
   
 }
 
-let goodScore = checkScore()
+const goodScore = computed(() => {
+    return props.run.placement > 7 
+})
 
 
 

@@ -23,7 +23,7 @@ const props = defineProps({
 })
 
 
-onMounted(async () => {
+ onMounted(async () => {
     try {
         const response = await axios.get('api/runs');
         state.runs = response.data;
@@ -40,6 +40,23 @@ onMounted(async () => {
         state.isLoading = false;
     }
 })
+
+async function getNewruns() {
+
+    
+        try {
+        const response = await axios.get('api/runs');
+        state.runs = response.data;
+        console.log(response)
+
+    } catch (error) {
+        console.log("ERROR", error)
+        
+    }  finally {
+        state.isLoading = false;
+    }
+
+}
 
 
 function combineRunWithClass(run) {
@@ -72,7 +89,7 @@ if(index !== -1) {
 
 
 // Add a new run:
-
+ let idNewRuns = state.runs.length
 const emit = defineEmits(['add'])
 
 //reactive state for modal visability
@@ -98,6 +115,8 @@ const handleFormSubmit = async (formData) => {
         showToast.success("Listing added successfully")
         emit('add', addRun)
         showModal.value=false;
+        getNewruns()
+
        
     } catch (error) {
         console.log("ERROR", error)

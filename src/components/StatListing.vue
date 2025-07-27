@@ -22,7 +22,7 @@ const statsArray = computed(() => {
 })
 
 
-//Looks ugly. Need to rethink
+// prepare clumn headers for sort callback
 const headerItems = computed(() => {
    const firstEntry = Object.values(props.stats || {})[0];
   return firstEntry ? Object.keys(firstEntry) : [];
@@ -40,15 +40,20 @@ watch(statsArray, (newValue) => {
 })
 
 
+
+// Dynamic sorting on each collumn
 const sortData = (sortBy, direction) => {
 
   let sortedArray = [...shallowRows.value]
 
 switch(sortBy) {
+
+  //only column with alphabetical sorting
   case 'className':
       sortedArray = sortedArray.sort((a, b) => {
         if (direction === 'ASC') {
           return a[sortBy].localeCompare(b[sortBy])
+          //
         } else {
           return b[sortBy].localeCompare(a[sortBy])
         }
@@ -57,7 +62,7 @@ switch(sortBy) {
     default:
       sortedArray = sortedArray.sort((a, b) => {
         if (direction === 'ASC') {
-          return a[sortBy] - b[sortBy]
+          return a[sortBy] - b[sortBy] 
         } else {
           return b[sortBy] - a[sortBy]
         }
