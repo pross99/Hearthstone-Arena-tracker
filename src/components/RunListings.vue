@@ -181,12 +181,14 @@ const statsByClass = computed (() => {
     <section class="tl">
         <div class="tl-container">
 
-            <button @click="showModal = true" class="button-29">Add new run   </button>
-             <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
-            </Modal>
+            
             <h2 class="tl-title">
                 Recent Runs
             </h2>
+
+            <button @click="showModal = true" id="add-btn">Add new run   </button>
+             <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
+            </Modal>
 
             <!-- Show spinner when fetching saved runs -->
              <div v-if="state.isLoading" class="tl-spinner">
@@ -207,7 +209,13 @@ const statsByClass = computed (() => {
         </div>
     </section>
 
- <StatListing  :stats="statsByClass" class="tl-tattoos"/>
+     <section class="tl">
+        <div class="tl-container">
+             <StatListing  :stats="statsByClass" class="tl-tattoos"/>
+            </div>
+     </section>
+
+
 
 </template>
 
@@ -217,10 +225,11 @@ padding-left: 0.5rem;
 padding-right: 0.5rem;
 padding-top:0.5rem;
 padding-bottom: 0.5rem;
- background-color:rgb(234,235,202);
-  text-shadow: -1px -1px -1px #ffffff, 0.1px 0.1px 0.1px #ffffff;
-width: 45%;
+background-color: var(--secondary-color);
+width: 50%;
 border-radius: 20px;
+border: solid var(--third-color) 5px;
+
 
 }
 
@@ -232,7 +241,7 @@ border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-  background-color:rgb(251,251,251);
+  background-color: var(--secondary-color);
 }
 
 .tl-title {
@@ -244,19 +253,6 @@ align-items: center;
     color: burlywood;
 }
 
-.tl-expand {
-margin-top: 5px;
-padding-left: 2rem;
-padding-right: 2rem;
-padding-top:2.5rem;
-padding-bottom: 2.5rem;
-background-color: rgb(196, 217, 255);
-width: 70vh;
-margin-left: 0;
-margin-right: 0;
-z-index: 0;
-border-radius: 8px;
-}
 .tl-button {
     display: flex; 
 padding-left: 5rem;
@@ -265,60 +261,18 @@ border-radius: 8px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
- font-size:24px;
 line-height: 2rem;
 margin: 0;
 height: 40px;
 text-align: center;
 }
 
+#add-btn{
+    margin-top: 10px;
+}
+
 
 /* CSS */
-.button-29 {
-    margin-top: 20px;
-  align-items: center;
-  appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, rgb(76,86,111) 0, rgb(151,101,36) 100%);
-  border: 0;
-  border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
-  
-}
 
-.button-29:focus {
-  box-shadow: rgb(151,101,36) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.button-29:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(151,101,36) 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.button-29:active {
-  box-shadow: rgb(151,101,36) 0 3px 7px inset;
-  transform: translateY(2px);
-}
 </style>
 

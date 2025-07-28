@@ -48,13 +48,12 @@ defineProps({
     display: flex;
     justify-content: center;
     padding-top: 1rem;
-    border-radius: 25px;
-    background-position: left 100px;
-    background-size: 50%;
-    background-repeat: repeat-x;
    padding-bottom: 10px;
-   margin-bottom: 20px;
-   height: 55vh;
+   margin-top: 30px;
+   margin-bottom: 100px;
+   height: 550px;
+   background-color: var(--secondary-color);
+
 }
 
 .h-container-wrapper {
@@ -73,6 +72,10 @@ defineProps({
 
 #heading-gray {
     text-align: center;
+    color: var(--main-color);
+    margin: auto;
+    background-color: var(--secondary-color);
+    width: 380px;
 }
 
 .h-container {
@@ -89,8 +92,8 @@ align-items: center;
 
 .paragraph{
    text-wrap: balance;
-   margin-top: 40px;
-    background-color: rgb(234,235,202);
+    width: auto;
+    background-color: var(--third-color);
    border-radius: 20px;
    padding-bottom: 8px;
 }

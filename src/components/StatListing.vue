@@ -77,7 +77,6 @@ switch(sortBy) {
 
 <template>
 
-    <div class="stat">
     <div class="s-container">
         <div class="s-title-container">
         <h1 class="s-title">Statistics by class</h1>
@@ -104,93 +103,63 @@ switch(sortBy) {
       </tbody>
     </table>
   </div>
-    </div>
 
 </template>
 
 
 <style>
-.stat {
-
-    height: 800px;
-    width: 45%;
-    padding-left: 0.5rem;
-padding-right: 0.5rem;
-padding-top:0.5rem;
-padding-bottom: 0.5rem;
- background-color: rgb(234,235,202);
-border-radius: 20px;
-margin-left: 0;
-margin-right: 0;
-}
-
-.s-container{
-        display: flex; 
-padding-left: 5rem;
-padding-right: 5rem; 
-border-radius: 8px;
-flex-direction: column; 
-align-items: center; 
- max-width: 80rem;
- height: 800px;  
- background-color: rgb(251, 251, 251);
-}
-
-.s-title {
-     padding: 10px;
-  margin: 0;
-}
-
-
-.s-title-container h1::after {
-  width: 100px;
-  height: 1px;
-  display: block;
-  content: "";
-  position: relative;
-  margin-top: 25px;
-  left: 50%;
-  margin-left: -50px;
-}
 
 .s-table {
-        border-collapse: collapse;
-    margin: 25px 0px;
-    min-width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    height: 800px;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 650px;
+  margin-bottom: 20px;
 }
-.s-table thead tr {
- background-color:rgb(38,37,48);
-    color: #ffffff;
-    text-align: left;
 
+.s-table thead {
+  background-color: var(--main-color);
+  color: white;
+  text-align: left;
 }
 
 .s-table th,
 .s-table td {
-    padding: 12px 15px;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
 }
 
-.s-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+.s-table tbody tr:nth-child(odd) {
+  background-color: #eaebca; /* light cream */
 }
 
-.s-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+.s-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
-.s-table tbody tr:last-of-type {
-    border-bottom: 2px solid rgb(196, 217, 255);
-}
-
-.s-table tbody tr.active-row {
-    font-weight: bold;
-    color: rgb(196, 217, 255);
+.s-table tbody td {
+  color: #262530; /* dark gray for text */
 }
 
 .sort-btn {
-  color: rgb(38, 37, 48);
+  background: none;
+  border: none;
+  color: #ffffff;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.sort-btn:hover {
+  color: var(--third-color);
+}
+
+.s-title {
+  color: var(--third-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
    
 </style>

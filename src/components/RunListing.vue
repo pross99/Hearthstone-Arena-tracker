@@ -145,7 +145,8 @@ h6{
    width: 500px;
    margin: 10px;
 border-radius: 20px; 
-background-color:rgb(221,193,82);
+background-color:var(--main-color);
+color: var(--main-color);
 margin-bottom: 30px;
 
 
@@ -234,12 +235,10 @@ margin-bottom: 30px;
  }
 
  .tas-low { 
-color: black;
  }
 
   .tas-high {
 
-color: black;
  }
 
 
@@ -252,7 +251,7 @@ flex-direction: column;
 align-items: center; 
  max-width: 80rem;  
  background-color: rgb(251, 251, 251);
- font-size:24px;
+
 line-height: 2rem;
 margin: 0;
 height: 40px;
