@@ -31,13 +31,10 @@ import { RouterLink } from 'vue-router';
 
 <style>
 .hc {
-     background-color:rgba(76,86,111, 0.7);
-  text-shadow: -1px -1px -1px #ffffff, 0.1px 0.1px 0.1px #ffffff;
-    box-shadow: 
-    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
-    -20px 20px 40px hsla(0, 0%, 99%, 0.92) ;
+background-color: rgb(234,235,202);
     padding: 2rem;
     border-radius: 20px;
+    display: none;
 }
 
 .hc-container {

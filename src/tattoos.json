@@ -113,7 +113,7 @@
       "note": "FUN"
     },
     {
-      "id": 0,
+      "id": "0",
       "classId": 3,
       "placement": 5,
       "legendaryBracket": "Rouge legendary",
@@ -130,11 +130,27 @@
     },
     {
       "id": "ec7e",
-      "classId": 6,
-      "placement": 2,
+      "classId": 8,
+      "placement": 8,
       "legendaryBracket": "Boar stampede",
       "priceWinnings": "225",
       "note": "Hunter sucks"
+    },
+    {
+      "id": "acbd",
+      "classId": 6,
+      "placement": 5,
+      "legendaryBracket": "Killrog",
+      "priceWinnings": "200",
+      "note": "Fun run!!"
+    },
+    {
+      "id": "af00",
+      "classId": 5,
+      "placement": 5,
+      "legendaryBracket": "killrog",
+      "priceWinnings": "200",
+      "note": "fun"
     }
   ],
   "classes": [

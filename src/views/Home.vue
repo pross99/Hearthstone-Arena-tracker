@@ -14,7 +14,7 @@ const rules = `
 
 
 <template>
-    <Hero title = "Arena Tracker" subtitle ="Unsure how Hearhtstone Arena works?" :paragraph="rules" /> 
+    <Hero title = "Arena Tracker" subtitle ="Showcase your deck building mastery " :paragraph="rules" /> 
     <HomeCards /> 
     <div class="container-component">
     <RunListings />
@@ -42,11 +42,13 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family: 'Arial', sans-serif;
     font-weight: bold;
+    padding: 0 15px;
 }
 
 a {
   text-decoration: none; /* Removes underline */
 }
+
 
 
 </style>

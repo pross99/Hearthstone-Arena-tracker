@@ -203,28 +203,23 @@ const statsByClass = computed (() => {
 
                 
               </div>
+             
         </div>
     </section>
 
- <StatListing  :stats="statsByClass"/>
+ <StatListing  :stats="statsByClass" class="tl-tattoos"/>
 
 </template>
 
 <style>
 .tl{
-padding-left: 2rem;
-padding-right: 2rem;
-padding-top:2.5rem;
-padding-bottom: 2.5rem;
- background-color:rgba(76,86,111, 0.7);
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+padding-top:0.5rem;
+padding-bottom: 0.5rem;
+ background-color:rgb(234,235,202);
   text-shadow: -1px -1px -1px #ffffff, 0.1px 0.1px 0.1px #ffffff;
-    box-shadow: 
-    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
-    -20px 20px 40px hsla(0, 0%, 99%, 0.92) ;
 width: 45%;
-margin-left: 0;
-margin-right: 0;
-z-index: 0;
 border-radius: 20px;
 
 }
@@ -233,15 +228,11 @@ border-radius: 20px;
     display: flex; 
 padding-left: 5rem;
 padding-right: 5rem; 
-border-radius: 8px;
+border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-  background-color:rgba(251,251,251, 0.7);
-  text-shadow: -1px -1px -1px #ffffff, 0.9px 0.9px 0.9px #ffffff;
-    box-shadow: 
-    inset -5px 5px hsl(34 61.5 36.7% / 0.1),
-    -20px 20px 40px hsla(0, 0%, 99%, 0.95) ;
+  background-color:rgb(251,251,251);
 }
 
 .tl-title {
@@ -254,8 +245,8 @@ align-items: center;
 }
 
 .tl-expand {
-    margin-top: 5px;
-    padding-left: 2rem;
+margin-top: 5px;
+padding-left: 2rem;
 padding-right: 2rem;
 padding-top:2.5rem;
 padding-bottom: 2.5rem;

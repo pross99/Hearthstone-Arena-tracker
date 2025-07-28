@@ -145,8 +145,7 @@ h6{
    width: 500px;
    margin: 10px;
 border-radius: 20px; 
-background-color: rgb(251, 251, 251); 
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+background-color:rgb(221,193,82);
 margin-bottom: 30px;
 
 
@@ -157,7 +156,6 @@ margin-bottom: 30px;
 .tas-container {
     margin-top: 10px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 450px; 
     border-radius: 20px;
 }
@@ -166,22 +164,17 @@ margin-bottom: 30px;
 .tas-header {
     margin-bottom: 15px; 
     text-align: center;
-    background-color: rgba(190,190, 190, 0.5);
-    border-radius: 30px 30px 8px 8px;
+    background-color: rgba(251,251, 251);
+    border-radius: 20px 20px 8px 8px;
     height: 150px;
 }
 .tas-header:hover {
    transform: scale(1.01);
-    filter: drop-shadow(5px 3px 2px rgb(251, 251, 251));
 }
 
-.tas-header-title {
-    font-size: 1.25rem;
-}
 
 
 .tas-header-placement {
-    font-size: 1rem;
     display: flex;
     align-self: center;
     justify-content: center;
@@ -190,13 +183,10 @@ margin-bottom: 30px;
 
 
 .tas-text-note {
-    border-radius: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
-    
-   
+    border-radius: 8px 8px 20px 20px;
+    padding: 20px;
     background-color: rgb(251, 251, 251);
-    height: 100px;
+    height: 200px;
    margin: auto;
    margin-bottom: 40px;
 }
@@ -225,12 +215,11 @@ margin-bottom: 30px;
 
 
  .tas-run-wrapper-high {
- background-color: rgb(251, 251, 251);
  margin-top: 15px;
  margin-top: 10px;
  padding: 10px;
  border-radius: 8px;
- background-color: rgba(212, 72, 72, 0.2) ;
+ background-color: rgba(212, 72, 72) ;
  cursor: pointer;
  }
 
@@ -244,16 +233,13 @@ margin-bottom: 30px;
  cursor: pointer;
  }
 
- .tas-low {
-    color: rgb(212, 72, 72); 
-    filter: drop-shadow(0 0 0.9rem rgb(251,251,251));
-    font-weight: bold;
+ .tas-low { 
+color: black;
  }
 
   .tas-high {
-    color: #70d448; 
-    filter: drop-shadow(0 0 0.9rem rgb(251,251,251));
-    font-weight: bold;
+
+color: black;
  }
 
 

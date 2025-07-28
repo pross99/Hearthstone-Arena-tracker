@@ -41,16 +41,13 @@ const isActive = (routePath) => {
 
 <style>
 .nav {
-    background-color:rgb(76, 86, 111);
-    border-color: #1E90AA;
-    border-bottom-width: 500px;
-    width: 100%;
     position: fixed;
+    background-color: rgb(221,193,82);
+    border-color: #1E90AA;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 99;
-    
-    
 }
 .navbar {
     margin-left: auto;
@@ -58,8 +55,6 @@ const isActive = (routePath) => {
     max-width: 80rem;
     padding-left: 8px;
     padding-right: 8px;
-    border-radius: 25px;
-    
 }
 
 
@@ -122,12 +117,11 @@ const isActive = (routePath) => {
 .notActive {
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, rgb(0,0,0) 0, rgb(151,101,36) 100%);
+  background-image: radial-gradient(1% 1% at 10% 0, rgb(221,193,82) 0, rgb(84,53,26) 100%);
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
   box-sizing: border-box;
-  color: gray;
+  color: rgb(201, 201, 201);
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono",monospace;
@@ -151,19 +145,18 @@ const isActive = (routePath) => {
 }
 
 .notActive:hover {
-     box-shadow: rgb(151,101,36) 0 3px 7px inset;
-  transform: translateY(2px);
-  color: white;
+    box-shadow: rgb(221,193,82) 0 4px 8px, rgb(221,193,82) 0 7px 13px -3px, rgb(151,101,36) 0 -3px 0 inset;
+    transform: translateY(-0.5px);
+    color: #fff;
 } 
 
 
 .active {
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, rgb(76,86,111) 0, rgb(151,101,36) 100%);
+  background-image: radial-gradient(1% 1% at 10% 0, rgb(221,193,82) 0, rgb(84,53,26) 100%);
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -188,16 +181,11 @@ const isActive = (routePath) => {
 }
 
 .active:focus {
-  box-shadow: rgb(151,101,36) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+
 }
 
 .active:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(151,101,36) 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.active:active {
-  box-shadow: rgb(151,101,36) 0 3px 7px inset;
-  transform: translateY(2px);
+  box-shadow: rgb(221,193,82) 0 4px 8px, rgb(221,193,82) 0 7px 13px -3px, rgb(151,101,36) 0 -3px 0 inset;
+  transform: translateY(-0.5px);
 }
 </style>

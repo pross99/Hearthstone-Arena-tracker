@@ -47,25 +47,26 @@ defineProps({
 .h-section{
     display: flex;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 1rem;
     border-radius: 25px;
-    background-image:  url("/images/hslogo.png");
     background-position: left 100px;
     background-size: 50%;
     background-repeat: repeat-x;
-    color: white;
    padding-bottom: 10px;
-    
+   margin-bottom: 20px;
+   height: 55vh;
 }
 
 .h-container-wrapper {
-   backdrop-filter: invert(80%);
     width: 100vw;
-    height: 55%;
+    background-image:  url("/images/hslogo.png");
+    margin-top: 20px;
+    border-radius: 20px;
+    background-position: left 10px;
+    background-size: 50%;
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 100px;
     border-radius: 20px;
    
 }
@@ -84,25 +85,13 @@ align-items: center;
  max-width: 80rem; 
 }
 
-.heading {
-   &-xl {
-      font-family: inherit;
-      font-size: clamp(2.648rem, 6vw, 4.241rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -1px;
-   }
-}
+
 
 .paragraph{
-     font-family: inherit;
    text-wrap: balance;
-   color: inherit;
-   font-size: 14px;
    margin-top: 40px;
-   color: black;
-   background-color: rgba(251,251,251, 0.5);
-   border-radius: 10px;
+    background-color: rgb(234,235,202);
+   border-radius: 20px;
    padding-bottom: 8px;
 }
 
