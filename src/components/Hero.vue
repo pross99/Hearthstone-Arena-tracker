@@ -60,6 +60,7 @@ defineProps({
    margin-top:80px;
    margin-bottom: 100px;
    height: 545px;
+   
 
 }
 .h-container-wrapper {
@@ -71,6 +72,7 @@ defineProps({
     flex: 2;
     justify-content: center;
     background-color: var(--secondary-color);
+    
    
 }
 
@@ -105,6 +107,7 @@ align-items: center;
    text-wrap: balance;
     width: auto;
     background-color: var(--third-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
    border-radius: 20px;
    padding-bottom: 8px;
 }

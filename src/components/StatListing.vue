@@ -116,6 +116,7 @@ switch(sortBy) {
   overflow: hidden;
   height: 650px;
   margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .s-table thead {
@@ -153,6 +154,11 @@ switch(sortBy) {
 
 .sort-btn:hover {
   color: var(--third-color);
+}
+
+.sort-btn:focus {
+  color: var(--third-color);
+  box-shadow: none;
 }
 
 .s-title {

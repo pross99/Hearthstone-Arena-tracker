@@ -65,10 +65,14 @@ const goodScore = computed(() => {
 
 <template>
 
+<div class="s-title-container">
+        <h1 class="s-title">Statistics by class</h1>
+        </div>
     <div class="tas">
+        
         <div class="tas-container">
 
-           <h1 id="tas-header-container">{{ run.className}}</h1>
+           <h2 id="tas-header-container">{{ run.className}}</h2>
             <div class="tas-header"  :class="
                                     props.run.classId === 1
                                     ? 'c-warrior'
@@ -142,12 +146,12 @@ h6{
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 500px;
-   margin: 10px;
+    max-width: 300px;
+    max-height: 250px;
 border-radius: 20px; 
-background-color:var(--main-color);
-color: var(--main-color);
-margin-bottom: 30px;
+background-color:white;
+margin-bottom: 130px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
 }
@@ -186,7 +190,7 @@ margin-bottom: 30px;
 .tas-text-note {
     border-radius: 8px 8px 20px 20px;
     padding: 20px;
-    background-color: rgb(251, 251, 251);
+    background-color: var(--third-color);
     height: 200px;
    margin: auto;
    margin-bottom: 40px;
@@ -216,29 +220,30 @@ margin-bottom: 30px;
 
 
  .tas-run-wrapper-high {
- margin-top: 15px;
- margin-top: 10px;
+ margin: 10px;
  padding: 10px;
  border-radius: 8px;
+ height: 50px;
  background-color: rgba(212, 72, 72) ;
  cursor: pointer;
  }
 
   .tas-run-wrapper-low {
- background-color: rgb(251, 251, 251);
- margin-top: 15px;
- margin-top: 10px;
  padding: 10px;
  border-radius: 8px;
  background-color: #4dd44833 ;
  cursor: pointer;
+ height: 50px;
  }
 
  .tas-low { 
+margin-top: 10px;
+color: white;
  }
 
   .tas-high {
-
+margin-top: 10px ;
+    color: var(--main-color);
  }
 
 
@@ -325,4 +330,11 @@ text-align: center;
     background-position: 50% -0%;
  }
  
+
+ .s-title {
+  color: var(--third-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 </style>

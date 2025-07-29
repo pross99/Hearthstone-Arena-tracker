@@ -4,11 +4,11 @@ import HomeCards from '@/components/HomeCards.vue';
 import RunListings from '@/components/RunListings.vue';
 
 const rules = `
-📘 Draft a 30-card deck by picking 1 of 3 random cards, repeated 30 times.
-📘 Face off against other Arena players with similar records.
-📘 Play until you reach 12 wins or 3 losses, whichever comes first.
-📘 The more wins, the better your reward (gold, packs, dust, etc).
-📘 Add each completed run below and keep track of your winrates, best classes e.t.c`
+Draft a 30-card deck by picking 1 of 3 random cards, repeated 30 times.
+Face off against other Arena players with similar records.
+Play until you reach 12 wins or 3 losses, whichever comes first.
+The more wins, the better your reward (gold, packs, dust, etc).
+Add each completed run below and keep track of your winrates, best classes e.t.c`
 </script>
 
 
@@ -27,10 +27,10 @@ const rules = `
 
 
 .container-component{
-  margin-top: 30px;
+  margin: 30px;
   display: flex;
  gap: 40px;
-  margin: auto;
+  justify-content: center;
 }
 
 p {

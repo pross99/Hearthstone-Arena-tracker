@@ -181,11 +181,6 @@ const statsByClass = computed (() => {
     <section class="tl">
         <div class="tl-container">
 
-            
-            <h2 class="tl-title">
-                Recent Runs
-            </h2>
-
             <button @click="showModal = true" id="add-btn">Add new run   </button>
              <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
             </Modal>
@@ -226,9 +221,8 @@ padding-right: 0.5rem;
 padding-top:0.5rem;
 padding-bottom: 0.5rem;
 background-color: var(--secondary-color);
-width: 50%;
+width: 45%;
 border-radius: 20px;
-border: solid var(--third-color) 5px;
 
 
 }
@@ -236,6 +230,7 @@ border: solid var(--third-color) 5px;
 .tl-container {
     display: flex; 
 padding-left: 5rem;
+margin-top: 200px;
 padding-right: 5rem; 
 border-radius: 20px;
 flex-direction: column; 
@@ -250,7 +245,7 @@ align-items: center;
 }
 
 .tl-spinner {
-    color: burlywood;
+    color: var(--main-color);
 }
 
 .tl-button {
