@@ -52,6 +52,10 @@ defineProps({
     opacity: 0.5;
 }
 .h-section{
+    background-image: url("/images/hearthstone-arena-wins-1920.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     padding-top: 1rem;
@@ -95,12 +99,12 @@ align-items: center;
  max-width: 80rem; 
 }
 
-.h-whitespace{
+/* .h-whitespace{
     height: 545px;
     background-color: white;
     border: solid white 1px;
     width: 20%;
-}
+} */
 
 
 .paragraph{
