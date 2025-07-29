@@ -65,14 +65,9 @@ const goodScore = computed(() => {
 
 <template>
 
-<div class="s-title-container">
-        <h1 class="s-title">Statistics by class</h1>
-        </div>
     <div class="tas">
         
         <div class="tas-container">
-
-           <h2 id="tas-header-container">{{ run.className}}</h2>
             <div class="tas-header"  :class="
                                     props.run.classId === 1
                                     ? 'c-warrior'
@@ -137,17 +132,13 @@ const goodScore = computed(() => {
 .clickable-image:hover {
     transform: scale(1.05);
 }
-h6{
-    margin-bottom: 10px;
-    text-align: left;
-}
 
 .tas {
    display: flex;
    justify-content: center;
    align-items: center;
     max-width: 300px;
-    max-height: 250px;
+    
 border-radius: 20px; 
 background-color:white;
 margin-bottom: 130px;
@@ -167,7 +158,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
 .tas-header {
-    margin-bottom: 15px; 
+    margin-bottom: 2px; 
     text-align: center;
     background-color: rgba(251,251, 251);
     border-radius: 20px 20px 8px 8px;
@@ -191,25 +182,8 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 8px 8px 20px 20px;
     padding: 20px;
     background-color: var(--third-color);
-    height: 200px;
-   margin: auto;
-   margin-bottom: 40px;
+    height: 150px;
 }
-
-.tas-text-header-container {
-    margin-top: 50px;
-    
-    border-radius: 5px
-}
-
-.tas-text-header-container p {
-    margin-top: 30px ;
-    text-align: left;
-}
-
- .tas-image-container {
-   margin: 15px 0;
- }
 
 
 

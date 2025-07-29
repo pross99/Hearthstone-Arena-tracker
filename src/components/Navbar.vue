@@ -20,8 +20,18 @@ const isActive = (routePath) => {
                 <div class="navbarItems">
                     <!--Logo-->
                     <RouterLink class="navbarLogo" to="/">
-                        
-                    <span class="navbarLogoTxt"> Arena tracker</span>
+                    <div class="navbarLogoTxt">
+                        <svg viewBox="0 0 500 500">
+                            <path id="curve" d="M 100,250 A 200,200 0 0,1 400,250" fill="transparent"/> <!-- Command M 100,250, moved the point (100,250) The command A 200,200 0 0,1 400, 250 draws an arc from (100,250) to (400,250) with a radius of 200 units, creating a semi-circle -->
+                              <text>
+                                <textPath href="#curve" startOffset="50%" fill="#5aa0d4">
+                                Arena Tracker
+                              </textPath>
+                              </text>
+                          
+                        </svg>
+                    </div>    
+                    
                     </RouterLink>
                     
                     
@@ -42,13 +52,15 @@ const isActive = (routePath) => {
 <style>
 .nav {
     position: fixed;
-    background-color: var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0);
     width: 100%;
     top: 0;
     left: 0;
     z-index: 99;
-    margin-bottom: 10px;
     border: solid var(--third-color) 1px;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
 }
 .navbar {
     margin-left: auto;
@@ -59,6 +71,17 @@ const isActive = (routePath) => {
    
 }
 
+svg{
+    margin-top: 71px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+text {
+     font-size: 40px;
+    text-anchor: middle;
+    
+}
 
 .navbarContainer {
     display: flex;
@@ -91,6 +114,7 @@ const isActive = (routePath) => {
     font-size: 36px;
     text-decoration:underline;
 }
+
 
 .navbarMenu {
     display: flex;

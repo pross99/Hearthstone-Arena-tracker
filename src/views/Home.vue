@@ -14,7 +14,7 @@ Add each completed run below and keep track of your winrates, best classes e.t.c
 
 
 <template>
-    <Hero title = "Arena Tracker" subtitle ="Showcase your deck building mastery and compete to reach 12wins!" :paragraph="rules" /> 
+    <Hero title = "Your Hearthstone Arena companion" subtitle ="Showcase your deck building mastery and compete to reach 12wins!" :paragraph="rules" /> 
     <HomeCards /> 
     <div class="container-component">
     <RunListings />

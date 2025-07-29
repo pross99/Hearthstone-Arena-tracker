@@ -28,16 +28,25 @@ body {
     --secondary-color: #eaebca;
     --third-color: #976524;
 }
+
+@font-face {
+  font-family: 'Belwe Bold';
+  src: url('@/assets/fonts/Belwe/Belwe-Bold.woff2') format('woff2'),
+       url('@/assets/fonts/Belwe/Belwe-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 h1,h2,h3,h4,h5,h6 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 24px;
+    font-family: 'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
     color: var(--third-color);
     text-align: center;
 }
 
 p, a, td{
     font-size: 18px;
-     font-family: Georgia, 'Times New Roman', Times, serif;
+     font-family:'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
      color: white;
      text-decoration: none;
     
@@ -45,7 +54,7 @@ p, a, td{
 
 
 button {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   align-items: center;
   background-color: var(--third-color);
