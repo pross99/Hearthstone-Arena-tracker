@@ -1,6 +1,5 @@
 <script setup>
 
-import { defineProps } from 'vue';
 
 
 defineProps({
@@ -22,8 +21,13 @@ defineProps({
 
 <template>
     <section class="h-section banner banner-section">
+       
+        <div class="h-whitespace">
+        </div>
         <div class="h-container-wrapper">
+           
         <div class="h-container banner-column">
+
             <img src="/images/Arena.webp">
             <div class="h-wrapper">
                 <h1 class="heading-xl">
@@ -32,43 +36,44 @@ defineProps({
                 <p class="heading-xl" id="heading-gray">
                     {{ subtitle }}
                 </p>
-
                 <p class="paragraph">
                  <pre>  {{ paragraph }}</pre> 
-
                 </p>
             </div>
         </div>
         </div>
+
+        <div class="h-whitespace"></div>
     </section>
 </template>
 
 <style>
+#logo {
+    opacity: 0.5;
+}
 .h-section{
     display: flex;
     justify-content: center;
     padding-top: 1rem;
    padding-bottom: 10px;
-   margin-top: 30px;
+   width: 100vw;
+   margin-top:80px;
    margin-bottom: 100px;
-   height: 550px;
-   background-color: var(--secondary-color);
+   height: 545px;
 
 }
-
 .h-container-wrapper {
-    width: 100vw;
-    background-image:  url("/images/hslogo.png");
-    margin-top: 20px;
+    margin-top: 80px;
     border-radius: 20px;
     background-position: left 10px;
-    background-size: 50%;
+    background-size: 80%;
     display: flex;
+    flex: 2;
     justify-content: center;
-    padding-top: 100px;
-    border-radius: 20px;
+    background-color: var(--secondary-color);
    
 }
+
 
 #heading-gray {
     text-align: center;
@@ -78,7 +83,7 @@ defineProps({
     width: 380px;
 }
 
-.h-container {
+.h-container{
 display: flex; 
 padding-left: 1rem;
 padding-right: 1rem; 
@@ -88,6 +93,12 @@ align-items: center;
  max-width: 80rem; 
 }
 
+.h-whitespace{
+    height: 545px;
+    background-color: white;
+    border: solid white 1px;
+    width: 20%;
+}
 
 
 .paragraph{
