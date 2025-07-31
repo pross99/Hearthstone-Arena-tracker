@@ -220,7 +220,7 @@ padding-left: 0.5rem;
 padding-right: 0.5rem;
 padding-top:0.5rem;
 padding-bottom: 0.5rem;
-background-color: var(--secondary-color);
+background-color: var(--third-color);
 width: 45%;
 border-radius: 20px;
 
@@ -236,7 +236,7 @@ border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-  background-color: var(--secondary-color);
+  background-color: var(--main-color);
 }
 
 .tl-title {

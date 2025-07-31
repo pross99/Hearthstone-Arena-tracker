@@ -23,10 +23,12 @@ Add your completed runs below and start tracking your best classes`
 
 
 .container-component{
-  margin: 30px;
+  width: 100%;
+  padding: 30px;
   display: flex;
  gap: 40px;
   justify-content: center;
+  background-color: var(--secondary-color);
 }
 
 

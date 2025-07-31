@@ -107,12 +107,6 @@ text {
     align-items: center;
 }
 
-.navbarLogoTxt {
-    line-height: 1;
-    white-space: nowrap;
-    font-size: 36px;
-    text-decoration:underline;
-}
 
 
 .navbarMenu {
