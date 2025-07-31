@@ -24,7 +24,7 @@ Add your completed runs below and start tracking your best classes`
 
 .container-component{
   width: 100%;
-  padding: 30px;
+  padding: 30px 0px;
   display: flex;
  gap: 40px;
   justify-content: center;

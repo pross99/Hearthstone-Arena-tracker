@@ -79,7 +79,7 @@ switch(sortBy) {
 
     <div class="s-container">
         <div class="s-title-container">
-        <h1 class="s-title">Statistics by class</h1>
+        <h2 >Statistics by class</h2>
         </div>
     <table class="s-table">
       <thead>
@@ -120,7 +120,13 @@ switch(sortBy) {
 }
 
 .s-table thead {
-  background-color: var(--main-color);
+  background: repeating-linear-gradient(
+  45deg,
+  var(--secondary-color), 2px,
+  var(--secondary-color) 0px,
+  rgba(151, 101, 36,1) 645px,
+  rgba(0,0,0,0) 0px
+);
   color: white;
   text-align: left;
 }
@@ -133,7 +139,7 @@ switch(sortBy) {
 }
 
 .s-table tbody tr:nth-child(odd) {
-  background-color: #eaebca; /* light cream */
+  background-color: var(--secondary-color); /* light cream */
 }
 
 .s-table tbody tr:nth-child(even) {
@@ -147,7 +153,7 @@ switch(sortBy) {
 .sort-btn {
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--seondary-color);
   margin-left: 4px;
   cursor: pointer;
 }
@@ -161,11 +167,5 @@ switch(sortBy) {
   box-shadow: none;
 }
 
-.s-title {
-  color: var(--third-color);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
    
 </style>

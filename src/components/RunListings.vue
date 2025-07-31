@@ -83,15 +83,6 @@ if(index !== -1) {
 
 
 
-
-
-
-
-
-// Add a new run:
- let idNewRuns = state.runs.length
-const emit = defineEmits(['add'])
-
 //reactive state for modal visability
 
 const showModal = ref(false)
@@ -123,12 +114,6 @@ const handleFormSubmit = async (formData) => {
         showToast.error("Error updating listing")
     }
 }
-
-
-
-
-
-
 
 
 
@@ -181,6 +166,7 @@ const statsByClass = computed (() => {
     <section class="tl">
         <div class="tl-container">
 
+            <h2>Recent runs</h2>
             <button @click="showModal = true" id="add-btn">Add new run   </button>
              <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
             </Modal>
@@ -218,9 +204,9 @@ const statsByClass = computed (() => {
 .tl{
 padding-left: 0.5rem;
 padding-right: 0.5rem;
-padding-top:0.5rem;
 padding-bottom: 0.5rem;
-background-color: var(--third-color);
+padding-top: 0.5rem;
+background-color: white;
 width: 45%;
 border-radius: 20px;
 
@@ -229,14 +215,20 @@ border-radius: 20px;
 
 .tl-container {
     display: flex; 
-padding-left: 5rem;
-margin-top: 200px;
-padding-right: 5rem; 
+padding-left: 1rem;
+padding-top: 40px;
+padding-right: 1rem; 
 border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-  background-color: var(--main-color);
+  background: repeating-linear-gradient(
+  45deg,
+  var(--third-color), 100px,
+  var(--third-color) 0px,
+  rgba(234, 235, 202,0.9) 1525px,
+  rgba(0,0,0,0) 0px
+);
 }
 
 .tl-title {

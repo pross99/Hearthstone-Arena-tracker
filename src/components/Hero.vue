@@ -90,13 +90,13 @@ height: 80.5%;
 }
 
 .heading-xl {
-    color: white;
+    color: var(--secondary-color);
 }
 
 
 #heading-gray {
     text-align: center;
-    color: white;
+    color: var(--secondary-color);
     padding: 8px;
     margin: auto;
    font-size: 19px;
@@ -126,7 +126,6 @@ align-items: center;
     width: auto;
    border-radius: 20px;
    padding-bottom: 8px;
-    color: white;
     font-size: 14px;
     text-align: center;
 }

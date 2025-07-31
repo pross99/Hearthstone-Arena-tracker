@@ -40,16 +40,20 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
     font-size: 28px;
-    color: var(--third-color);
+    color: var(--secondary-color);
     text-align: center;
 }
 
-p, a, td{
+p, a, td,pre{
     font-size: 18px;
      font-family:'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
-     color: white;
+     color: var(--secondary-color);
      text-decoration: none;
     
+}
+
+pre{
+  font-size: 14px;
 }
 
 
@@ -69,7 +73,7 @@ button {
   overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
-  color: white;
+  color: var(--secondary-color);
 }
 
 button:focus {
@@ -77,7 +81,7 @@ button:focus {
 }
 
 button:hover {
-    scale: 1.1;
+    scale: 1.04;
 }
 
 button:active {

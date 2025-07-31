@@ -21,16 +21,18 @@ const isActive = (routePath) => {
                     <!--Logo-->
                     <RouterLink class="navbarLogo" to="/">
                     <div class="navbarLogoTxt">
-                        <svg viewBox="0 0 500 500">
-                            <path id="curve" d="M 100,250 A 200,200 0 0,1 400,250" fill="transparent"/> <!-- Command M 100,250, moved the point (100,250) The command A 200,200 0 0,1 400, 250 draws an arc from (100,250) to (400,250) with a radius of 200 units, creating a semi-circle -->
-                              <text>
-                                <textPath href="#curve" startOffset="50%" fill="#eaebca">
-                                Arena Tracker
-                              </textPath>
-                              </text>
-                          
-                        </svg>
-                    </div>    
+                        <svg viewBox="0 0 300 70" xmlns="http://www.w3.org/2000/svg">
+  <!-- A wide, gently curved arc -->
+  <path id="curve" d="M 20,80 A 130,40 0 0,1 280,80" fill="transparent"/>
+  
+  <text>
+    <textPath href="#curve" startOffset="50%" fill="#eaebca" text-anchor="middle">
+      Arena Tracker
+    </textPath>
+  </text>
+</svg>
+
+                    </div> 
                     
                     </RouterLink>
                     
@@ -49,9 +51,9 @@ const isActive = (routePath) => {
     </nav>
 </template>
 
-<style>
+<style scoped>
 .nav {
-    position: fixed;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
     top: 0;
@@ -68,17 +70,15 @@ const isActive = (routePath) => {
     max-width: 80rem;
     padding-left: 8px;
     padding-right: 8px;
-   
 }
 
 svg{
-    margin-top: 78px;
     width: 100%;
     height: 100%;
     display: block;
 }
 text {
-     font-size: 40px;
+     font-size: 32px;
     text-anchor: middle;
     
 }
@@ -98,6 +98,7 @@ text {
     border-radius: 20px;
     margin-left: 20px;
     padding-left: 20px;
+    height: 80px;
   
 }
 

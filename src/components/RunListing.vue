@@ -138,7 +138,6 @@ const goodScore = computed(() => {
    justify-content: center;
    align-items: center;
     max-width: 300px;
-    
 border-radius: 20px; 
 background-color:white;
 margin-bottom: 130px;
@@ -152,7 +151,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 .tas-container {
     margin-top: 10px;
     padding: 20px;
-    width: 450px; 
+    width: 480px; 
     border-radius: 20px;
 }
 
@@ -182,7 +181,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 8px 8px 20px 20px;
     padding: 20px;
     background-color: var(--third-color);
-    height: 150px;
+    height: 130px;
 }
 
 
@@ -205,7 +204,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .tas-run-wrapper-low {
  padding: 10px;
  border-radius: 8px;
- background-color: #4dd44833 ;
+ background-color: var(--main-color) ;
  cursor: pointer;
  height: 50px;
  }
@@ -217,7 +216,7 @@ color: white;
 
   .tas-high {
 margin-top: 10px ;
-    color: var(--main-color);
+    color: white;
  }
 
 
