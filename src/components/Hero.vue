@@ -78,16 +78,16 @@ width: 50%;
 
 height: 87%;
     
-  
-.heading-xl {
-    color: white;
-}
 
 }
 .h-container-wrapper img:hover {
     
    scale: 1.01; 
    
+}
+
+.heading-xl {
+    color: white;
 }
 
 
