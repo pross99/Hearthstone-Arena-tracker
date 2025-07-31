@@ -24,7 +24,7 @@ const isActive = (routePath) => {
                         <svg viewBox="0 0 500 500">
                             <path id="curve" d="M 100,250 A 200,200 0 0,1 400,250" fill="transparent"/> <!-- Command M 100,250, moved the point (100,250) The command A 200,200 0 0,1 400, 250 draws an arc from (100,250) to (400,250) with a radius of 200 units, creating a semi-circle -->
                               <text>
-                                <textPath href="#curve" startOffset="50%" fill="#5aa0d4">
+                                <textPath href="#curve" startOffset="50%" fill="#eaebca">
                                 Arena Tracker
                               </textPath>
                               </text>
@@ -72,7 +72,7 @@ const isActive = (routePath) => {
 }
 
 svg{
-    margin-top: 71px;
+    margin-top: 78px;
     width: 100%;
     height: 100%;
     display: block;
@@ -110,7 +110,6 @@ text {
 .navbarLogoTxt {
     line-height: 1;
     white-space: nowrap;
-    color: var(--main-color);
     font-size: 36px;
     text-decoration:underline;
 }

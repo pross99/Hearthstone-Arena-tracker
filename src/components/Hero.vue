@@ -38,11 +38,14 @@ defineProps({
                 </p>
             </div>
         </div>
+        
         </div>
+        <div class="empty-div"></div>
     </section>
 </template>
 
 <style>
+
 #logo {
     opacity: 0.5;
 }
@@ -52,25 +55,34 @@ defineProps({
     background-position: center center;
     background-size: cover;
     display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-   padding-bottom: 10px;
+    flex: 2;
+    justify-content: space-between;
    width: 100vw;
    margin-bottom: 100px;
    height: 615px;
-   
 
 }
 .h-container-wrapper {
-    margin-top: 80px;
-    border-radius: 20px;
-    background-position: left 10px;
-    background-size: 80%;
     display: flex;
     justify-content: center;
-    background-color: rgba(234, 235, 202, 0.6)
+    background-color: rgba(234, 235, 202, 0.6);
+    padding-top: 80px;
+    background: repeating-linear-gradient(
+  45deg,
+  var(--third-color), 10px,
+  var(--third-color) 0px,
+  rgba(0,0,0,0) 1125px,
+  rgba(0,0,0,0) 0px
+);
+width: 50%;
+
+height: 87%;
     
-   
+  
+.heading-xl {
+    color: white;
+}
+
 }
 .h-container-wrapper img:hover {
     
@@ -81,7 +93,7 @@ defineProps({
 
 #heading-gray {
     text-align: center;
-    color: var(--main-color);
+    color: white;
     padding: 8px;
     margin: auto;
    font-size: 19px;
@@ -109,11 +121,11 @@ align-items: center;
 .paragraph{
    text-wrap: balance;
     width: auto;
-    background-color: rgba(234, 235, 202, 0.9);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
    border-radius: 20px;
    padding-bottom: 8px;
-    color: var(--third-color);
+    color: white;
+    font-size: 14px;
+    text-align: center;
 }
 
 #spin-img  {
