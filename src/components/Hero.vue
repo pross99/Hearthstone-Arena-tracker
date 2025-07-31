@@ -46,9 +46,6 @@ defineProps({
 
 <style>
 
-#logo {
-    opacity: 0.5;
-}
 .h-section{
     background-image: url("/images/maik-jonietz-22W93iChREU-unsplash.jpg");
     background-repeat: no-repeat;
@@ -66,7 +63,7 @@ defineProps({
     display: flex;
     justify-content: center;
     background-color: rgba(234, 235, 202, 0.6);
-    padding-top: 80px;
+    padding-top: 120px;
     background: repeating-linear-gradient(
   45deg,
   var(--third-color), 10px,
@@ -76,10 +73,16 @@ defineProps({
 );
 width: 50%;
 
-height: 87%;
+height: 80.5%;
     
 
 }
+.h-container-wrapper img{
+    
+    width: 150px;
+    
+ }
+
 .h-container-wrapper img:hover {
     
    scale: 1.01; 
