@@ -111,6 +111,14 @@
       "legendaryBracket": "Tree of life",
       "priceWinnings": "150",
       "note": "Funion"
+    },
+    {
+      "id": "1b84",
+      "classId": 5,
+      "placement": 7,
+      "legendaryBracket": "7",
+      "priceWinnings": "7",
+      "note": "7"
     }
   ],
   "classes": [

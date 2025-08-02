@@ -7,181 +7,45 @@ import RunListing from './RunListing.vue';
 import StatListing from './StatListing.vue';
 import { useToast } from 'vue-toastification';
 import Modal from './Modal.vue'
+import {useStore} from 'vuex';
 
-const state = reactive({
-    runs: [],
-    classes: [],
-    isLoading: true,
-})
-
-const props = defineProps({
-    limit: Number,
-    showButton: {
-        type:Boolean,
-        default: true
-    }
-})
-
-const emit = defineEmits(['add'])
+const store = useStore()
+const showToast = useToast()
  onMounted(async () => {
-    try {
-           const response = await apiCallWithLag(
-            () => axios.get('api/runs'),
-            500
-        );
-       
-        console.log(response)
- await loadRunsWithDelay(response.data, 300);
-        const classResponse = await axios.get('api/classes')
-        state.classes = classResponse.data
-        console.log(classResponse)
 
-    } catch (error) {
-        console.log("ERROR", error)
-        
-    }  finally {
-        state.isLoading = false;
-    }
+  if(store.state.runs || store.state.runs.length === 0) {
+  store.dispatch('getRuns')
+  }
+
 })
-
-async function getNewruns() {
-    
-        try {
-          const response = await apiCallWithLag(
-            () => axios.get('api/runs'),
-            500
-        );
-           await loadRunsWithDelay(response.data, 200);
-        console.log(response)
-
-    } catch (error) {
-        console.log("ERROR", error)
-        
-    }  finally {
-        state.isLoading = false;
-    }
-
-}
-
-const makeLag = (ms = 1000) => {
-    return new Promise(resolve => setTimeout(resolve,ms))
-}
-
-const apiCallWithLag = async(apiCall, latencyMs = 500) => {
-    const [response] = await Promise.all([
-        apiCall(),
-        makeLag(latencyMs)
-    ]);
-    return response;
-}
-
-const loadRunsWithDelay = async (runs, delayMs = 100) => {
-    for (let i = 0; i < runs.length; i++) {
-        await new Promise(resolve => setTimeout(resolve,delayMs))
-            state.runs.push(runs[i]);
-    }
-}
-
-function combineRunWithClass(run) {
- const cls = state.classes.find(e => String(e.id) === String(run.classId)) ?? {};
-    return {
-        ...run,
-        className: cls.className // only return className to not clash ids..
-    }
-    }
-
-
-
-    // uses the function above and returns a new object with classes linked to the runs
-const runsWithClass = computed(() => {
-    return state.runs.map(combineRunWithClass);
-});
-
-
-function updateItem(id, newData) {
-const index = state.runs.findIndex(run => run.id === id)
-if(index !== -1) {
-    Object.assign(state.runs[index], newData)
-}
-}
-
-
-
-//reactive state for modal visability
 
 const showModal = ref(false)
-const submittedData = ref(null)
-const showToast = useToast()
-
-const handleFormSubmit = async (formData) => {
-
-    const addRun = {
-        classId: Number(formData.classId),
-        placement: formData.placement,
-        legendaryBracket: formData.legendaryBracket,
-        priceWinnings: formData.priceWinnings,
-        note: formData.note
-
-    }
-         try {
-        console.log(addRun)
-        const response = await axios.post(`/api/runs/`, addRun)
-        state.runs = [...state.runs, response.data]
-        emit('add', addRun)
-        showModal.value=false;
-        showToast.success("Listing added successfully");
-
-       
-    } catch (error) {
-        console.log("ERROR", error)
-        showToast.error("Error updating listing")
-    }
-}
-
+//reactive state for modal visability
+const emit = defineEmits(['add']);
 
 
 
 
 // Prepare stats for child component
 // computed so it knows if new runs are added or updated.
+const runsWithClass = computed(() => store.getters.runsWithClass);
+const statsByClass = computed(() => store.getters.statsByClass);
+const isLoading = computed(() => store.state.isLoading);
 
-const statsByClass = computed (() => {
-    const stats = {}
-    const runsArray = runsWithClass.value
+const updateItem = (id, newData) => {
+  store.commit('UPDATE_RUN', { id, newData });
+};
 
-    runsArray.forEach(run => {
-        const clsId = run.classId
-        const clsName = run.className
-
-        if (!stats[clsId]) {
-        stats[clsId] = {
-          className : clsName,
-          totalRuns: 0,
-          totalWins: 0,
-          totalMatches: 0,
-        };
-      }
-
-      const placement = Number(run.placement) // convert to number
-      const matchesPlayed = placement + 3;
-
-      stats[clsId].totalRuns++;
-      stats[clsId].totalWins += placement
-      stats[clsId].totalMatches += matchesPlayed
-    });
-
-
-      // After all runs are proccessed, i loop through each class in the stats obejct and calc the winrate. If no matches have been played it can be set to 0
-   Object.keys(stats).forEach(cls => {
-      const s = stats[cls];
-      s.winrate = s.totalMatches > 0
-        ? (s.totalWins / s.totalMatches) * 100
-        : 0;
-    });
-
-    return stats;
-  
-})
+const handleFormSubmit = async (formData) => {
+  try {
+    const newRun = await store.dispatch('submitRun', formData);
+    emit('add', newRun);
+    showModal.value = false;
+    showToast.success("Listing added successfully");
+  } catch (error) {
+    showToast.error("Error updating listing");
+  }
+};
 
 </script>
 
@@ -195,26 +59,24 @@ const statsByClass = computed (() => {
             </Modal>
 
             <!-- Show spinner when fetching saved runs -->
-             <div v-if="state.isLoading" class="tl-spinner">
+             <div v-if="isLoading" class="tl-spinner">
                 <PulseLoader /> 
              </div>
 
              <!-- Show runs when done loading -->
               <div v-else class="tl-tattoos">
                 <!-- REVERSE order to show latest entry first -->
-                <RunListing v-for="run in runsWithClass.slice(0, limit || state.runs.length).reverse()"
+                <RunListing v-for="run in runsWithClass.slice(0).reverse()"
                  :key="run.id" 
                  :run="run"  
                  @update="updateItem" />
-
-                
               </div>
              
         </div>
     </section>
 
      <section class="tl">
-          <div v-if="state.isLoading" class="tl-spinner">
+          <div v-if="isLoading" class="tl-spinner">
                 <PulseLoader /> 
              </div>
         <div v-else class="tl-container">

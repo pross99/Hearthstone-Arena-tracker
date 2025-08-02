@@ -1,0 +1,115 @@
+import {createStore} from 'vuex';
+import axios from 'axios';
+
+const delay = (ms) => new Promise(resolve => setTimeout(resolve,ms));
+
+
+export default createStore({
+    state: {
+        runs: [],
+        classes: [],
+        isLoading: true
+    },
+    mutations: {
+        SET_RUNS(state,runs){
+            state.runs =runs;
+        },
+        ADD_RUN(state,run) {
+            state.runs.push(run);
+        },
+        UPDATE_RUN(state, {id, newData}) {
+            const index = state.runs.findIndex(run => run.id === id)
+             if (index !== -1) Object.assign(state.runs[index], newData)
+        },
+        SET_CLASSES(state,classes) {
+            state.classes = classes;
+        },
+        SET_LOADING(state,loading) {
+            state.isLoading = loading;
+        }
+       
+    },
+    actions: {
+        async getRuns({commit, dispatch, state}) {
+            if(state.runs.length > 0) {
+                return;
+            }
+
+            
+            commit('SET_LOADING', true);
+            try {
+                const response = await dispatch('apiCallWithLag', {call: () => axios.get('api/runs')});
+                await dispatch('loadRunsWithDelay', {runs: response.data, delay: 100});
+                const classRes = await axios.get('/api/classes');
+                commit('SET_CLASSES', classRes.data);
+            } catch(e) {
+                console.error('err', e);
+            } finally {
+                commit('SET_LOADING', false)
+            }
+        },
+        async apiCallWithLag(_,{call, delay: d}) {
+            const [res] = await Promise.all([call(), delay(d)]);
+            return res;
+        },
+        async loadRunsWithDelay({ commit, state }, { runs, delay }) {
+            const newRuns = [...state.runs];
+            for(let run of runs) {
+                await delayMs(delay);
+                newRuns.push(run);
+            }
+            commit('SET_RUNS', newRuns);
+        },
+        async submitRun({ commit }, formData) {
+            const newRun = {
+                 classId: Number(formData.classId),
+        placement: formData.placement,
+        legendaryBracket: formData.legendaryBracket,
+        priceWinnings: formData.priceWinnings,
+        note: formData.note
+            };
+            const res = await axios.post('/api/runs', newRun);
+            commit('ADD_RUN', res.data);
+            return res.data;
+        }
+    },
+    getters: {
+        runsWithClass(state) {
+            return state.runs.map(run => {
+                const cls = state.classes.find(c => String(c.id) === String(run.classId)) ?? {};
+                return {...run, className: cls.className};
+            })
+        },
+        statsByClass(_, getters) {
+      const stats = {};
+      getters.runsWithClass.forEach(run => {
+        const clsId = run.classId;
+        const clsName = run.className;
+        if (!stats[clsId]) {
+          stats[clsId] = {
+            className: clsName,
+            totalRuns: 0,
+            totalWins: 0,
+            totalMatches: 0
+          };
+        }
+        const placement = Number(run.placement);
+        const matchesPlayed = placement + 3;
+        stats[clsId].totalRuns++;
+        stats[clsId].totalWins += placement;
+        stats[clsId].totalMatches += matchesPlayed;
+      });
+
+      Object.values(stats).forEach(s => {
+        s.winrate = s.totalMatches > 0 ? (s.totalWins / s.totalMatches) * 100 : 0;
+      });
+
+      return stats;
+    }
+
+    }
+});
+
+function delayMs(ms) {
+    return new Promise(resolve => setTimeout(resolve,ms));
+}
