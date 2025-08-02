@@ -11,7 +11,7 @@ import Modal from './Modal.vue'
 const state = reactive({
     runs: [],
     classes: [],
-    isLoading: true
+    isLoading: true,
 })
 
 const props = defineProps({
@@ -22,13 +22,16 @@ const props = defineProps({
     }
 })
 
-
+const emit = defineEmits(['add'])
  onMounted(async () => {
     try {
-        const response = await axios.get('api/runs');
-        state.runs = response.data;
+           const response = await apiCallWithLag(
+            () => axios.get('api/runs'),
+            500
+        );
+       
         console.log(response)
-
+ await loadRunsWithDelay(response.data, 300);
         const classResponse = await axios.get('api/classes')
         state.classes = classResponse.data
         console.log(classResponse)
@@ -42,11 +45,13 @@ const props = defineProps({
 })
 
 async function getNewruns() {
-
     
         try {
-        const response = await axios.get('api/runs');
-        state.runs = response.data;
+          const response = await apiCallWithLag(
+            () => axios.get('api/runs'),
+            500
+        );
+           await loadRunsWithDelay(response.data, 200);
         console.log(response)
 
     } catch (error) {
@@ -58,6 +63,24 @@ async function getNewruns() {
 
 }
 
+const makeLag = (ms = 1000) => {
+    return new Promise(resolve => setTimeout(resolve,ms))
+}
+
+const apiCallWithLag = async(apiCall, latencyMs = 500) => {
+    const [response] = await Promise.all([
+        apiCall(),
+        makeLag(latencyMs)
+    ]);
+    return response;
+}
+
+const loadRunsWithDelay = async (runs, delayMs = 100) => {
+    for (let i = 0; i < runs.length; i++) {
+        await new Promise(resolve => setTimeout(resolve,delayMs))
+            state.runs.push(runs[i]);
+    }
+}
 
 function combineRunWithClass(run) {
  const cls = state.classes.find(e => String(e.id) === String(run.classId)) ?? {};
@@ -66,6 +89,7 @@ function combineRunWithClass(run) {
         className: cls.className // only return className to not clash ids..
     }
     }
+
 
 
     // uses the function above and returns a new object with classes linked to the runs
@@ -102,11 +126,10 @@ const handleFormSubmit = async (formData) => {
          try {
         console.log(addRun)
         const response = await axios.post(`/api/runs/`, addRun)
-        console.log(response)
-        showToast.success("Listing added successfully")
+        state.runs = [...state.runs, response.data]
         emit('add', addRun)
         showModal.value=false;
-        getNewruns()
+        showToast.success("Listing added successfully");
 
        
     } catch (error) {
@@ -191,7 +214,10 @@ const statsByClass = computed (() => {
     </section>
 
      <section class="tl">
-        <div class="tl-container">
+          <div v-if="state.isLoading" class="tl-spinner">
+                <PulseLoader /> 
+             </div>
+        <div v-else class="tl-container">
              <StatListing  :stats="statsByClass" class="tl-tattoos"/>
             </div>
      </section>
@@ -222,13 +248,7 @@ border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-  background: repeating-linear-gradient(
-  45deg,
-  var(--third-color), 100px,
-  var(--third-color) 0px,
-  rgba(234, 235, 202,0.9) 1525px,
-  rgba(0,0,0,0) 0px
-);
+background-color: var(--secondary-color);
 }
 
 .tl-title {
@@ -238,6 +258,9 @@ align-items: center;
 
 .tl-spinner {
     color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tl-button {
@@ -249,13 +272,13 @@ flex-direction: column;
 align-items: center; 
  max-width: 80rem;  
 line-height: 2rem;
-margin: 0;
+
 height: 40px;
 text-align: center;
 }
 
 #add-btn{
-    margin-top: 10px;
+    margin: 10px;
 }
 
 

@@ -97,60 +97,20 @@
       "note": "Fun, unlucky"
     },
     {
-      "id": "9911",
-      "classId": 4,
-      "placement": 2,
-      "legendaryBracket": "Sylvanas",
-      "priceWinnings": "50",
-      "note": "Tough matches"
-    },
-    {
-      "id": "58db",
-      "classId": 5,
-      "placement": 12,
-      "legendaryBracket": "Alexandros Mograine",
-      "priceWinnings": "175",
-      "note": "FUN"
-    },
-    {
-      "id": "0",
+      "id": "ac04",
       "classId": 3,
-      "placement": 5,
-      "legendaryBracket": "Rouge legendary",
-      "priceWinnings": "200",
-      "note": "Fun times"
+      "placement": 10,
+      "legendaryBracket": "Knives out",
+      "priceWinnings": "50",
+      "note": "Better Luck"
     },
     {
-      "id": "1480",
-      "classId": 8,
-      "placement": 5,
-      "legendaryBracket": "Rouge legendary",
-      "priceWinnings": "200",
-      "note": "Fun times"
-    },
-    {
-      "id": "ec7e",
-      "classId": 8,
-      "placement": 8,
-      "legendaryBracket": "Boar stampede",
-      "priceWinnings": "225",
-      "note": "Hunter sucks"
-    },
-    {
-      "id": "acbd",
-      "classId": 6,
-      "placement": 5,
-      "legendaryBracket": "Killrog",
-      "priceWinnings": "200",
-      "note": "Fun run!!"
-    },
-    {
-      "id": "af00",
-      "classId": 5,
-      "placement": 5,
-      "legendaryBracket": "killrog",
-      "priceWinnings": "200",
-      "note": "fun"
+      "id": "99bc",
+      "classId": 2,
+      "placement": 6,
+      "legendaryBracket": "Tree of life",
+      "priceWinnings": "150",
+      "note": "Funion"
     }
   ],
   "classes": [

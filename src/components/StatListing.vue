@@ -136,6 +136,11 @@ switch(sortBy) {
   padding: 0.75rem;
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
+  color: white
+}
+
+th:first-child {
+  color: var(--main-color);
 }
 
 .s-table tbody tr:nth-child(odd) {

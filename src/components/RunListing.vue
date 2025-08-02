@@ -140,16 +140,21 @@ const goodScore = computed(() => {
     max-width: 300px;
 border-radius: 20px; 
 background-color:white;
-margin-bottom: 130px;
+margin-bottom: 60px;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+ background: repeating-linear-gradient(
+  45deg,
+  var(--third-color), 100px,
+  var(--third-color) 0px,
+  rgba(234, 235, 202,0.9) 625px,
+  rgba(0,0,0,0) 0px
+);
 
 }
 
 
 
 .tas-container {
-    margin-top: 10px;
     padding: 20px;
     width: 480px; 
     border-radius: 20px;
@@ -162,6 +167,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: rgba(251,251, 251);
     border-radius: 20px 20px 8px 8px;
     height: 150px;
+    margin-bottom: 5px;
 }
 .tas-header:hover {
    transform: scale(1.01);
@@ -180,8 +186,12 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 .tas-text-note {
     border-radius: 8px 8px 20px 20px;
     padding: 20px;
-    background-color: var(--third-color);
+    background-color: white;
     height: 130px;
+}
+
+.tas-text-note p {
+    color: var(--third-color);
 }
 
 

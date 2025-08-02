@@ -40,7 +40,7 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Belwe Bold', Georgia, 'Times New Roman', Times, serif;
     font-size: 28px;
-    color: var(--secondary-color);
+    color: var(--third-color);
     text-align: center;
 }
 

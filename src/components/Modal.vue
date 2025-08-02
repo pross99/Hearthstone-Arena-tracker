@@ -7,7 +7,7 @@ export default {
         initialData: Object, // new Prop for passing initial data
         item: []
     },
-    emits: ["close", "submit", "update-item"],
+    emits: ["close", "submit", "update-item", "add"],
     data() {
         return {
             

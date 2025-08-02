@@ -55,7 +55,6 @@ defineProps({
     flex: 2;
     justify-content: space-between;
    width: 100vw;
-   margin-bottom: 100px;
    height: 615px;
 
 }
