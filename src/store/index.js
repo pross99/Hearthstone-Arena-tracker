@@ -80,6 +80,12 @@ export default createStore({
                 return {...run, className: cls.className};
             })
         },
+
+        classes(state) {
+            return state.classes.map(cls => {
+                return cls
+            })
+        },
         statsByClass(_, getters) {
       const stats = {};
       getters.runsWithClass.forEach(run => {

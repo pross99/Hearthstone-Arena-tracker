@@ -7,6 +7,7 @@ import RunListing from './RunListing.vue';
 import StatListing from './StatListing.vue';
 import { useToast } from 'vue-toastification';
 import Modal from './Modal.vue'
+import HsClassesModal from './HsClassesModal.vue';
 import {useStore} from 'vuex';
 
 const store = useStore()
@@ -31,7 +32,7 @@ const emit = defineEmits(['add']);
 const runsWithClass = computed(() => store.getters.runsWithClass);
 const statsByClass = computed(() => store.getters.statsByClass);
 const isLoading = computed(() => store.state.isLoading);
-
+const classes = computed(() => store.getters.classes)
 const updateItem = (id, newData) => {
   store.commit('UPDATE_RUN', { id, newData });
 };
@@ -47,6 +48,7 @@ const handleFormSubmit = async (formData) => {
   }
 };
 
+
 </script>
 
 <template>
@@ -55,8 +57,9 @@ const handleFormSubmit = async (formData) => {
 
             <h2>Recent runs</h2>
             <button @click="showModal = true" id="add-btn">Add new run   </button>
-             <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
-            </Modal>
+            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes"></HsClassesModal>
+             <!-- <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
+            </Modal> -->
 
             <!-- Show spinner when fetching saved runs -->
              <div v-if="isLoading" class="tl-spinner">

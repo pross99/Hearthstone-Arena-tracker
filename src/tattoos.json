@@ -124,19 +124,19 @@
   "classes": [
     {
       "id": "1",
-      "className": "Warrior"
+      "className": "Death Knight"
     },
     {
       "id": "2",
-      "className": "Warlock"
+      "className": "Demon Hunter"
     },
     {
       "id": "3",
-      "className": "Rouge"
+      "className": "Druid"
     },
     {
       "id": "4",
-      "className": "Druid"
+      "className": "Hunter"
     },
     {
       "id": "5",
@@ -144,27 +144,27 @@
     },
     {
       "id": "6",
-      "className": "Hunter"
+      "className": "Paladin"
     },
     {
       "id": "7",
-      "className": "Shaman"
-    },
-    {
-      "id": "8",
-      "className": "Demon Hunter"
-    },
-    {
-      "id": "9",
-      "className": "Death Knight"
-    },
-    {
-      "id": "10",
       "className": "Priest"
     },
     {
+      "id": "8",
+      "className": "Rouge"
+    },
+    {
+      "id": "9",
+      "className": "Shaman"
+    },
+    {
+      "id": "10",
+      "className": "Warlock"
+    },
+    {
       "id": "11",
-      "className": "Paladin"
+      "className": "Warrior"
     }
   ]
 }

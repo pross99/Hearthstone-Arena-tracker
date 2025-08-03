@@ -50,17 +50,17 @@ export default {
                 <label>
                     Class:
                     <select v-model="formData.classId">
-                        <option label="Warrior" value="1"></option>
-                        <option label="Warlock" value="2"></option>
-                        <option label="Rouge" value="3"></option>
-                        <option label="Druid" value="4"></option>
+                        <option label="Death Knight" value="1"></option>
+                        <option label="Demon Hunter" value="2"></option>
+                        <option label="Druid" value="3"></option>
+                        <option label="Hunter" value="4"></option>
                         <option label="Mage" value="5"></option>
-                        <option label="Hunter" value="6"></option>
-                        <option label="Shaman" value="7"></option>
-                        <option label="Demon Hunter" value="8"></option>
-                        <option label="Death Knight" value="9"></option>
-                        <option label="Priest" value="10"></option>
-                        <option label="Paladin" value="11"></option>
+                        <option label="Paladin" value="6"></option>
+                        <option label="Priest" value="7"></option>
+                        <option label="Rouge" value="8"></option>
+                        <option label="Shaman" value="9"></option>
+                        <option label="Warlock" value="10"></option>
+                        <option label="Warrior" value="11"></option>
                         
                     </select>
                 </label>
@@ -109,7 +109,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;

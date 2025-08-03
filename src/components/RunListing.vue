@@ -103,9 +103,9 @@ const goodScore = computed(() => {
                 
             </div>
                 <div class="tas-image-container">
-                <img :src="run.imageLink" @click="showModal = true" class="clickable-image" />
+                <img :src="run.imageLink" class="clickable-image" />
                 </div>
-                <div  :class="{ 'tas-run-wrapper-high': !goodScore, 'tas-run-wrapper-low': goodScore }" @click="showModal = true" >
+                <div  :class="{ 'tas-run-wrapper-high': !goodScore, 'tas-run-wrapper-low': goodScore }" @click="showModal = true">
 
                
                 <h5 :class="{ 'tas-high': goodScore, 'tas-low': !goodScore }" > 
