@@ -247,25 +247,25 @@ text-align: center;
  } */
 
  .c-warrior {
-    background-image: url("/images/Warrior.webp");
+    background-image: url("/images/DK.webp");
     background-repeat: no-repeat;
     background-position: 50% -0%;
  }
 
  .c-warlock {
-    background-image: url("/images/Warlock.webp");
+    background-image: url("/images/DH.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;
  }
  .c-rouge {
-    background-image: url("/images/Rouge.webp");
+    background-image: url("/images/Druid.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;
  }
  .c-druid {
-    background-image: url("/images/Druid.webp");
+    background-image: url("/images/Hunter.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;
@@ -277,37 +277,37 @@ text-align: center;
     background-position: 50% -0%;
  }
  .c-hunter {
-    background-image: url("/images/Hunter.webp");
+    background-image: url("/images/Paladin.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;
  }
  .c-shaman {
-    background-image: url("/images/Shaman.webp");
-    background-repeat: no-repeat;
-    
-    background-position: 50% -0%;
- }
- .c-dh {
-    background-image: url("/images/DH.webp");
-    background-repeat: no-repeat;
-    
-    background-position: 50% -0%;
- }
- .c-dk {
-    background-image: url("/images/DK.webp");
-    background-repeat: no-repeat;
-    
-    background-position: 50% -0%;
- }
- .c-priest {
     background-image: url("/images/Priest.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;
  }
+ .c-dh {
+    background-image: url("/images/Rouge.webp");
+    background-repeat: no-repeat;
+    
+    background-position: 50% -0%;
+ }
+ .c-dk {
+    background-image: url("/images/Shaman.webp");
+    background-repeat: no-repeat;
+    
+    background-position: 50% -0%;
+ }
+ .c-priest {
+    background-image: url("/images/Warlock.webp");
+    background-repeat: no-repeat;
+    
+    background-position: 50% -0%;
+ }
  .c-paladin {
-    background-image: url("/images/Paladin.webp");
+    background-image: url("/images/Warrior.webp");
     background-repeat: no-repeat;
     
     background-position: 50% -0%;

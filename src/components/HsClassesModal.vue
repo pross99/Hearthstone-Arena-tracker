@@ -47,10 +47,11 @@ export default {
             this.$emit("close")
         },
         async handleFormSubmit(formData) {
-             try {
-        const newRun = await store.dispatch('submitRun', formData);
+		
+        try {
+        const newRun = await this.$store.dispatch('submitRun', formData);
         this.$emit('add', newRun);
-        this.showModal.value = false;
+        this.showModal = false;
         showToast.success("Listing added successfully");
   } catch (error) {
     showToast.error("Error updating listing", error);

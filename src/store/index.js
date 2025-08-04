@@ -61,6 +61,7 @@ export default createStore({
             commit('SET_RUNS', newRuns);
         },
         async submitRun({ commit }, formData) {
+            console.log("Hi!")
             const newRun = {
                  classId: Number(formData.classId),
         placement: formData.placement,

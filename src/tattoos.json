@@ -119,6 +119,30 @@
       "legendaryBracket": "7",
       "priceWinnings": "7",
       "note": "7"
+    },
+    {
+      "id": "40b7",
+      "classId": 5,
+      "placement": 2,
+      "legendaryBracket": "2",
+      "priceWinnings": "2",
+      "note": "2"
+    },
+    {
+      "id": "0d53",
+      "classId": 7,
+      "placement": 2,
+      "legendaryBracket": "2",
+      "priceWinnings": "2",
+      "note": "2"
+    },
+    {
+      "id": "cdea",
+      "classId": 9,
+      "placement": 2,
+      "legendaryBracket": "2",
+      "priceWinnings": "2",
+      "note": "2"
     }
   ],
   "classes": [
