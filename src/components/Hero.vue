@@ -84,9 +84,9 @@ height: 80.5%;
 
 .h-container-wrapper img:hover {
     
-   scale: 1.01; 
-   
+   -webkit-animation: spin 3s;
 }
+   
 
 .heading-xl {
     color: var(--secondary-color);
@@ -132,6 +132,11 @@ align-items: center;
 #spin-img  {
     -webkit-animation: spin 3s;
 }
+
+#spin-img:hover{
+    -webkit-animation: spin 3s;
+}
+
 
 @-webkit-keyframes spin {
 	0%  {-webkit-transform: rotate(0deg);}

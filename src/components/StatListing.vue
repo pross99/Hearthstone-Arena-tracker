@@ -78,9 +78,8 @@ switch(sortBy) {
 <template>
 
     <div class="s-container">
-        <div class="s-title-container">
-        <h2 >Statistics by class</h2>
-        </div>
+        <h2>Statistics by class</h2>
+      
     <table class="s-table">
       <thead>
         <tr>
@@ -120,13 +119,7 @@ switch(sortBy) {
 }
 
 .s-table thead {
-  background: repeating-linear-gradient(
-  45deg,
-  var(--secondary-color), 2px,
-  var(--secondary-color) 0px,
-  rgba(151, 101, 36,1) 645px,
-  rgba(0,0,0,0) 0px
-);
+  background-color: var(--third-color);
   color: white;
   text-align: left;
 }
@@ -137,10 +130,6 @@ switch(sortBy) {
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
   color: white
-}
-
-th:first-child {
-  color: var(--main-color);
 }
 
 .s-table tbody tr:nth-child(odd) {

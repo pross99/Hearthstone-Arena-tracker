@@ -2,11 +2,18 @@
 import {defineProps, ref, computed, watch, onMounted } from 'vue';
 import Modal from './Modal.vue'
 import {useStore} from 'vuex';
+import { useToast } from 'vue-toastification';
+
+
+const showToast = useToast()
 
 export default {
+
+
     props: {
         isOpen: Boolean,
-        classes: Object
+        classes: Object,
+		stats: Object
     },
     computed: {
         clsArray() {
@@ -46,7 +53,7 @@ export default {
         this.showModal.value = false;
         showToast.success("Listing added successfully");
   } catch (error) {
-    showToast.error("Error updating listing");
+    showToast.error("Error updating listing", error);
   }
         }
     }
@@ -68,12 +75,16 @@ export default {
              <div class="cards">
     <div class="card" v-for="cls in clsArray" :key="cls.id">
       <div class="card-face" @click=testClick(cls)>
-        <div class="card-label">{{ showNextModal }}</div>
+		<div class="card-background">
+			
+				<div class="card-class">
+				<div class="card-label">{{ cls.className }}</div>
+		</div>
+		</div>
+		
+        
        
       </div>
-      <div class="card-bottom">
-       <div class="card-label">{{ cls.className }}</div>
-       </div>
     </div>
   </div>
   	<Modal 
@@ -122,6 +133,7 @@ export default {
 
 }
 
+
 .cards {
 	 bottom: 0;
 	 display: flex;
@@ -134,9 +146,10 @@ export default {
 }
  .card {
 	 height: 190px;
-	 margin: 0 -25px;
+	 margin: 0 -15px;
 	 position: relative;
-	 width: 100px;
+	 width: 110px;
+	 text-align: left;
 }
  .card:after {
 	 bottom: 0;
@@ -166,6 +179,7 @@ export default {
 	 position: absolute;
 	 right: 0;
 	 top: 0;
+
 }
 
 
@@ -181,7 +195,6 @@ export default {
 
  .card-bottom:after {
 	 animation: none;
-	 background: #fff;
 	 bottom: 0;
 	 content: '';
 	 left: 0;
@@ -193,11 +206,14 @@ export default {
 
 
  .card-label {
-    text-align: center;
 	 font-size: 24px;
 	 font-weight: bold;
 	 letter-spacing: -0.025em;
-	 padding: 15px 0 0 15px;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	text-align: center;
+	padding-top: 5px;
 }
 
 .card-label-bottom {
@@ -208,16 +224,16 @@ export default {
 	 padding: 15px 0 0 15px;
 }
  .card:nth-child(1) .card-face {
-	 background: linear-gradient(-135deg, rgba(255, 153, 153, 1), rgba(218, 11, 11, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
+	 background: linear-gradient(-135deg, rgba(196, 30, 69, 1), rgb(126, 7, 39));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(196, 30, 69, 0.75);
 	 transform: translateY(45px) rotate(-28.125deg);
 }
  .card:nth-child(1) .card-face .card-label {
-	 color: rgba(219, 0, 0, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(255, 128, 128, 1);
+	 color: rgb(104, 1, 1);
+	 text-shadow: -0.025em 0.025em 0 rgb(197, 23, 58);
 }
  .card:nth-child(1):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(196, 30, 69, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -229,16 +245,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(2) .card-face {
-	 background: linear-gradient(-135deg, rgba(255, 153, 214, 1), rgba(218, 11, 135, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 153, 214, 0.75);
+	 background: linear-gradient(-135deg, rgba(163, 48, 201, 1), rgb(127, 23, 161));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(163, 48, 201, 0.75);
 	 transform: translateY(35px) rotate(-21.875deg);
 }
  .card:nth-child(2) .card-face .card-label {
-	 color: rgba(219, 0, 132, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(255, 128, 204, 1);
+	 color: rgb(104, 3, 138);
+	 text-shadow: -0.025em 0.025em 0 rgb(140, 19, 180);
 }
  .card:nth-child(2):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 214, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(163, 48, 201 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -250,16 +266,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(3) .card-face {
-	 background: linear-gradient(-135deg, rgba(235, 153, 255, 1), rgba(177, 11, 218, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 153, 255, 0.75);
+	 background: linear-gradient(-135deg, rgb(255,125,10), rgb(155, 74, 3));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,125,10, 0.75);
 	 transform: translateY(25px) rotate(-15.625deg);
 }
  .card:nth-child(3) .card-face .card-label {
-	 color: rgba(175, 0, 219, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(230, 128, 255, 1);
+	 color: rgb(201, 94, 1);
+	 text-shadow: -0.025em 0.025em 0 rgb(241, 120, 14);
 }
  .card:nth-child(3):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(235, 153, 255, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255,125,10, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -271,16 +287,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(4) .card-face {
-	 background: linear-gradient(-135deg, rgba(173, 153, 255, 1), rgba(53, 11, 218, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(173, 153, 255, 0.75);
+	 background: linear-gradient(-135deg, rgba(171, 212, 115, 1), rgb(101, 161, 17));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(171, 212, 115, 0.75);
 	 transform: translateY(15px) rotate(-9.375deg);
 }
  .card:nth-child(4) .card-face .card-label {
-	 color: rgba(44, 0, 219, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(153, 128, 255, 1);
+	 color: rgb(112, 145, 66);
+	 text-shadow: -0.025em 0.025em 0 rgb(81, 109, 41);
 }
  .card:nth-child(4):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(173, 153, 255, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(171, 212, 115, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -292,13 +308,13 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(5) .card-face {
-	 background: linear-gradient(-135deg, rgba(153, 194, 255, 1), rgba(11, 94, 218, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
+	 background: linear-gradient(-135deg, rgba(105, 204, 240, 1), rgb(45, 159, 201));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(105, 204, 240, 0.75);
 	 transform: translateY(5px) rotate(-3.125deg);
 }
  .card:nth-child(5) .card-face .card-label {
-	 color: rgba(0, 88, 219, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(128, 179, 255, 1);
+	 color: rgb(67, 160, 194);
+	 text-shadow: -0.025em 0.025em 0 rgb(32, 118, 150);
 }
  .card:nth-child(5):hover .card-face {
 	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
@@ -313,16 +329,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(6) .card-face {
-	 background: linear-gradient(-135deg, rgba(153, 255, 255, 1), rgba(11, 218, 218, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 255, 0.75);
+	 background: linear-gradient(-135deg, rgba(245, 140, 186, 1), rgb(216, 33, 112));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(245, 140, 186, 0.75);
 	 transform: translateY(5px) rotate(3.125deg);
 }
  .card:nth-child(6) .card-face .card-label {
-	 color: rgba(0, 219, 219, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(128, 255, 255, 1);
+	 color: rgb(211, 74, 133);
+	 text-shadow: -0.025em 0.025em 0 rgb(177, 40, 99);
 }
  .card:nth-child(6):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 255, 255, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(245, 140, 186, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -334,16 +350,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(7) .card-face {
-	 background: linear-gradient(-135deg, rgba(153, 255, 194, 1), rgba(11, 218, 94, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
+	 background: linear-gradient(-135deg, rgba(255,255,255, 1), rgb(192, 192, 192));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255, 0.75);
 	 transform: translateY(15px) rotate(9.375deg);
 }
  .card:nth-child(7) .card-face .card-label {
-	 color: rgba(0, 219, 88, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(128, 255, 179, 1);
+	 color: rgb(209, 209, 209);
+	 text-shadow: -0.025em 0.025em 0 rgb(175, 175, 175);
 }
  .card:nth-child(7):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255,255,255, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -355,16 +371,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(8) .card-face {
-	 background: linear-gradient(-135deg, rgba(173, 255, 153, 1), rgba(53, 218, 11, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(173, 255, 153, 0.75);
+	 background: linear-gradient(-135deg, rgba(255, 245, 105, 1), rgb(180, 169, 18));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 245, 105, 0.75);
 	 transform: translateY(25px) rotate(15.625deg);
 }
  .card:nth-child(8) .card-face .card-label {
-	 color: rgba(44, 219, 0, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(153, 255, 128, 1);
+	 color: rgb(196, 185, 43);
+	 text-shadow: -0.025em 0.025em 0 rgb(199, 188, 35);
 }
  .card:nth-child(8):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(173, 255, 153, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 245, 105, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -376,16 +392,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(9) .card-face {
-	 background: linear-gradient(-135deg, rgba(235, 255, 153, 1), rgba(177, 218, 11, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
+	 background: linear-gradient(-135deg, rgba(0, 112, 222, 1), rgb(0, 60, 119));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(0, 112, 222, 0.75);
 	 transform: translateY(35px) rotate(21.875deg);
 }
  .card:nth-child(9) .card-face .card-label {
-	 color: rgba(175, 219, 0, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(230, 255, 128, 1);
+	 color: rgb(3, 60, 117);
+	 text-shadow: -0.025em 0.025em 0 rgb(0, 76, 151);
 }
  .card:nth-child(9):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(0, 112, 222, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -397,16 +413,16 @@ export default {
 	 top: -175px;
 }
  .card:nth-child(10) .card-face {
-	 background: linear-gradient(-135deg, rgba(255, 214, 153, 1), rgba(218, 135, 11, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
+	 background: linear-gradient(-135deg, rgba(148, 130, 201, 1), rgb(58, 20, 172));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(148, 130, 201, 0.75);
 	 transform: translateY(45px) rotate(28.125deg);
 }
  .card:nth-child(10) .card-face .card-label {
-	 color: rgba(219, 132, 0, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(255, 204, 128, 1);
+	 color: rgb(95, 67, 180);
+	 text-shadow: -0.025em 0.025em 0 rgb(49, 20, 136);
 }
  .card:nth-child(10):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(148, 130, 201, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -419,16 +435,16 @@ export default {
 }
 
  .card:nth-child(11) .card-face {
-	 background: linear-gradient(-135deg, rgba(255, 214, 153, 1), rgba(218, 135, 11, 1));
-	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
+	 background: linear-gradient(-135deg, rgba(199, 156, 110, 1), rgb(163, 94, 21));
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(199, 156, 110, 0.75);
 	 transform: translateY(45px) rotate(28.125deg);
 }
  .card:nth-child(11) .card-face .card-label {
-	 color: rgba(219, 132, 0, 1);
-	 text-shadow: -0.025em 0.025em 0 rgba(255, 204, 128, 1);
+	 color: rgb(175, 110, 40);
+	 text-shadow: -0.025em 0.025em 0 rgb(156, 95, 29);
 }
  .card:nth-child(11):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(199, 156, 110, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -439,6 +455,123 @@ export default {
  .card:nth-child(11):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(1) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Death_Knight_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+.card:nth-child(2) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Demon_Hunter_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(3) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Druid_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(4) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Hunter_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(5) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Mage_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(6) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Paladin_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(7) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Priest_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+.card:nth-child(8) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Rogue_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+
+
+.card:nth-child(9) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Shaman_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+.card:nth-child(10) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Warlock_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+.card:nth-child(11) .card-class{
+	width: 100%;
+	height: 100%;
+	   background-image: url("/images/Warrior_icon.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30%;
+}
+
+.card-background{
+	height: 100%;
+	width: 100%;
+	background-image: url("/images/hsIconLogo-removebg-preview.png");
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
  @keyframes fade {
 	 0% {
 		 opacity: 0.9;
@@ -448,6 +581,16 @@ export default {
 		 opacity: 0;
 		 transform: scale(1.15);
 	}
+}
+
+
+ 
+
+ .s-title {
+  color: var(--third-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 </style>

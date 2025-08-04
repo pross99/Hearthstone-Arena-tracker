@@ -42,6 +42,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 28px;
     color: var(--third-color);
     text-align: center;
+    margin-bottom: 25px;
 }
 
 p, a, td,pre{

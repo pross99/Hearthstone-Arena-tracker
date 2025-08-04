@@ -57,7 +57,7 @@ const handleFormSubmit = async (formData) => {
 
             <h2>Recent runs</h2>
             <button @click="showModal = true" id="add-btn">Add new run   </button>
-            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes"></HsClassesModal>
+            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass"></HsClassesModal>
              <!-- <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
             </Modal> -->
 
@@ -137,7 +137,6 @@ flex-direction: column;
 align-items: center; 
  max-width: 80rem;  
 line-height: 2rem;
-
 height: 40px;
 text-align: center;
 }
