@@ -53,7 +53,7 @@ export default createStore({
             return res;
         },
         async loadRunsWithDelay({ commit, state }, { runs, delay }) {
-            const newRuns = [...state.runs]; // clone runs from the state to a new array
+            const newRuns = [...state.runs]; // clone runs from the state to a new array. starting with a copy of current runs and can then add new runs below
             for(let run of runs) {
                 await delayMs(delay);
                 newRuns.push(run);
