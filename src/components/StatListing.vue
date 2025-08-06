@@ -22,11 +22,25 @@ const statsArray = computed(() => {
 })
 
 
+
+const headerNames= {
+  className: 'Class',
+  totalRuns: 'Completed runs',
+  totalWins: 'Wins',
+  totalMatches: 'Matches played',
+  winrate: 'Winrate'
+}
+
 // prepare clumn headers for sort callback
 const headerItems = computed(() => {
    const firstEntry = Object.values(props.stats || {})[0];
-  return firstEntry ? Object.keys(firstEntry) : [];
-})
+  if(!firstEntry) return [];
+
+  return Object.keys(firstEntry).map(key =>({
+    key,
+    name: headerNames[key] || key
+  }));
+});
 
 
 const shallowRows = ref([])
@@ -73,6 +87,24 @@ switch(sortBy) {
 
 }
 
+
+
+function goodWinrate(num) {
+if(num > 75) {
+      return 'rgba(179,104,0,255)'
+    }
+    else if(num > 60){
+      return '#a247b0'
+    }
+    else if(num > 50){
+      return '#3e8df2'
+    }
+    else {
+      return '#b0bcb2'
+    }
+}
+
+
 </script>
 
 <template>
@@ -83,9 +115,9 @@ switch(sortBy) {
     <table class="s-table">
       <thead>
         <tr>
-           <th v-for="header in headerItems" :key="header">{{ header.toUpperCase() }}
-               <button @click="sortData(header, 'ASC')" class="sort-btn">↑</button>
-           <button @click="sortData(header, 'DESC')" class="sort-btn">↓</button>
+           <th v-for="header in headerItems" :key="header">{{ header.name}}
+               <button @click="sortData(header.key, 'ASC')" class="sort-btn">↑</button>
+           <button @click="sortData(header.key, 'DESC')" class="sort-btn">↓</button>
            </th>
         
           
@@ -97,7 +129,7 @@ switch(sortBy) {
           <td sameClass>{{ cls.totalRuns }}</td>
           <td sameClass>{{ cls.totalWins }}</td>
           <td sameClass>{{ cls.totalMatches }}</td>
-          <td sameClass>{{ cls.winrate.toFixed(1) }}%</td>
+          <td :style="{ color:goodWinrate(cls.winrate)}">{{ cls.winrate.toFixed(1) }}%</td>
         </tr>
       </tbody>
     </table>
@@ -111,7 +143,6 @@ switch(sortBy) {
 .s-table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 12px;
   overflow: hidden;
   height: 650px;
   margin-bottom: 20px;
@@ -126,10 +157,15 @@ switch(sortBy) {
 
 .s-table th,
 .s-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
-  color: white
+  color: white;
+  border: solid var(--third-color) 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+td{
+  width: 200px;
 }
 
 .s-table tbody tr:nth-child(odd) {
@@ -141,25 +177,27 @@ switch(sortBy) {
 }
 
 .s-table tbody td {
-  color: #262530; /* dark gray for text */
+  color: black;
 }
 
 .sort-btn {
   background: none;
   border: none;
   color: var(--seondary-color);
-  margin-left: 4px;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+  margin-left: 3px;
+
 }
 
 .sort-btn:hover {
-  color: var(--third-color);
+  color: var(--main-color);
 }
 
 .sort-btn:focus {
-  color: var(--third-color);
+  color: var(--main-color);
   box-shadow: none;
 }
 
-   
 </style>

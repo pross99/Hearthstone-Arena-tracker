@@ -45,7 +45,15 @@ export default {
         <div class="m-content">
             <button class="m-close" @click="close"> X</button>
             <slot></slot>
-            <form @submit.prevent="submitForm">
+            <div class="m-container">
+                <div class="m-c-img">
+                    <img src="/images/Arena.webp" />
+                </div>
+
+                <div class="m-form-c">
+
+               
+                 <form @submit.prevent="submitForm">
              
                 <label>
                     Class:
@@ -87,9 +95,9 @@ export default {
                 </label>
 
                  <label>
-                    Note About run:
+                    Note:
                     <input v-model="formData.note" 
-                    :placeholder="initialData.note || 'Any notes for this run?'"
+                    :placeholder="initialData.note || 'Did you have fun?'"
                     ></input>
                 </label>
 
@@ -97,6 +105,9 @@ export default {
 
                 <button type="submit">Save Changes</button>
             </form>
+             </div>
+            </div>
+           
         </div>
     </div>
 </template>
@@ -117,7 +128,7 @@ export default {
 }
 
 .m-content {
-    background-color: rgb(251, 251, 251);
+    background-color: var(--secondary-color);
     padding: 20px;
     border-radius: 8px;
     min-width: 300px;
@@ -137,6 +148,24 @@ export default {
 }
 
 
+.m-container {
+    display: flex;
+    gap: 10px;
+}
+
+.m-c-img  {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 70%;
+}
+
+.m-form-c{
+    padding: 0 50px;
+    background-color: var(--third-color);
+    width: 90%;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -145,23 +174,28 @@ form {
 }
 
 input, textarea {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button[type="submit"] {
-    background-color: #0056b3;
+    background-color: var(--main-color);
     color: white;
     border: none;
-    padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    width: 378px;
 }
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+    scale: 1.01;
+}
+
+label{
+    color: var(--secondary-color);
 }
 
 </style>

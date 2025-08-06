@@ -65,7 +65,7 @@
       "classId": 10
     },
     {
-      "placement": 4,
+      "placement": 2,
       "legendaryBracket": "Pulp of madness",
       "note": "Boring",
       "priceWinnings": "3000",
@@ -99,7 +99,7 @@
     {
       "id": "ac04",
       "classId": 3,
-      "placement": 10,
+      "placement": 12,
       "legendaryBracket": "Knives out",
       "priceWinnings": "50",
       "note": "Better Luck"
@@ -143,6 +143,22 @@
       "legendaryBracket": "2",
       "priceWinnings": "2",
       "note": "2"
+    },
+    {
+      "id": "9439",
+      "classId": 3,
+      "placement": 12,
+      "legendaryBracket": "Guff ",
+      "priceWinnings": "200",
+      "note": "Guff funny"
+    },
+    {
+      "id": "8a03",
+      "classId": 5,
+      "placement": 2,
+      "legendaryBracket": "GUFFY",
+      "priceWinnings": "300",
+      "note": "GOOFY"
     }
   ],
   "classes": [

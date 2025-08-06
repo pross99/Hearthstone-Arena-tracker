@@ -37,7 +37,7 @@ const updateItem = (id, newData) => {
   store.commit('UPDATE_RUN', { id, newData });
 };
 
-const handleFormSubmit = async (formData) => {
+/* const handleFormSubmit = async (formData) => {
   try {
     const newRun = await store.dispatch('submitRun', formData);
     emit('add', newRun);
@@ -46,7 +46,7 @@ const handleFormSubmit = async (formData) => {
   } catch (error) {
     showToast.error("Error updating listing");
   }
-};
+}; */
 
 
 </script>
@@ -57,7 +57,7 @@ const handleFormSubmit = async (formData) => {
 
             <h2>Recent runs</h2>
             <button @click="showModal = true" id="add-btn">Add new run   </button>
-            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass"></HsClassesModal>
+            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass" ></HsClassesModal>
              <!-- <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
             </Modal> -->
 

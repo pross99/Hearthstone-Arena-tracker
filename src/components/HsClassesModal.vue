@@ -23,10 +23,11 @@ export default {
             })).sort((a,b) =>a.className - b.className)
         }
     },
-    emits: ["close", "add"],
+    emits: ["close", "add", "submit"],
     data() {
         return {
             showNextModal: false,
+			showModal: false,
 			clickCount: 0,
 			selectedClass: null,
 			sClsRework: {classId:null,className:null}
@@ -34,6 +35,10 @@ export default {
     },
 	components: {
 		Modal
+	},
+	watch: {
+		deep: true,
+		immediate: true
 	},
     methods: {
 		testClick(cls) {
@@ -51,8 +56,11 @@ export default {
         try {
         const newRun = await this.$store.dispatch('submitRun', formData);
         this.$emit('add', newRun);
-        this.showModal = false;
+        
+
         showToast.success("Listing added successfully");
+		this.showNextModal = false;
+		this.$emit("close")
   } catch (error) {
     showToast.error("Error updating listing", error);
   }
@@ -131,6 +139,12 @@ export default {
 
 .m-title{
 	padding-bottom: 200px;
+	color: var(--main-color);
+
+}
+.m-title h3{
+
+	color: var(--main-color);
 
 }
 
@@ -245,6 +259,19 @@ export default {
  .card:nth-child(1):hover:after {
 	 top: -175px;
 }
+
+
+.card:nth-child(1) .card-background{
+	background-color: var(--secondary-color);
+	  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(196, 30, 69, 0.75);
+}
+
+
+
+
+
+
+
  .card:nth-child(2) .card-face {
 	 background: linear-gradient(-135deg, rgba(163, 48, 201, 1), rgb(127, 23, 161));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(163, 48, 201, 0.75);
@@ -266,6 +293,18 @@ export default {
  .card:nth-child(2):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(2) .card-background{
+	background-color: var(--secondary-color);
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(163, 48, 201, 0.75);
+}
+
+
+
+
+
+
+
  .card:nth-child(3) .card-face {
 	 background: linear-gradient(-135deg, rgb(255,125,10), rgb(155, 74, 3));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,125,10, 0.75);
@@ -287,6 +326,20 @@ export default {
  .card:nth-child(3):hover:after {
 	 top: -175px;
 }
+.card:nth-child(3) .card-background{
+	background-color: var(--secondary-color);
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,125,10, 0.75);
+}
+
+
+
+
+
+
+
+
+
+
  .card:nth-child(4) .card-face {
 	 background: linear-gradient(-135deg, rgba(171, 212, 115, 1), rgb(101, 161, 17));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(171, 212, 115, 0.75);
@@ -308,6 +361,19 @@ export default {
  .card:nth-child(4):hover:after {
 	 top: -175px;
 }
+
+
+
+.card:nth-child(4) .card-background{
+	background-color: var(--secondary-color);
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(171, 212, 115, 0.75);
+}
+
+
+
+
+
+
  .card:nth-child(5) .card-face {
 	 background: linear-gradient(-135deg, rgba(105, 204, 240, 1), rgb(45, 159, 201));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(105, 204, 240, 0.75);
@@ -329,6 +395,18 @@ export default {
  .card:nth-child(5):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(5) .card-background{
+	background-color: var(--secondary-color);
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(105, 204, 240, 0.75);
+}
+
+
+
+
+
+
+
  .card:nth-child(6) .card-face {
 	 background: linear-gradient(-135deg, rgba(245, 140, 186, 1), rgb(216, 33, 112));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(245, 140, 186, 0.75);
@@ -350,13 +428,26 @@ export default {
  .card:nth-child(6):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(6) .card-background{
+	background-color: var(--secondary-color);
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(245, 140, 186, 0.75);
+}
+
+
+
+
+
+
+
+
  .card:nth-child(7) .card-face {
 	 background: linear-gradient(-135deg, rgba(255,255,255, 1), rgb(192, 192, 192));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255, 0.75);
 	 transform: translateY(15px) rotate(9.375deg);
 }
  .card:nth-child(7) .card-face .card-label {
-	 color: rgb(209, 209, 209);
+	 color: rgb(192, 192, 192);
 	 text-shadow: -0.025em 0.025em 0 rgb(175, 175, 175);
 }
  .card:nth-child(7):hover .card-face {
@@ -371,6 +462,23 @@ export default {
  .card:nth-child(7):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(7) .card-background{
+	background-color: var(--secondary-color);
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255, 0.75);
+}
+
+
+
+
+
+
+
+
+
+
+
+
  .card:nth-child(8) .card-face {
 	 background: linear-gradient(-135deg, rgba(255, 245, 105, 1), rgb(180, 169, 18));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 245, 105, 0.75);
@@ -392,6 +500,19 @@ export default {
  .card:nth-child(8):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(8) .card-background{
+	background-color: var(--secondary-color);
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 245, 105, 0.75);
+}
+
+
+
+
+
+
+
+
  .card:nth-child(9) .card-face {
 	 background: linear-gradient(-135deg, rgba(0, 112, 222, 1), rgb(0, 60, 119));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(0, 112, 222, 0.75);
@@ -413,6 +534,19 @@ export default {
  .card:nth-child(9):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(9) .card-background{
+	background-color: var(--secondary-color);
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(0, 112, 222, 0.75);
+}
+
+
+
+
+
+
+
+
  .card:nth-child(10) .card-face {
 	 background: linear-gradient(-135deg, rgba(148, 130, 201, 1), rgb(58, 20, 172));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(148, 130, 201, 0.75);
@@ -435,6 +569,21 @@ export default {
 	 top: -175px;
 }
 
+.card:nth-child(10) .card-background{
+	background-color: var(--secondary-color);
+	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(148, 130, 201, 0.75);
+}
+
+
+
+
+
+
+
+
+
+
+
  .card:nth-child(11) .card-face {
 	 background: linear-gradient(-135deg, rgba(199, 156, 110, 1), rgb(163, 94, 21));
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(199, 156, 110, 0.75);
@@ -456,6 +605,22 @@ export default {
  .card:nth-child(11):hover:after {
 	 top: -175px;
 }
+
+.card:nth-child(11) .card-background{
+	background-color: var(--secondary-color);
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(199, 156, 110, 0.75);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .card:nth-child(1) .card-class{
 	width: 100%;
@@ -564,14 +729,19 @@ export default {
 	background-size: 30%;
 }
 
+
 .card-background{
+	margin-top: 10px;
 	height: 100%;
+	background-color:var(--secondary-color);
 	width: 100%;
 	background-image: url("/images/hsIconLogo-removebg-preview.png");
 	background-size: 80%;
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
+
 
  @keyframes fade {
 	 0% {
