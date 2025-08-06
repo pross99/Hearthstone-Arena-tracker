@@ -10,7 +10,7 @@ export default createStore({
         classes: [],
         isLoading: true
     },
-    mutations: {
+    mutations: { // Mutations modify the state.
         SET_RUNS(state,runs){
             state.runs =runs;
         },
@@ -29,7 +29,7 @@ export default createStore({
         }
        
     },
-    actions: {
+    actions: { // can commit mutations - dispatch is used to run actions
         async getRuns({commit, dispatch, state}) {
             if(state.runs.length > 0) {
                 return;
@@ -38,7 +38,7 @@ export default createStore({
             
             commit('SET_LOADING', true);
             try {
-                const response = await dispatch('apiCallWithLag', {call: () => axios.get('api/runs')});
+                const response = await dispatch('apiCallWithLag', {call: () => axios.get('api/runs')}); // passing the function, not calling it
                 await dispatch('loadRunsWithDelay', {runs: response.data, delay: 100});
                 const classRes = await axios.get('/api/classes');
                 commit('SET_CLASSES', classRes.data);
@@ -49,11 +49,11 @@ export default createStore({
             }
         },
         async apiCallWithLag(_,{call, delay: d}) {
-            const [res] = await Promise.all([call(), delay(d)]);
+            const [res] = await Promise.all([call(), delay(d)]); // Run both tasks at the same time and wait for both to finish. using brackets to only save take the first value i.e the call response
             return res;
         },
         async loadRunsWithDelay({ commit, state }, { runs, delay }) {
-            const newRuns = [...state.runs];
+            const newRuns = [...state.runs]; // clone runs from the state to a new array
             for(let run of runs) {
                 await delayMs(delay);
                 newRuns.push(run);
@@ -74,7 +74,7 @@ export default createStore({
             return res.data;
         }
     },
-    getters: {
+    getters: { // computed properties for the store
         runsWithClass(state) {
             return state.runs.map(run => {
                 const cls = state.classes.find(c => String(c.id) === String(run.classId)) ?? {};
