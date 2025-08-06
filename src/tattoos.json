@@ -159,6 +159,14 @@
       "legendaryBracket": "GUFFY",
       "priceWinnings": "300",
       "note": "GOOFY"
+    },
+    {
+      "id": "03c4",
+      "classId": 4,
+      "placement": 11,
+      "legendaryBracket": "XX",
+      "priceWinnings": "100",
+      "note": "So fun!"
     }
   ],
   "classes": [

@@ -160,7 +160,7 @@ if(num > 75) {
   color: white;
   border: solid var(--third-color) 1px;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 
@@ -187,7 +187,7 @@ td{
   cursor: pointer;
   padding: 0;
   margin: 0;
-  margin-left: 3px;
+  margin-left: 0px;
 
 }
 
