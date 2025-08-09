@@ -9,6 +9,16 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/assets/theme.scss" as *;
+          @use "@/assets/global.scss" as globals;
+           `
+      }
+    }
+  },
   server: {
     proxy: {
       '/api': {

@@ -109,8 +109,7 @@ export default {
 
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
 
 
 .m-close {
@@ -139,12 +138,12 @@ export default {
 
 .m-title{
 	padding-bottom: 200px;
-	color: var(--main-color);
+	color: $primary-color;
 
 }
 .m-title h3{
 
-	color: var(--main-color);
+	color: $primary-color;
 
 }
 
@@ -262,7 +261,7 @@ export default {
 
 
 .card:nth-child(1) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(196, 30, 69, 0.75);
 }
 
@@ -282,7 +281,7 @@ export default {
 	 text-shadow: -0.025em 0.025em 0 rgb(140, 19, 180);
 }
  .card:nth-child(2):hover .card-face {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(163, 48, 201 0.75);
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(163, 48, 201, 0.75);
 	 transform: translateY(-100px) rotate(0deg) scale(2);
 	 transition-duration: 0ms;
 	 z-index: 5;
@@ -295,7 +294,7 @@ export default {
 }
 
 .card:nth-child(2) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(163, 48, 201, 0.75);
 }
 
@@ -327,7 +326,7 @@ export default {
 	 top: -175px;
 }
 .card:nth-child(3) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,125,10, 0.75);
 }
 
@@ -365,7 +364,7 @@ export default {
 
 
 .card:nth-child(4) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(171, 212, 115, 0.75);
 }
 
@@ -397,7 +396,7 @@ export default {
 }
 
 .card:nth-child(5) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(105, 204, 240, 0.75);
 }
 
@@ -430,7 +429,7 @@ export default {
 }
 
 .card:nth-child(6) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(245, 140, 186, 0.75);
 }
 
@@ -464,19 +463,9 @@ export default {
 }
 
 .card:nth-child(7) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255, 0.75);
 }
-
-
-
-
-
-
-
-
-
-
 
 
  .card:nth-child(8) .card-face {
@@ -502,7 +491,7 @@ export default {
 }
 
 .card:nth-child(8) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 245, 105, 0.75);
 }
 
@@ -536,7 +525,7 @@ export default {
 }
 
 .card:nth-child(9) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(0, 112, 222, 0.75);
 }
 
@@ -570,7 +559,7 @@ export default {
 }
 
 .card:nth-child(10) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	 box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(148, 130, 201, 0.75);
 }
 
@@ -607,7 +596,7 @@ export default {
 }
 
 .card:nth-child(11) .card-background{
-	background-color: var(--secondary-color);
+	background-color: $secondary-color;
 	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(199, 156, 110, 0.75);
 }
 
@@ -733,7 +722,7 @@ export default {
 .card-background{
 	margin-top: 10px;
 	height: 100%;
-	background-color:var(--secondary-color);
+	background-color:$secondary-color;
 	width: 100%;
 	background-image: url("/images/hsIconLogo-removebg-preview.png");
 	background-size: 80%;
@@ -758,7 +747,7 @@ export default {
  
 
  .s-title {
-  color: var(--third-color);
+  color: $third-color;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   text-align: center;

@@ -29,7 +29,7 @@ import { RouterLink } from 'vue-router';
 
 </template>
 
-<style>
+<style lang="scss">
 .hc {
 background-color: rgb(234,235,202);
     padding: 2rem;

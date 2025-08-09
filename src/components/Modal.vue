@@ -1,6 +1,4 @@
 <script>
-import { defineProps, defineEmits } from 'vue';
-
 export default {
     props: {
         isOpen: Boolean,
@@ -112,7 +110,7 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .m-overlay {
     position: fixed;
     z-index: 100;
@@ -128,7 +126,7 @@ export default {
 }
 
 .m-content {
-    background-color: var(--secondary-color);
+    background-color: $secondary-color;
     padding: 20px;
     border-radius: 8px;
     min-width: 300px;
@@ -162,7 +160,7 @@ export default {
 
 .m-form-c{
     padding: 0 50px;
-    background-color: var(--third-color);
+    background-color: $third-color;
     width: 90%;
 }
 
@@ -181,7 +179,7 @@ input, textarea {
 }
 
 button[type="submit"] {
-    background-color: var(--main-color);
+    background-color: $primary-color;
     color: white;
     border: none;
     cursor: pointer;
@@ -195,7 +193,7 @@ button[type="submit"]:hover {
 }
 
 label{
-    color: var(--secondary-color);
+    color: $secondary-color
 }
 
 </style>

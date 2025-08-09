@@ -138,8 +138,7 @@ if(num > 75) {
 </template>
 
 
-<style>
-
+<style lang="scss">
 .s-table {
   width: 100%;
   border-collapse: collapse;
@@ -150,7 +149,7 @@ if(num > 75) {
 }
 
 .s-table thead {
-  background-color: var(--third-color);
+  background-color: $third-color;
   color: white;
   text-align: left;
 }
@@ -158,7 +157,7 @@ if(num > 75) {
 .s-table th,
 .s-table td {
   color: white;
-  border: solid var(--third-color) 1px;
+  border: solid $third-color 1px;
   text-align: center;
   font-size: 15px;
 }
@@ -169,7 +168,7 @@ td{
 }
 
 .s-table tbody tr:nth-child(odd) {
-  background-color: var(--secondary-color); /* light cream */
+  background-color: $secondary-color /* light cream */
 }
 
 .s-table tbody tr:nth-child(even) {
@@ -183,7 +182,7 @@ td{
 .sort-btn {
   background: none;
   border: none;
-  color: var(--seondary-color);
+  color: $secondary-color;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -192,11 +191,11 @@ td{
 }
 
 .sort-btn:hover {
-  color: var(--main-color);
+  color: $primary-color;
 }
 
 .sort-btn:focus {
-  color: var(--main-color);
+  color: $primary-color;
   box-shadow: none;
 }
 

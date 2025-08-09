@@ -91,7 +91,7 @@ const updateItem = (id, newData) => {
 
 </template>
 
-<style>
+<style lang="scss">
 .tl{
 padding-left: 0.5rem;
 padding-right: 0.5rem;
@@ -113,7 +113,7 @@ border-radius: 20px;
 flex-direction: column; 
 align-items: center; 
  max-width: 80rem;  
-background-color: var(--secondary-color);
+background-color: $secondary-color;
 }
 
 .tl-title {
@@ -122,7 +122,7 @@ background-color: var(--secondary-color);
 }
 
 .tl-spinner {
-    color: var(--main-color);
+    color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;

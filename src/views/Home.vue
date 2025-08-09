@@ -19,7 +19,7 @@ Add your completed runs below and start tracking your best classes`
 </template>
 
 
-<style>
+<style lang="scss">
 
 
 .container-component{
@@ -28,7 +28,7 @@ Add your completed runs below and start tracking your best classes`
   display: flex;
  gap: 40px;
   justify-content: center;
-  background-color: var(--secondary-color);
+  background-color: $secondary-color
 }
 
 

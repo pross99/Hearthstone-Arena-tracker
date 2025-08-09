@@ -123,7 +123,7 @@ const goodScore = computed(() => {
 </template>
 
 
-<style>
+<style lang="scss">
 .clickable-image {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
@@ -144,8 +144,8 @@ margin-bottom: 60px;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
  background: repeating-linear-gradient(
   45deg,
-  var(--third-color), 100px,
-  var(--third-color) 0px,
+  $third-color, 100px,
+  $third-color 0px,
   rgba(234, 235, 202,0.9) 625px,
   rgba(0,0,0,0) 0px
 );
@@ -191,7 +191,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .tas-text-note p {
-    color: var(--third-color);
+    color: $third-color;
 }
 
 
@@ -214,7 +214,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .tas-run-wrapper-low {
  padding: 10px;
  border-radius: 8px;
- background-color: var(--main-color) ;
+ background-color: $primary-color ;
  cursor: pointer;
  height: 50px;
  }
@@ -315,7 +315,7 @@ text-align: center;
  
 
  .s-title {
-  color: var(--third-color);
+  color: $third-color;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   text-align: center;
