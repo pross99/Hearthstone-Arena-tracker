@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 
 
 <template>
-   <section class="hc">
+<!--    <section class="hc">
     <div class="hc-container">
         <Card class="hc-card">
             <div class="hc-head-container">
@@ -26,7 +26,7 @@ import { RouterLink } from 'vue-router';
         </Card>
     </div>
 </section>
-
+ -->
 </template>
 
 <style lang="scss">

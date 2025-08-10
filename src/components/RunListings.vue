@@ -91,62 +91,7 @@ const updateItem = (id, newData) => {
 
 </template>
 
-<style lang="scss">
-.tl{
-padding-left: 0.5rem;
-padding-right: 0.5rem;
-padding-bottom: 0.5rem;
-padding-top: 0.5rem;
-background-color: white;
-width: 45%;
-border-radius: 20px;
-
-
-}
-
-.tl-container {
-    display: flex; 
-padding-left: 1rem;
-padding-top: 40px;
-padding-right: 1rem; 
-border-radius: 20px;
-flex-direction: column; 
-align-items: center; 
- max-width: 80rem;  
-background-color: $secondary-color;
-}
-
-.tl-title {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.tl-spinner {
-    color: $primary-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tl-button {
-    display: flex; 
-padding-left: 5rem;
-padding-right: 5rem; 
-border-radius: 8px;
-flex-direction: column; 
-align-items: center; 
- max-width: 80rem;  
-line-height: 2rem;
-height: 40px;
-text-align: center;
-}
-
-#add-btn{
-    margin: 10px;
-}
-
-
-/* CSS */
+<style lang="scss" src="../assets/runListings.scss">
 
 </style>
 

@@ -1,0 +1,144 @@
+$color_1: $third-color;
+$color_2: white;
+$background-color_1: white;
+$background-color_2: rgba(251,251, 251);
+$background-color_3: rgba(212, 72, 72);
+$background-color_4: $primary-color;
+
+.clickable-image {
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+.tas {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 300px;
+	border-radius: 20px;
+	background-color: $background-color_1;
+	margin-bottom: 60px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	background: repeating-linear-gradient( 45deg, $third-color, 100px, $third-color 0px, rgba(234, 235, 202,0.9) 625px, rgba(0,0,0,0) 0px );
+}
+.tas-container {
+	padding: 20px;
+	width: 480px;
+	border-radius: 20px;
+}
+.tas-header {
+	margin-bottom: 2px;
+	text-align: center;
+	background-color: $background-color_2;
+	border-radius: 20px 20px 8px 8px;
+	height: 150px;
+	margin-bottom: 5px;
+	&:hover {
+		transform: scale(1.01);
+	}
+}
+.tas-header-placement {
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	gap: 8px;
+}
+.tas-text-note {
+	border-radius: 8px 8px 20px 20px;
+	padding: 20px;
+	background-color: $background-color_1;
+	height: 130px;
+	p {
+		color: $color_1;
+        margin: 0;
+        margin-bottom: 10px;
+        text-align: center;
+	}
+    margin-bottom: 20px;
+}
+.tas-run-wrapper-high {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 8px;
+	height: 50px;
+	background-color: $background-color_3;
+	cursor: pointer;
+}
+.tas-run-wrapper-low {
+	padding: 10px;
+	border-radius: 8px;
+	background-color: $background-color_4;
+	cursor: pointer;
+	height: 50px;
+}
+.tas-low {
+	margin-top: 10px;
+	color: $color_2;
+}
+.tas-high {
+	margin-top: 10px;
+	color: $color_2;
+}
+.c-warrior {
+	background-image: url("/images/DK.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-warlock {
+	background-image: url("/images/DH.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-rouge {
+	background-image: url("/images/Druid.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-druid {
+	background-image: url("/images/Hunter.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-mage {
+	background-image: url("/images/Mage.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-hunter {
+	background-image: url("/images/Paladin.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-shaman {
+	background-image: url("/images/Priest.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-dh {
+	background-image: url("/images/Rouge.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-dk {
+	background-image: url("/images/Shaman.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-priest {
+	background-image: url("/images/Warlock.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.c-paladin {
+	background-image: url("/images/Warrior.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.s-title {
+	color: $color_1;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}

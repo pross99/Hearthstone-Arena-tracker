@@ -138,65 +138,6 @@ if(num > 75) {
 </template>
 
 
-<style lang="scss">
-.s-table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  height: 650px;
-  margin-bottom: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.s-table thead {
-  background-color: $third-color;
-  color: white;
-  text-align: left;
-}
-
-.s-table th,
-.s-table td {
-  color: white;
-  border: solid $third-color 1px;
-  text-align: center;
-  font-size: 15px;
-}
-
-
-td{
-  width: 200px;
-}
-
-.s-table tbody tr:nth-child(odd) {
-  background-color: $secondary-color /* light cream */
-}
-
-.s-table tbody tr:nth-child(even) {
-  background-color: #ffffff;
-}
-
-.s-table tbody td {
-  color: black;
-}
-
-.sort-btn {
-  background: none;
-  border: none;
-  color: $secondary-color;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  margin-left: 0px;
-
-}
-
-.sort-btn:hover {
-  color: $primary-color;
-}
-
-.sort-btn:focus {
-  color: $primary-color;
-  box-shadow: none;
-}
+<style lang="scss" src="../assets/statListings.scss">
 
 </style>
