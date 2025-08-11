@@ -1,4 +1,8 @@
 <script>
+import { useToast } from 'vue-toastification';
+const showToast = useToast()
+
+
 export default {
     props: {
         isOpen: Boolean,
@@ -10,7 +14,9 @@ export default {
         return {
             
             formData: { ...this.initialData}, // Clone InitialData into local state
-            showModal: false
+            showModal: false,
+            errors: [],
+
         }
     },
     watch: {
@@ -27,14 +33,41 @@ export default {
         close() {
             this.$emit("close")
         },
-        submitForm() {
-            this.$emit("submit", this.formData);
-            this.close; //
+        checkForm(error) {
+            console.log(this.formData)
+               if (
+                (this.formData.priceWinnings || this.initialData.priceWinnings) &&
+                (this.formData.legendaryBracket || this.initialData.legendaryBracket) &&
+                (this.formData.placement || this.initialData.placement)
+                ) {
+                    console.log("HI");
+                     this.$emit("submit", this.formData);
+                     this.close();
+}
 
+                this.errors = [];
+
+                if(!this.formData.priceWinnings || !this.initialData.priceWinnings) {
+                    this.errors.push('Input your glod won')
+                }
+                if(!this.formData.placement || !this.initialData.placement) {
+                    this.errors.push('Input your wins')
+                }
+
+                if(!this.formData.legendaryBracket || !this.initialData.legendaryBracket) {
+                    this.errors.push('Input your drafted legendary')
+                }
+                if(!this.formData.note && this.initialData.note) {
+                    this.formData.note="No note given"
+                }
+
+                error.preventDefault();
+        },
+        submitForm() { 
+                  
+            },
         }
-    }
-
-};
+    };
 
 </script>
 
@@ -51,7 +84,18 @@ export default {
                 <div class="m-form-c">
 
                
-                 <form @submit.prevent="submitForm">
+                 <form  
+                @submit="checkForm"
+                method="post"
+                novalidate="true"
+                 >
+
+                 <p v-if="errors.length">
+                    <b>Please correct the following error(s):</b>
+                    <ul>
+                        <li v-for="error in errors"> {{ error }}</li>
+                    </ul>
+                 </p>
              
                 <label>
                     Class:
@@ -73,28 +117,36 @@ export default {
 
                 <label>
                     Wins:
-                    <input type="number" v-model="formData.placement"
+                    <input type="number" 
+                    v-model="formData.placement"
                     :placeholder="initialData.placement || '0 to 12'"
+                    min="0"
+                    max="12"
                     />
                 </label>
 
                 
                 <label>
                     Legendary Bucket:
-                    <input v-model="formData.legendaryBracket" 
+                    <input type="text" 
+                    v-model="formData.legendaryBracket" 
                     :placeholder="initialData.legendaryBracket || 'Input your first legendary picked'"
                     ></input>
                 </label>
                 <label>
                     Price Winnings:
-                    <input v-model="formData.priceWinnings" 
-                    :placeholder="initialData.priceWinnings || 'Gold won'"
+                    <input type="number" 
+                    v-model="formData.priceWinnings" 
+                    :placeholder="initialData.priceWinnings || 'Gold won 0-2000'"
+                    min="0"
+                    max="2000"
                     ></input>
                 </label>
 
                  <label>
                     Note:
-                    <input v-model="formData.note" 
+                    <input type="text"
+                    v-model="formData.note" 
                     :placeholder="initialData.note || 'Did you have fun?'"
                     ></input>
                 </label>

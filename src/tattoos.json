@@ -163,10 +163,18 @@
     {
       "id": "03c4",
       "classId": 4,
-      "placement": 11,
-      "legendaryBracket": "XX",
+      "placement": 12,
+      "legendaryBracket": "XXX",
       "priceWinnings": "100",
       "note": "So fun!"
+    },
+    {
+      "id": "fa18",
+      "classId": 6,
+      "placement": 11,
+      "legendaryBracket": "gg",
+      "priceWinnings": 11,
+      "note": "gg"
     }
   ],
   "classes": [

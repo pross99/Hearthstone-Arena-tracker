@@ -28,7 +28,6 @@ export default {
         return {
             showNextModal: false,
 			showModal: false,
-			clickCount: 0,
 			selectedClass: null,
 			sClsRework: {classId:null,className:null}
         }
@@ -57,16 +56,16 @@ export default {
         const newRun = await this.$store.dispatch('submitRun', formData);
         this.$emit('add', newRun);
         
-
         showToast.success("Listing added successfully");
+
 		this.showNextModal = false;
+        
 		this.$emit("close")
-  } catch (error) {
-    showToast.error("Error updating listing", error);
-  }
+            } catch (error) {
+                showToast.error("Error updating listing", error);
+            }
         }
     }
-
 };
 
 
