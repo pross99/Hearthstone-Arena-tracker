@@ -5,6 +5,20 @@ $background-color_2: rgba(251,251, 251);
 $background-color_3: rgba(212, 72, 72);
 $background-color_4: $primary-color;
 
+
+$repeating-background-dk: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(196, 30, 69, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-dh: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(163, 48, 201, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-druid: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 125, 10, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-hunter: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(171, 212, 115, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-mage: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(153, 194, 255, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-paladin: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(245, 140, 186, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-priest: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 255, 255, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-rouge: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 245, 105, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-shaman: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(0, 112, 222, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-warlock: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(148, 130, 201, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(199, 156, 110, 0.75) 625px, rgba(0,0,0,0) 0px );
+
+
 .clickable-image {
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
@@ -21,40 +35,32 @@ $background-color_4: $primary-color;
 	background-color: $background-color_1;
 	margin-bottom: 60px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	background: repeating-linear-gradient( 45deg, $third-color, 100px, $third-color 0px, rgba(234, 235, 202,0.9) 625px, rgba(0,0,0,0) 0px );
 }
 .tas-container {
-	padding: 20px;
+	padding: 10px;
 	width: 480px;
 	border-radius: 20px;
 }
 .tas-header {
-	margin-bottom: 2px;
-	text-align: center;
-	background-color: $background-color_2;
 	border-radius: 20px 20px 8px 8px;
 	height: 150px;
-	margin-bottom: 5px;
 	&:hover {
 		transform: scale(1.01);
 	}
 }
-.tas-header-placement {
-	display: flex;
-	align-self: center;
-	justify-content: center;
-	gap: 8px;
-}
+
+
 .tas-text-note {
 	border-radius: 8px 8px 20px 20px;
 	padding: 20px;
 	background-color: $background-color_1;
 	height: 130px;
+	display: flex;
 	p {
 		color: $color_1;
         margin: 0;
         margin-bottom: 10px;
-        text-align: center;
+        text-align: left;
 	}
     margin-bottom: 20px;
 }
@@ -82,63 +88,117 @@ $background-color_4: $primary-color;
 	color: $color_2;
 }
 .c-warrior {
-	background-image: url("/images/DK.webp");
+	background: $repeating-background-dk;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-warlock {
-	background-image: url("/images/DH.webp");
+	background: $repeating-background-dh;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-rouge {
-	background-image: url("/images/Druid.webp");
+	background: $repeating-background-druid;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-druid {
-	background-image: url("/images/Hunter.webp");
+	background: $repeating-background-hunter;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-mage {
-	background-image: url("/images/Mage.webp");
+	background: $repeating-background-mage;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-hunter {
-	background-image: url("/images/Paladin.webp");
+	background: $repeating-background-paladin;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-shaman {
-	background-image: url("/images/Priest.webp");
+	background: $repeating-background-priest;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-dh {
-	background-image: url("/images/Rouge.webp");
+	background: $repeating-background-rouge;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-dk {
-	background-image: url("/images/Shaman.webp");
+	background: $repeating-background-shaman;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-priest {
-	background-image: url("/images/Warlock.webp");
+	background: $repeating-background-warlock;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
 .c-paladin {
-	background-image: url("/images/Warrior.webp");
+	background: $repeating-background-warrior;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
-.s-title {
-	color: $color_1;
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
-	text-align: center;
+
+
+
+.h-warrior {
+	background-image: $repeating-background-dk, url("/images/DK.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
 }
+.h-warlock {
+	background-image: $repeating-background-dh, url("/images/DH.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-rouge {
+	background-image: $repeating-background-druid, url("/images/Druid.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-druid {
+	background-image: $repeating-background-hunter, url("/images/Hunter.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-mage {
+	background-image: $repeating-background-mage, url("/images/Mage.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-hunter {
+	background-image: $repeating-background-paladin, url("/images/Paladin.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-shaman {
+	background-image: $repeating-background-priest, url("/images/Priest.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-dh {
+	background-image: $repeating-background-rouge, url("/images/Rouge.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-dk {
+	background-image: $repeating-background-shaman, url("/images/Shaman.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-priest {
+	background-image: $repeating-background-warlock, url("/images/Warlock.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+.h-paladin {
+	background-image: $repeating-background-warrior, url("/images/Warrior.webp");
+	background-repeat: no-repeat;
+	background-position: 50% -0%;
+}
+
+

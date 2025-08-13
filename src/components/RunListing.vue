@@ -67,8 +67,8 @@ const goodScore = computed(() => {
 
     <div class="tas">
         
-        <div class="tas-container">
-            <div class="tas-header"  :class="
+        <div class="tas-container"
+        :class="
                                     props.run.classId === 1
                                     ? 'c-warrior'
                                     : props.run.classId === 2  
@@ -91,8 +91,33 @@ const goodScore = computed(() => {
                                     ? 'c-priest'
                                     :props.run.classId === 11 
                                     ? 'c-paladin'
-                                    :errorClass "> 
-            </div>
+                                    :errorClass ">
+
+                                        <div class="tas-header"  :class="
+                                            props.run.classId === 1
+                                            ? 'h-warrior'
+                                            : props.run.classId === 2  
+                                            ? 'h-warlock'
+                                            : props.run.classId === 3 
+                                            ? 'h-rouge'
+                                            :props.run.classId === 4 
+                                            ? 'h-druid'
+                                            :props.run.classId === 5 
+                                            ? 'h-mage'
+                                            :props.run.classId === 6 
+                                            ? 'h-hunter'
+                                            :props.run.classId === 7 
+                                            ? 'h-shaman'
+                                            :props.run.classId === 8 
+                                            ? 'h-dh'
+                                            :props.run.classId === 9 
+                                            ? 'h-dk'
+                                            :props.run.classId === 10 
+                                            ? 'h-priest'
+                                            :props.run.classId === 11 
+                                            ? 'h-paladin'
+                                            :errorClass "> 
+                                             </div>
 
             <div class="tas-text-note">
                 <div class="tas-text-header-container">

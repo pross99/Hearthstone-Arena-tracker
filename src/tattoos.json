@@ -175,6 +175,14 @@
       "legendaryBracket": "gg",
       "priceWinnings": 11,
       "note": "gg"
+    },
+    {
+      "id": "3023",
+      "classId": 1,
+      "placement": 2,
+      "legendaryBracket": "test",
+      "priceWinnings": 200,
+      "note": "test"
     }
   ],
   "classes": [
