@@ -45,6 +45,9 @@ $background-color_1: $secondary-color; // Cards color
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	opacity: 0;
+	animation: fadeIn 0.3s ease-in forwards;
+	
 }
 .m-title {
 	padding-bottom: 200px;
@@ -62,7 +65,18 @@ $background-color_1: $secondary-color; // Cards color
 	position: fixed;
 	left: 0;
 	right: 0;
+	opacity: 0;
+	animation: fadeIn 0.8s ease-in forwards;
+
 }
+
+	@keyframes fadeIn{
+	to{
+		opacity: 1;
+	}
+}
+
+
 .card {
 	height: 190px;
 	margin: 0 -15px;
@@ -587,10 +601,9 @@ $background-color_1: $secondary-color; // Cards color
         display: flex;
         align-items: stretch;
         overflow-x: auto;
+		overflow-y: hidden;
         gap: 12px;
         padding: 10px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
         justify-content: flex-start; // Override center alignment
 		overscroll-behavior-x: contain;
 		margin-left: 10px

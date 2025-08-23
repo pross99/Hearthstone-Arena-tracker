@@ -183,6 +183,14 @@
       "legendaryBracket": "test",
       "priceWinnings": 200,
       "note": "testdw"
+    },
+    {
+      "id": "1b49",
+      "classId": 4,
+      "placement": 5,
+      "legendaryBracket": "Guff mana tide",
+      "priceWinnings": 250,
+      "note": "Flipping unlucky :/"
     }
   ],
   "classes": [

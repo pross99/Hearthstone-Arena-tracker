@@ -22,6 +22,15 @@ $background-color_2: $secondary-color;
 	max-width: 80rem;
 	background-color: $background-color_2;
 }
+
+.stats{
+	background-color: $background-color_2;
+}
+
+.tl-wrapper{
+	display: flex;
+	width: 100%;
+}
 .tl-title {
 	margin-bottom: 10px;
 	text-align: center;

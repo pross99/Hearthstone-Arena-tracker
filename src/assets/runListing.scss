@@ -54,15 +54,23 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	border-radius: 8px 8px 20px 20px;
 	padding: 20px;
 	background-color: $background-color_1;
-	height: 130px;
-	display: flex;
+	height: 145px;
+	display: block;
 	p {
 		color: $color_1;
         margin: 0;
-        margin-bottom: 10px;
+        padding-bottom: 10px;
         text-align: left;
+		border-bottom: 1px solid $third-color;
 	}
     margin-bottom: 20px;
+
+	svg{
+		margin-top: 4px;
+		display: flex;
+		width: 100%;
+		justify-content: left;
+	}
 }
 .tas-run-wrapper-high {
 	margin: 10px;
