@@ -25,8 +25,6 @@ const showModal = ref(false)
 const emit = defineEmits(['add']);
 
 
-
-
 // Prepare stats for child component
 // computed so it knows if new runs are added or updated.
 const runsWithClass = computed(() => store.getters.runsWithClass);
@@ -36,30 +34,15 @@ const classes = computed(() => store.getters.classes)
 const updateItem = (id, newData) => {
   store.commit('UPDATE_RUN', { id, newData });
 };
-
-/* const handleFormSubmit = async (formData) => {
-  try {
-    const newRun = await store.dispatch('submitRun', formData);
-    emit('add', newRun);
-    showModal.value = false;
-    showToast.success("Listing added successfully");
-  } catch (error) {
-    showToast.error("Error updating listing");
-  }
-}; */
-
-
 </script>
 
 <template>
-    <section class="tl">
+    <div class="tl-wrapper"> <!-- To reverse order of stats and runs for mobile -->
+    <section class="tl runs">
         <div class="tl-container">
-
             <h2>Recent runs</h2>
             <button @click="showModal = true" id="add-btn">Add new run   </button>
             <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass" ></HsClassesModal>
-             <!-- <Modal :isOpen="showModal" @close="showModal = false" @submit="handleFormSubmit" initial-data="null">
-            </Modal> -->
 
             <!-- Show spinner when fetching saved runs -->
              <div v-if="isLoading" class="tl-spinner">
@@ -74,21 +57,19 @@ const updateItem = (id, newData) => {
                  :run="run"  
                  @update="updateItem" />
               </div>
-             
+
         </div>
     </section>
-
-     <section class="tl">
+     <section class="tl stats">
           <div v-if="isLoading" class="tl-spinner">
                 <PulseLoader /> 
-             </div>
-        <div v-else class="tl-container">
+          </div>
+
+          <div v-else class="tl-container">
              <StatListing  :stats="statsByClass" class="tl-tattoos"/>
             </div>
      </section>
-
-
-
+     </div>
 </template>
 
 <style lang="scss" src="../assets/runListings.scss">

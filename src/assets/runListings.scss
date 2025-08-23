@@ -47,3 +47,30 @@ $background-color_2: $secondary-color;
 #add-btn {
 	margin: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+
+	.tl-wrapper{
+		display: flex;
+		flex-direction: column;
+	}
+		.tl{
+			padding-left: 0;
+			border-radius: 0%;
+			width: 100%;
+		
+		}
+
+		.tl-container{
+			padding: 0;
+		}
+
+		.runs{
+			order: 2;
+		}
+
+		.stats{
+			order:1;
+		}
+
+}

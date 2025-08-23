@@ -20,11 +20,10 @@ defineProps({
 </script>
 
 <template>
-    <section class="h-section banner banner-section">
+    <section class="h-section banner banner-section ">
         <div class="h-container-wrapper">
            
         <div class="h-container banner-column">
-
             <img src="/images/Arena.webp" id="spin-img">
             <div class="h-wrapper">
                 <h1 class="heading-xl">
@@ -33,14 +32,15 @@ defineProps({
                 <h2 class="paragraph" id="heading-gray">
                     {{ subtitle }}
                 </h2>
-                <p class="paragraph">
-                 <pre>  {{ paragraph }}</pre> 
-                </p>
+                    <p class="paragraph">
+                    <pre>  {{ paragraph }}</pre> 
+                    </p>
             </div>
         </div>
-        
         </div>
-        <div class="empty-div"></div>
+        <div class="empty-div">
+
+        </div>
     </section>
 </template>
 

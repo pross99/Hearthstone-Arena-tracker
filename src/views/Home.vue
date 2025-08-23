@@ -19,17 +19,7 @@ Add your completed runs below and start tracking your best classes`
 </template>
 
 
-<style lang="scss">
-
-
-.container-component{
-  width: 100%;
-  padding: 30px 0px;
-  display: flex;
- gap: 40px;
-  justify-content: center;
-  background-color: $secondary-color
-}
+<style lang="scss" src="../assets/home.scss">
 
 
 

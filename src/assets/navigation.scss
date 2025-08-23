@@ -64,3 +64,22 @@ text {
     padding-left: 10px;
     width: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    svg{
+        width: 200px;
+        margin-right: -50px;
+    
+    }
+    .navbar{
+    padding: 0px;
+    margin: 0px;
+    }
+
+    .navbarItems{
+        
+    margin-left: 0px;
+    padding-left: 0px;
+    }
+
+}
