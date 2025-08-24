@@ -105,3 +105,14 @@ height: 80.5%;
     }
 
 }
+
+@media only screen and (max-width: 901px){
+
+    .paragraph{
+        overflow: auto;
+
+        pre{
+            text-wrap: auto;
+        }
+      }
+}

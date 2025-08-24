@@ -74,7 +74,7 @@ button[type="submit"] {
 	border: none;
 	cursor: pointer;
 	border-radius: 5px;
-	width: 378px;
+	width: 365px;
 	&:hover {
 		background-color: $background-color_4;
 		scale: 1.01;
@@ -98,5 +98,12 @@ label {
 		justify-content: center;
 		align-items: center;
 		padding: 20px;
+	}
+}
+
+
+@media only screen and (max-width: 901px){
+	button[type="submit"] {
+		width: 350px;
 	}
 }

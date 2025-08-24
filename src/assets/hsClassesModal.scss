@@ -580,8 +580,7 @@ $background-color_1: $secondary-color; // Cards color
 		display: flex;
 		justify-content: center;
 		align-items: center;
-        overflow: visible; /* Changed from hidden to visible */
-        /* OR use: overflow-y: hidden; overflow-x: visible; if you only want to prevent vertical scroll */
+        overflow: visible; 
 		
     }
 
@@ -591,20 +590,20 @@ $background-color_1: $secondary-color; // Cards color
 	}
       .cards{
         border: 2px solid red;
-        position: fixed; // Explicitly set position
-        bottom: auto; // Override the bottom: 0 from main rule
-        top: 50vh; // Now this will work
+        position: fixed; 
+        bottom: auto; 
+        top: 50vh;
         left: 0;
         right: 0;
         width: 90vw;
-        height: auto; // Override the height: 190px from main rule
+        height: auto; 
         display: flex;
         align-items: stretch;
         overflow-x: auto;
 		overflow-y: hidden;
         gap: 12px;
         padding: 10px;
-        justify-content: flex-start; // Override center alignment
+        justify-content: flex-start;
 		overscroll-behavior-x: contain;
 		margin-left: 10px
     }
@@ -617,7 +616,22 @@ $background-color_1: $secondary-color; // Cards color
         display: flex;
         flex-shrink: 0;
         scroll-snap-align: start;
-        margin: 0; // Override the negative margins from main rule
     }  
 }
 
+@media only screen and (max-width: 900px) {
+	  .m-overlay{
+        position: fixed;
+        height: 100%;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+    }
+
+	.cards{
+		top: 62vh;
+	}
+
+}

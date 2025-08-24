@@ -24,7 +24,7 @@ $background-color_2: $secondary-color;
 }
 
 .stats{
-	background-color: $background-color_2;
+	background-color: $background-color_1;
 }
 
 .tl-wrapper{
@@ -57,6 +57,15 @@ $background-color_2: $secondary-color;
 	margin: 10px;
 }
 
+.tl-wrapper{
+	  width: 100%;
+  padding: 30px 0px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  background-color: $secondary-color
+}
+
 @media only screen and (max-width: 600px) {
 
 	.tl-wrapper{
@@ -82,4 +91,29 @@ $background-color_2: $secondary-color;
 			order:1;
 		}
 
+}
+
+@media only screen and (max-width: 901px){
+	.tl-wrapper{
+		display: flex;
+		flex-direction: column;
+	}
+		.tl{
+			padding-left: 0;
+			border-radius: 0%;
+			width: 100%;
+		
+		}
+
+		.tl-container{
+			padding: 0;
+		}
+
+		.runs{
+			order: 2;
+		}
+
+		.stats{
+			order:1;
+		}
 }
