@@ -10,19 +10,14 @@ Add your completed runs below and start tracking your best classes`
 
 
 <template>
-    <Hero title = "Your Hearthstone Arena companion" subtitle ="Showcase your deck building mastery and compete to reach 12 wins!" :paragraph="rules" /> 
-    <HomeCards /> 
+    <Hero title="Your Hearthstone Arena companion"
+        subtitle="Showcase your deck building mastery and compete to reach 12 wins!" :paragraph="rules" />
+    <HomeCards />
     <div class="container-component">
-    <RunListings />
+        <RunListings />
     </div>
-   
+
 </template>
 
 
-<style lang="scss" src="../assets/home.scss">
-
-
-
-
-
-</style>
+<style lang="scss" src="../assets/home.scss"></style>

@@ -14,40 +14,48 @@ $background-color_3: #ffffff;
 	height: 650px;
 	margin-bottom: 20px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 	thead {
 		background-color: $background-color_1;
 		color: $color_1;
 		text-align: left;
 	}
+
 	th {
 		color: $color_1;
 		border: solid $third-color 1px;
 		text-align: center;
 		font-size: 15px;
 	}
+
 	td {
 		color: $color_1;
 		border: solid $third-color 1px;
 		text-align: center;
 		font-size: 15px;
 	}
+
 	tbody {
 		tr {
 			&:nth-child(odd) {
 				background-color: $background-color_2;
 			}
+
 			&:nth-child(even) {
 				background-color: $background-color_3;
 			}
 		}
+
 		td {
 			color: $color_2;
 		}
 	}
 }
+
 td {
 	width: 200px;
 }
+
 .sort-btn {
 	background: none;
 	border: none;
@@ -56,9 +64,11 @@ td {
 	padding: 0;
 	margin: 0;
 	margin-left: 0px;
+
 	&:hover {
 		color: $color_4;
 	}
+
 	&:focus {
 		color: $color_4;
 		box-shadow: none;
@@ -68,7 +78,7 @@ td {
 
 @media only screen and (max-width: 600px) {
 
-	.sort-btn{
+	.sort-btn {
 		display: none;
 	}
 }

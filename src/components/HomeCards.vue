@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 
 
 <template>
-<!--    <section class="hc">
+    <!--    <section class="hc">
     <div class="hc-container">
         <Card class="hc-card">
             <div class="hc-head-container">
@@ -31,7 +31,7 @@ import { RouterLink } from 'vue-router';
 
 <style lang="scss">
 .hc {
-background-color: rgb(234,235,202);
+    background-color: rgb(234, 235, 202);
     padding: 2rem;
     border-radius: 20px;
     display: none;
@@ -44,26 +44,26 @@ background-color: rgb(234,235,202);
 }
 
 .hc-card {
-    background-color: rgb(76,86,111);
+    background-color: rgb(76, 86, 111);
     border-radius: 12px;
     padding: 1.5rem;
     color: #fff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hc-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hc-head {
-   
+
     margin-bottom: 0.5rem;
 }
 
 .hc-para {
-  
+
     opacity: 0.85;
     margin-bottom: 1rem;
 }
@@ -71,7 +71,4 @@ background-color: rgb(234,235,202);
 .hc-routerlink {
     text-decoration: none;
 }
-
-
-
 </style>

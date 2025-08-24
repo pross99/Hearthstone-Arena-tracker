@@ -4,6 +4,6 @@ import Rules from '@/components/Rules.vue';
 
 <template>
 
-<Rules /> 
+    <Rules />
 
 </template>

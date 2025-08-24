@@ -1,6 +1,6 @@
 <template>
 
-<div class="card">
+    <div class="card">
         <img src="https://via.placeholder.com/300" alt="Card Image">
         <div class="card-content">
             <h2>Card Title</h2>
@@ -13,7 +13,7 @@
 
 
 <style scoped>
-.card{
+.card {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     text-align: center;
     width: 300px;
@@ -28,7 +28,6 @@
 }
 
 .card-content {
-    color:blue;
+    color: blue;
 }
-
 </style>

@@ -1,31 +1,33 @@
 $color_1: $third-color;
 $color_2: white;
 $background-color_1: white;
-$background-color_2: rgba(251,251, 251);
+$background-color_2: rgba(251, 251, 251);
 $background-color_3: rgba(212, 72, 72);
 $background-color_4: $primary-color;
 
 
-$repeating-background-dk: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(196, 30, 69, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-dh: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(163, 48, 201, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-druid: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 125, 10, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-hunter: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(171, 212, 115, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-mage: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(153, 194, 255, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-paladin: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(245, 140, 186, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-priest: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 255, 255, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-rouge: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(255, 245, 105, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-shaman: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(0, 112, 222, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-warlock: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(148, 130, 201, 0.75) 625px, rgba(0,0,0,0) 0px );
-$repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,255,0), 100px, rgba(255,255,255,0) 0px, rgba(199, 156, 110, 0.75) 625px, rgba(0,0,0,0) 0px );
+$repeating-background-dk: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(196, 30, 69, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-dh: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(163, 48, 201, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-druid: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(255, 125, 10, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-hunter: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(171, 212, 115, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-mage: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(153, 194, 255, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-paladin: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(245, 140, 186, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-priest: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-rouge: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(255, 245, 105, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-shaman: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(0, 112, 222, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-warlock: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(148, 130, 201, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
+$repeating-background-warrior: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0), 100px, rgba(255, 255, 255, 0) 0px, rgba(199, 156, 110, 0.75) 625px, rgba(0, 0, 0, 0) 0px);
 
 
 .clickable-image {
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
+
 	&:hover {
 		transform: scale(1.05);
 	}
 }
+
 .tas {
 	display: flex;
 	justify-content: center;
@@ -36,14 +38,17 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	margin-bottom: 60px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .tas-container {
 	padding: 10px;
 	width: 480px;
 	border-radius: 20px;
 }
+
 .tas-header {
 	border-radius: 20px 20px 8px 8px;
 	height: 150px;
+
 	&:hover {
 		transform: scale(1.01);
 	}
@@ -56,22 +61,25 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	background-color: $background-color_1;
 	height: 145px;
 	display: block;
+
 	p {
 		color: $color_1;
-        margin: 0;
-        padding-bottom: 10px;
-        text-align: left;
+		margin: 0;
+		padding-bottom: 10px;
+		text-align: left;
 		border-bottom: 1px solid $third-color;
 	}
-    margin-bottom: 20px;
 
-	svg{
+	margin-bottom: 20px;
+
+	svg {
 		margin-top: 4px;
 		display: flex;
 		width: 100%;
 		justify-content: left;
 	}
 }
+
 .tas-run-wrapper-high {
 	margin: 10px;
 	padding: 10px;
@@ -80,6 +88,7 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	background-color: $background-color_3;
 	cursor: pointer;
 }
+
 .tas-run-wrapper-low {
 	padding: 10px;
 	border-radius: 8px;
@@ -87,64 +96,77 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	cursor: pointer;
 	height: 50px;
 }
+
 .tas-low {
 	margin-top: 10px;
 	color: $color_2;
 }
+
 .tas-high {
 	margin-top: 10px;
 	color: $color_2;
 }
+
 .c-warrior {
 	background: $repeating-background-dk;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-warlock {
 	background: $repeating-background-dh;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-rouge {
 	background: $repeating-background-druid;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-druid {
 	background: $repeating-background-hunter;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-mage {
 	background: $repeating-background-mage;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-hunter {
 	background: $repeating-background-paladin;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-shaman {
 	background: $repeating-background-priest;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-dh {
 	background: $repeating-background-rouge;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-dk {
 	background: $repeating-background-shaman;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-priest {
 	background: $repeating-background-warlock;
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .c-paladin {
 	background: $repeating-background-warrior;
 	background-repeat: no-repeat;
@@ -158,55 +180,63 @@ $repeating-background-warrior: repeating-linear-gradient( 45deg, rgba(255,255,25
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-warlock {
 	background-image: $repeating-background-dh, url("/images/DH.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-rouge {
 	background-image: $repeating-background-druid, url("/images/Druid.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-druid {
 	background-image: $repeating-background-hunter, url("/images/Hunter.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-mage {
 	background-image: $repeating-background-mage, url("/images/Mage.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-hunter {
 	background-image: $repeating-background-paladin, url("/images/Paladin.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-shaman {
 	background-image: $repeating-background-priest, url("/images/Priest.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-dh {
 	background-image: $repeating-background-rouge, url("/images/Rouge.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-dk {
 	background-image: $repeating-background-shaman, url("/images/Shaman.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-priest {
 	background-image: $repeating-background-warlock, url("/images/Warlock.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
+
 .h-paladin {
 	background-image: $repeating-background-warrior, url("/images/Warrior.webp");
 	background-repeat: no-repeat;
 	background-position: 50% -0%;
 }
-
-

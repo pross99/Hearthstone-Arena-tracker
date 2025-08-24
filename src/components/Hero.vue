@@ -8,12 +8,12 @@ defineProps({
         default: 'Add your wanted Arena runs',
     },
     subtitle: {
-        type: String, 
+        type: String,
         default: 'Unsure how Hearthstone Arena works?'
     },
 
     paragraph: {
-        type:String,
+        type: String,
         default: 'Show rules or write a longer para'
     }
 })
@@ -22,21 +22,21 @@ defineProps({
 <template>
     <section class="h-section banner banner-section ">
         <div class="h-container-wrapper">
-           
-        <div class="h-container banner-column">
-            <img src="/images/Arena.webp" id="spin-img">
-            <div class="h-wrapper">
-                <h1 class="heading-xl">
-                    {{ title }}
-                </h1>
-                <h2 class="paragraph" id="heading-gray">
-                    {{ subtitle }}
-                </h2>
+
+            <div class="h-container banner-column">
+                <img src="/images/Arena.webp" id="spin-img">
+                <div class="h-wrapper">
+                    <h1 class="heading-xl">
+                        {{ title }}
+                    </h1>
+                    <h2 class="paragraph" id="heading-gray">
+                        {{ subtitle }}
+                    </h2>
                     <p class="paragraph">
-                    <pre>  {{ paragraph }}</pre> 
+                    <pre>  {{ paragraph }}</pre>
                     </p>
+                </div>
             </div>
-        </div>
         </div>
         <div class="empty-div">
 
@@ -44,5 +44,4 @@ defineProps({
     </section>
 </template>
 
-<style lang="scss" src="../assets/hero.scss">
-</style>
+<style lang="scss" src="../assets/hero.scss"></style>

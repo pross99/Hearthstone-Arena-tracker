@@ -8,14 +8,14 @@ import StatListing from './StatListing.vue';
 import { useToast } from 'vue-toastification';
 import Modal from './Modal.vue'
 import HsClassesModal from './HsClassesModal.vue';
-import {useStore} from 'vuex';
+import { useStore } from 'vuex';
 
 const store = useStore()
 const showToast = useToast()
- onMounted(async () => {
+onMounted(async () => {
 
-  if(store.state.runs || store.state.runs.length === 0) {
-  store.dispatch('getRuns')
+  if (store.state.runs || store.state.runs.length === 0) {
+    store.dispatch('getRuns')
   }
 
 })
@@ -37,42 +37,37 @@ const updateItem = (id, newData) => {
 </script>
 
 <template>
-    <div class="tl-wrapper"> <!-- To reverse order of stats and runs for mobile -->
+  <div class="tl-wrapper"> <!-- To reverse order of stats and runs for mobile -->
     <section class="tl runs">
-        <div class="tl-container">
-            <h2>Recent runs</h2>
-            <button @click="showModal = true" id="add-btn">Add new run   </button>
-            <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass" ></HsClassesModal>
+      <div class="tl-container">
+        <h2>Recent runs</h2>
+        <button @click="showModal = true" id="add-btn">Add new run </button>
+        <HsClassesModal :isOpen="showModal" @close="showModal = false" :classes="classes" :stats="statsByClass">
+        </HsClassesModal>
 
-            <!-- Show spinner when fetching saved runs -->
-             <div v-if="isLoading" class="tl-spinner">
-                <PulseLoader /> 
-             </div>
-
-             <!-- Show runs when done loading -->
-              <div v-else class="tl-tattoos">
-                <!-- REVERSE order to show latest entry first -->
-                <RunListing v-for="run in runsWithClass.slice(0).reverse()"
-                 :key="run.id" 
-                 :run="run"  
-                 @update="updateItem" />
-              </div>
-
+        <!-- Show spinner when fetching saved runs -->
+        <div v-if="isLoading" class="tl-spinner">
+          <PulseLoader />
         </div>
-    </section>
-     <section class="tl stats">
-          <div v-if="isLoading" class="tl-spinner">
-                <PulseLoader /> 
-          </div>
 
-          <div v-else class="tl-container">
-             <StatListing  :stats="statsByClass" class="tl-tattoos"/>
-            </div>
-     </section>
-     </div>
+        <!-- Show runs when done loading -->
+        <div v-else class="tl-tattoos">
+          <!-- REVERSE order to show latest entry first -->
+          <RunListing v-for="run in runsWithClass.slice(0).reverse()" :key="run.id" :run="run" @update="updateItem" />
+        </div>
+
+      </div>
+    </section>
+    <section class="tl stats">
+      <div v-if="isLoading" class="tl-spinner">
+        <PulseLoader />
+      </div>
+
+      <div v-else class="tl-container">
+        <StatListing :stats="statsByClass" class="tl-tattoos" />
+      </div>
+    </section>
+  </div>
 </template>
 
-<style lang="scss" src="../assets/runListings.scss">
-
-</style>
-
+<style lang="scss" src="../assets/runListings.scss"></style>

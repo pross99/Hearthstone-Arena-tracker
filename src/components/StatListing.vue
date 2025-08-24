@@ -6,7 +6,7 @@ import { useToast } from 'vue-toastification';
 
 
 const props = defineProps({
-     stats: Object,
+  stats: Object,
 })
 
 
@@ -15,15 +15,15 @@ const props = defineProps({
 
 const statsArray = computed(() => {
 
-    return Object.entries(props.stats).map(([classId, data]) => ({
-        classId,
-        ...data
-    })).sort((a,b) => b.winrate - a.winrate) // sort by winrate
+  return Object.entries(props.stats).map(([classId, data]) => ({
+    classId,
+    ...data
+  })).sort((a, b) => b.winrate - a.winrate) // sort by winrate
 })
 
 
 
-const headerNames= {
+const headerNames = {
   className: 'Class',
   totalRuns: 'Completed runs',
   totalWins: 'Wins',
@@ -33,10 +33,10 @@ const headerNames= {
 
 // prepare clumn headers for sort callback
 const headerItems = computed(() => {
-   const firstEntry = Object.values(props.stats || {})[0];
-  if(!firstEntry) return [];
+  const firstEntry = Object.values(props.stats || {})[0];
+  if (!firstEntry) return [];
 
-  return Object.keys(firstEntry).map(key =>({
+  return Object.keys(firstEntry).map(key => ({
     key,
     name: headerNames[key] || key
   }));
@@ -60,10 +60,10 @@ const sortData = (sortBy, direction) => {
 
   let sortedArray = [...shallowRows.value]
 
-switch(sortBy) {
+  switch (sortBy) {
 
-  //only column with alphabetical sorting
-  case 'className':
+    //only column with alphabetical sorting
+    case 'className':
       sortedArray = sortedArray.sort((a, b) => {
         if (direction === 'ASC') {
           return a[sortBy].localeCompare(b[sortBy])
@@ -76,7 +76,7 @@ switch(sortBy) {
     default:
       sortedArray = sortedArray.sort((a, b) => {
         if (direction === 'ASC') {
-          return a[sortBy] - b[sortBy] 
+          return a[sortBy] - b[sortBy]
         } else {
           return b[sortBy] - a[sortBy]
         }
@@ -90,18 +90,18 @@ switch(sortBy) {
 
 
 function goodWinrate(num) {
-if(num > 75) {
-      return 'rgba(179,104,0,255)'
-    }
-    else if(num > 60){
-      return '#a247b0'
-    }
-    else if(num > 50){
-      return '#3e8df2'
-    }
-    else {
-      return '#b0bcb2'
-    }
+  if (num > 75) {
+    return 'rgba(179,104,0,255)'
+  }
+  else if (num > 60) {
+    return '#a247b0'
+  }
+  else if (num > 50) {
+    return '#3e8df2'
+  }
+  else {
+    return '#b0bcb2'
+  }
 }
 
 
@@ -109,18 +109,18 @@ if(num > 75) {
 
 <template>
 
-    <div class="s-container">
-        <h2>Statistics by class</h2>
-      
+  <div class="s-container">
+    <h2>Statistics by class</h2>
+
     <table class="s-table">
       <thead>
         <tr>
-           <th v-for="header in headerItems" :key="header">{{ header.name}}
-               <button @click="sortData(header.key, 'ASC')" class="sort-btn">↑</button>
-           <button @click="sortData(header.key, 'DESC')" class="sort-btn">↓</button>
-           </th>
-        
-          
+          <th v-for="header in headerItems" :key="header">{{ header.name }}
+            <button @click="sortData(header.key, 'ASC')" class="sort-btn">↑</button>
+            <button @click="sortData(header.key, 'DESC')" class="sort-btn">↓</button>
+          </th>
+
+
         </tr>
       </thead>
       <tbody>
@@ -129,7 +129,7 @@ if(num > 75) {
           <td sameClass>{{ cls.totalRuns }}</td>
           <td sameClass>{{ cls.totalWins }}</td>
           <td sameClass>{{ cls.totalMatches }}</td>
-          <td :style="{ color:goodWinrate(cls.winrate)}">{{ cls.winrate.toFixed(1) }}%</td>
+          <td :style="{ color: goodWinrate(cls.winrate) }">{{ cls.winrate.toFixed(1) }}%</td>
         </tr>
       </tbody>
     </table>
@@ -138,6 +138,4 @@ if(num > 75) {
 </template>
 
 
-<style lang="scss" src="../assets/statListings.scss">
-
-</style>
+<style lang="scss" src="../assets/statListings.scss"></style>
