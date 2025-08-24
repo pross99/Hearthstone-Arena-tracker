@@ -1,6 +1,5 @@
 <script setup>
 import { defineProps, ref, computed, defineEmits } from 'vue';
-import { RouterLink } from 'vue-router';
 import axios from 'axios'
 import Modal from './Modal.vue'
 import { useToast } from 'vue-toastification';
@@ -13,7 +12,6 @@ const props = defineProps({
 const emit = defineEmits(['update'])
 //reactive state for modal visibility
 const showModal = ref(false)
-const submittedeData = ref(null)
 const showToast = useToast()
 const handleFormSubmit = async (formData) => {
 

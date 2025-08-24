@@ -11,7 +11,6 @@ import HsClassesModal from './HsClassesModal.vue';
 import { useStore } from 'vuex';
 
 const store = useStore()
-const showToast = useToast()
 onMounted(async () => {
 
   if (store.state.runs || store.state.runs.length === 0) {

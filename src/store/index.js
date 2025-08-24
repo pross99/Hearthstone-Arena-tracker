@@ -1,9 +1,6 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-
 export default createStore({
     state: {
         runs: [],
@@ -42,15 +39,15 @@ export default createStore({
                 await dispatch('loadRunsWithDelay', { runs: response.data, delay: 100 });
                 const classRes = await axios.get('/api/classes');
                 commit('SET_CLASSES', classRes.data);
-            } catch (e) {
-                console.error('err', e);
+            } catch (error) {
+                console.error('err', error);
             } finally {
                 commit('SET_LOADING', false)
             }
         },
-        async apiCallWithLag(_, { call, delay: d }) {
-            const [res] = await Promise.all([call(), delay(d)]); // Run both tasks at the same time and wait for both to finish. using brackets to only save take the first value i.e the call response
-            return res;
+        async apiCallWithLag(dummyParameter, { call, delay: d }) {
+            const [response] = await Promise.all([call(), delayMs(d)]); // Run both tasks at the same time and wait for both to finish. using brackets to only save take the first value i.e the call response
+            return response;
         },
         async loadRunsWithDelay({ commit, state }, { runs, delay }) {
             const newRuns = [...state.runs]; // clone runs from the state to a new array. starting with a copy of current runs and can then add new runs below
@@ -78,6 +75,7 @@ export default createStore({
             return state.runs.map(run => {
                 const cls = state.classes.find(c => String(c.id) === String(run.classId)) ?? {};
                 return { ...run, className: cls.className };
+                //add className from different "table" with ids and attach it to runs
             })
         },
 
@@ -86,7 +84,7 @@ export default createStore({
                 return cls
             })
         },
-        statsByClass(_, getters) {
+        statsByClass(dummyParameter, getters) {
             const stats = {};
             getters.runsWithClass.forEach(run => {
                 const clsId = run.classId;
