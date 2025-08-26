@@ -57,7 +57,18 @@ const goodScore = computed(() => {
 
 
 
+const truncateNote = computed(() => {
 
+    return props.run.note.length > 25
+    ? props.run.note.substring(0, 25) + "..."
+    : props.run.note
+})
+
+const truncateLegendaryBucket = computed(() => {
+    return props.run.legendaryBracket > 25
+    ? props.run.legendaryBracket.substring(0,25) +"..."
+    : props.run.legendaryBracket
+})
 
 </script>
 
@@ -117,13 +128,13 @@ const goodScore = computed(() => {
             <div class="tas-text-note">
                 <div class="tas-text-header-container">
                     <p>
-                        <fa icon="note-sticky" /> {{ run.note }}
+                        <fa icon="note-sticky" /> {{truncateNote}}
                     </p>
                     <p>
                         <fa icon="coins" /> {{ run.priceWinnings }}
                     </p>
                     <p>
-                        <fa icon="skull" /> {{ run.legendaryBracket }}
+                        <fa icon="skull" /> {{ truncateLegendaryBucket }}
                     </p>
                 </div>
 
