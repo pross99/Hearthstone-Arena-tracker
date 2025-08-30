@@ -35,9 +35,9 @@ export default createStore({
 
             commit('SET_LOADING', true);
             try {
-                const response = await dispatch('apiCallWithLag', { call: () => axios.get(`${process.env.VUE_APP_API_URL}/api/runs`) }); // passing the function, not calling it
+                const response = await dispatch('apiCallWithLag', { call: () => axios.get(`https://hs-arena-tracker-backend.onrender.com/api/runs`) }); // passing the function, not calling it
                 await dispatch('loadRunsWithDelay', { runs: response.data, delay: 100 });
-                const classRes = await axios.get(`${process.env.VUE_APP_API_URL}/api/classes`);
+                const classRes = await axios.get(`https://hs-arena-tracker-backend.onrender.com/api/classes`);
                 console.log(classRes)
                 commit('SET_CLASSES', classRes.data);
             } catch (error) {
@@ -66,7 +66,7 @@ export default createStore({
                 priceWinnings: formData.priceWinnings,
                 note: formData.note
             };
-            const res = await axios.post(`${process.env.VUE_APP_API_URL}/api/runs`, newRun);
+            const res = await axios.post(`https://hs-arena-tracker-backend.onrender.com/api/runs`, newRun);
             commit('ADD_RUN', res.data);
             return res.data;
         }
