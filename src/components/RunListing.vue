@@ -17,6 +17,7 @@ const handleFormSubmit = async (formData) => {
 
     if (!props.run || !props.run.id) {
         console.error("Where is the ID")
+        console.log(props.runs)
         return;
     }
 
