@@ -32,7 +32,7 @@ const handleFormSubmit = async (formData) => {
     }
     try {
         console.log(updateRun)
-        const response = await axios.put(`/api/runs/${props.run.id}`, updateRun)
+        const response = await axios.put(`${process.env.VUE_APP_API_URL}/api/runs${props.run.id}`, updateRun)
         console.log(response)
         showToast.success("Listing updated successfully")
         emit('update', props.run.id, updateRun)

@@ -66,7 +66,7 @@ export default createStore({
                 priceWinnings: formData.priceWinnings,
                 note: formData.note
             };
-            const res = await axios.post('/api/runs', newRun);
+            const res = await axios.post(`${process.env.VUE_APP_API_URL}/api/runs`, newRun);
             commit('ADD_RUN', res.data);
             return res.data;
         }
