@@ -37,7 +37,8 @@ export default createStore({
             try {
                 const response = await dispatch('apiCallWithLag', { call: () => axios.get('api/runs') }); // passing the function, not calling it
                 await dispatch('loadRunsWithDelay', { runs: response.data, delay: 100 });
-                const classRes = await axios.get('/api/classes');
+                const classRes = await axios.get('api/classes');
+                console.log(classRes)
                 commit('SET_CLASSES', classRes.data);
             } catch (error) {
                 console.error('err', error);
@@ -73,7 +74,7 @@ export default createStore({
     getters: { // computed properties for the store
         runsWithClass(state) {
             return state.runs.map(run => {
-                const cls = state.classes.find(c => String(c.id) === String(run.classId)) ?? {};
+                const cls = state.classes.find(c => String(c.classId) === String(run.classId)) ?? {};
                 return { ...run, className: cls.className };
                 //add className from different "table" with ids and attach it to runs
             })
