@@ -44,7 +44,7 @@ export default {
             console.log(cls)
             this.showNextModal = true
             this.selectedClass = cls
-            this.sClsRework.classId = this.selectedClass.id
+            this.sClsRework.classId = this.selectedClass.classId
             this.sClsRework.className = this.selectedClass.className
         },
         close() {
