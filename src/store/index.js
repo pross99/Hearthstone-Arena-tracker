@@ -32,32 +32,20 @@ export default createStore({
                 return;
             }
 
-
             commit('SET_LOADING', true);
             try {
-                const response = await dispatch('apiCallWithLag', { call: () => axios.get(`https://hs-arena-tracker-backend.onrender.com/api/runs`) }); // passing the function, not calling it
-                await dispatch('loadRunsWithDelay', { runs: response.data, delay: 100 });
+                const runResponse = await axios.get(`https://hs-arena-tracker-backend.onrender.com/api/runs`) 
                 const classRes = await axios.get(`https://hs-arena-tracker-backend.onrender.com/api/classes`);
-                console.log(classRes)
+                console.log(runResponse);
                 commit('SET_CLASSES', classRes.data);
+                commit('SET_RUNS', runResponse.data);
             } catch (error) {
                 console.error('err', error);
             } finally {
                 commit('SET_LOADING', false)
             }
-        },
-        async apiCallWithLag(dummyParameter, { call, delay: d }) {
-            const [response] = await Promise.all([call(), delayMs(d)]); // Run both tasks at the same time and wait for both to finish. using brackets to only save take the first value i.e the call response
-            return response;
-        },
-        async loadRunsWithDelay({ commit, state }, { runs, delay }) {
-            const newRuns = [...state.runs]; // clone runs from the state to a new array. starting with a copy of current runs and can then add new runs below
-            for (let run of runs) {
-                await delayMs(delay);
-                newRuns.push(run);
-            }
-            commit('SET_RUNS', newRuns);
-        },
+         
+        }, 
         async submitRun({ commit }, formData) {
             const newRun = {
                 classId: Number(formData.classId),
@@ -115,6 +103,6 @@ export default createStore({
     }
 });
 
-function delayMs(ms) {
+/* function delayMs(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
+} */

@@ -15,15 +15,15 @@ const showModal = ref(false)
 const showToast = useToast()
 const handleFormSubmit = async (formData) => {
 
-    if (!props.run || !props.run.id) {
+    if (!props.run || !props.run._id) {
         console.error("Where is the ID")
-        console.log(props.runs)
+        console.log(props.run)
         return;
     }
 
 
     const updateRun = {
-        id: props.run.id,
+        id: props.run._id,
         classId: Number(formData.classId),
         placement: formData.placement,
         legendaryBracket: formData.legendaryBracket,
@@ -32,7 +32,7 @@ const handleFormSubmit = async (formData) => {
     }
     try {
         console.log(updateRun)
-        const response = await axios.put(`${process.env.VUE_APP_API_URL}/api/runs${props.run.id}`, updateRun)
+        const response = await axios.put(`https://hs-arena-tracker-backend.onrender.com/api/runs/${props.run._id}`, updateRun)
         console.log(response)
         showToast.success("Listing updated successfully")
         emit('update', props.run.id, updateRun)
