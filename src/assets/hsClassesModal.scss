@@ -681,14 +681,9 @@ $background-color_1: $secondary-color; // Cards color
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-	  
-		/* Optional - ensures it doesn't overflow */
 		width: 100%;
 		overflow: hidden;
-	  
-		/* Add padding or margin as needed */
 		margin: 0 auto;
-
 	}
 
 	.cards {
