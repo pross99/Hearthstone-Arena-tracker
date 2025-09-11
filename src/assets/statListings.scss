@@ -11,7 +11,7 @@ $background-color_3: #ffffff;
 	width: 100%;
 	border-collapse: collapse;
 	overflow: hidden;
-	height: 650px;
+	height: 75vh;
 	margin-bottom: 20px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -52,9 +52,7 @@ $background-color_3: #ffffff;
 	}
 }
 
-td {
-	width: 200px;
-}
+
 
 .sort-btn {
 	background: none;

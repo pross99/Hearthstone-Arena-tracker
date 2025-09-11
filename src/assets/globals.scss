@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
   font-family: $font-stack;
-  font-size: 28px;
+  font-size: clamp(0.7rem,4vw,4rem);
   color: $primary-color;
   text-align: center;
   margin-bottom: 25px;
@@ -34,7 +34,7 @@ p,
 a,
 td,
 pre {
-  font-size: 18px;
+  font-size: clamp(0.5rem,1vw,1.8rem);
   font-family: $font-stack;
   color: $secondary-color;
   text-decoration: none;
@@ -42,7 +42,8 @@ pre {
 }
 
 pre {
-  font-size: 14px;
+  font-size: clamp(0.8rem,1vw,1.8rem);
+  padding: 2rem;
 }
 
 

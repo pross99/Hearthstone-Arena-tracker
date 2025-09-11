@@ -146,10 +146,10 @@ const truncateLegendaryBucket = computed(() => {
                 @click="showModal = true">
 
 
-                <h5 :class="{ 'tas-high': goodScore, 'tas-low': !goodScore }">
+                <p :class="{ 'tas-high': goodScore, 'tas-low': !goodScore }">
                     Score: {{ run.placement }}-3
 
-                </h5>
+                </p>
 
 
             </div>

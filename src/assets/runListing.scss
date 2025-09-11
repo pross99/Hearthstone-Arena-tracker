@@ -58,9 +58,11 @@ $repeating-background-warrior: repeating-linear-gradient(45deg, rgba(255, 255, 2
 .tas-text-note {
 	border-radius: 8px 8px 20px 20px;
 	padding: 20px;
+	max-width: 250px;
 	background-color: $background-color_1;
+	display: flex;
+	flex: 1;
 	height: 145px;
-	display: block;
 
 	p {
 		color: $color_1;
@@ -87,6 +89,9 @@ $repeating-background-warrior: repeating-linear-gradient(45deg, rgba(255, 255, 2
 	height: 50px;
 	background-color: $background-color_3;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .tas-run-wrapper-low {
@@ -95,6 +100,9 @@ $repeating-background-warrior: repeating-linear-gradient(45deg, rgba(255, 255, 2
 	background-color: $background-color_4;
 	cursor: pointer;
 	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .tas-low {
