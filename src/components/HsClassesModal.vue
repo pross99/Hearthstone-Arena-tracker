@@ -1,7 +1,5 @@
 <script>
-import { defineProps, ref, computed, watch, onMounted } from 'vue';
 import Modal from './Modal.vue'
-import { useStore } from 'vuex';
 import { useToast } from 'vue-toastification';
 
 

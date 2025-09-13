@@ -66,8 +66,8 @@ const truncateNote = computed(() => {
 })
 
 const truncateLegendaryBucket = computed(() => {
-    return props.run.legendaryBracket > 25
-    ? props.run.legendaryBracket.substring(0,25) +"..."
+    return props.run.legendaryBracket.length > 25
+    ? props.run.legendaryBracket.substring(0, 25) + "..."
     : props.run.legendaryBracket
 })
 
@@ -127,7 +127,6 @@ const truncateLegendaryBucket = computed(() => {
             </div>
 
             <div class="tas-text-note">
-                <div class="tas-text-header-container">
                     <p>
                         <fa icon="note-sticky" /> {{truncateNote}}
                     </p>
@@ -137,7 +136,6 @@ const truncateLegendaryBucket = computed(() => {
                     <p>
                         <fa icon="skull" /> {{ truncateLegendaryBucket }}
                     </p>
-                </div>
 
             </div>
             <div class="tas-image-container">

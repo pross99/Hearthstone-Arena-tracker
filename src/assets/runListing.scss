@@ -60,17 +60,16 @@ $repeating-background-warrior: repeating-linear-gradient(45deg, rgba(255, 255, 2
 	padding: 20px;
 	background-color: $background-color_1;
 	height: 145px;
-	display: block;
+	max-width: 250px;
 
 	p {
 		color: $color_1;
 		margin: 0;
 		padding-bottom: 10px;
 		text-align: left;
+		font-size: 14px;
 		border-bottom: 1px solid $third-color;
 	}
-
-	margin-bottom: 20px;
 
 	svg {
 		margin-top: 4px;

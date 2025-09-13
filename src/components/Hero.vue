@@ -25,7 +25,6 @@ defineProps({
 
             <div class="h-container banner-column">
                 <img src="/images/Arena.webp" id="spin-img">
-                <div class="h-wrapper">
                     <h1 class="heading-xl">
                         {{ title }}
                     </h1>
@@ -35,7 +34,7 @@ defineProps({
                     <p class="paragraph">
                     <pre>  {{ paragraph }}</pre>
                     </p>
-                </div>
+                
             </div>
         </div>
         <div class="empty-div">

@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
   font-family: $font-stack;
-  font-size: 28px;
+  font-size: clamp(0.8rem, 3.5vw, 2rem);
   color: $primary-color;
   text-align: center;
   margin-bottom: 25px;
@@ -34,7 +34,7 @@ p,
 a,
 td,
 pre {
-  font-size: 18px;
+  font-size: clamp(0.6rem, 0.9vw, 1.4rem);
   font-family: $font-stack;
   color: $secondary-color;
   text-decoration: none;
@@ -42,7 +42,7 @@ pre {
 }
 
 pre {
-  font-size: 14px;
+  font-size: clamp(0.5rem, 0.8vw, 1.2rem);
 }
 
 
@@ -67,8 +67,13 @@ button {
   transition: background-color 0.45s ease,
     color 0.45s ease,
     transform 1.15s ease;
-  ;
 
+  a{  
+  font-size: 16px;
+  font-family: $font-stack;
+  color: $secondary-color;
+  text-decoration: none;
+  }
 
 
 
