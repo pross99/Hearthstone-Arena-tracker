@@ -28,11 +28,6 @@ $background-color_2: $secondary-color;
 	background-color: $background-color_1;
 }
 
-.tl-wrapper {
-	display: flex;
-	width: 100%;
-}
-
 .tl-title {
 	margin-bottom: 10px;
 	text-align: center;
@@ -62,7 +57,7 @@ $background-color_2: $secondary-color;
 	margin: 10px;
 }
 .tl-stats-width{
-	width: 90%;
+	width: 95%;
 	padding: 1rem;
 }
 .tl-wrapper {
@@ -79,10 +74,10 @@ $background-color_2: $secondary-color;
 	.tl-wrapper {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 	}
 
 	.tl {
-		padding-left: 0;
 		border-radius: 0%;
 		width: 100%;
 
@@ -94,10 +89,12 @@ $background-color_2: $secondary-color;
 
 	.runs {
 		order: 2;
+		width: 100%;
 	}
 
 	.stats {
 		order: 1;
+		width: 100%;
 	}
 
 }
@@ -106,24 +103,27 @@ $background-color_2: $secondary-color;
 	.tl-wrapper {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 	}
 
 	.tl {
-		padding-left: 0;
+	
 		border-radius: 0%;
 
 	}
 
 	.tl-container {
-		width: 100vw;
-		margin: 0;
+		width: 95svw;
+		justify-content: center;
 	}
 
 	.runs {
 		order: 2;
+		width: 100%;
 	}
 
 	.stats {
 		order: 1;
+		width: 100%;
 	}
 }

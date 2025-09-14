@@ -23,16 +23,15 @@ $background-color_3: #ffffff;
 
 	th {
 		color: $color_1;
-		border: solid $third-color 1px;
+		border: solid $secondary-color 1px;
 		text-align: center;
-		font-size: 15px;
+		font-weight: lighter;
 	}
 
 	td {
 		color: $color_1;
 		border: solid $third-color 1px;
 		text-align: center;
-		font-size: 15px;
 	}
 
 	tbody {

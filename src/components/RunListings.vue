@@ -63,7 +63,7 @@ const updateItem = (id, newData) => {
       </div>
 
       <div v-else class="tl-container">
-        <StatListing :stats="statsByClass" class="tl-stats-wdith" />
+        <StatListing :stats="statsByClass" class="tl-stats-width" />
       </div>
     </section>
   </div>
