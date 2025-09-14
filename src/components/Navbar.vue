@@ -1,14 +1,23 @@
 <script setup>
 import { RouterLink, useRoute } from 'vue-router'
-import logo from '../../images/477324.png'
+import { ref } from 'vue';
 
+
+const route = useRoute()
+const isMenuOpen = ref(false)
 
 const isActive = (routePath) => {
-    const route = useRoute();
-
     return route.path === routePath
 }
 
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value
+}
+
+
+const closeMenu = () => {
+    isMenuOpen.value = false
+}
 
 
 </script>
@@ -33,20 +42,29 @@ const isActive = (routePath) => {
                         </div>
                     </RouterLink>
 
-                    <div class="navbarMenu">
-                        <button>
+
+                    <!-- Desktop -->
+                    <div class="navbarMenu" :class="{'menuOpen': isMenuOpen}">
+                        <button @click="closeMenu">
                             <RouterLink to="/" :class="[isActive('/') ? 'active' : 'notActive']">
                                 Home
                             </RouterLink>
                         </button>
 
-                        <button>
+                        <button @click="closeMenu">
                             <RouterLink to="/Rules" :class="[isActive('/Rules') ? 'active' : 'notActive']">
                                 Arena Rules
                             </RouterLink>
                         </button>
-
                     </div>
+
+                     <!-- Mobile  -->
+                        <button class="hamburgerBtn" @click="toggleMenu" :class="{'open': isMenuOpen}"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    
                 </div>
             </div>
         </div>
