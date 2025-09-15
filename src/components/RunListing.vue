@@ -3,7 +3,9 @@ import { defineProps, ref, computed, defineEmits } from 'vue';
 import axios from 'axios'
 import Modal from './Modal.vue'
 import { useToast } from 'vue-toastification';
+import { useStore } from 'vuex'
 
+const store = useStore()
 const props = defineProps({
     run: Object,
 });
@@ -22,20 +24,21 @@ const handleFormSubmit = async (formData) => {
     }
 
 
-    const updateRun = {
+    const updateRunObject = {
         id: props.run._id,
         classId: Number(formData.classId),
         placement: formData.placement,
         legendaryBracket: formData.legendaryBracket,
         priceWinnings: formData.priceWinnings,
-        note: formData.note
+        note: formData.note,
     }
+
     try {
-        console.log(updateRun)
-        const response = await axios.put(`https://hs-arena-tracker-backend.onrender.com/api/runs/${props.run._id}`, updateRun)
-        console.log(response)
+       console.log("Start of try", updateRunObject)
+        const updatedRun = await store.dispatch('updateRun', updateRunObject);
+        console.log("WHAT IS THIS", updateRunObject)
         showToast.success("Listing updated successfully")
-        emit('update', props.run.id, updateRun)
+        emit('update', updateRunObject, updatedRun)
         showModal.value = false;
 
     } catch (error) {

@@ -62,10 +62,8 @@ export default {
             }
 
             error.preventDefault();
-        },
-        submitForm() {
-
-        },
+         
+        }
     }
 };
 

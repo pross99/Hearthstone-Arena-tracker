@@ -11,9 +11,10 @@ import HsClassesModal from './HsClassesModal.vue';
 import { useStore } from 'vuex';
 
 const store = useStore()
-onMounted(async () => {
 
-  if (store.state.runs || store.state.runs.length === 0) {
+onMounted(() => {
+
+  if (!store.state.runs || store.state.runs.length === 0) {
     store.dispatch('getRuns')
   }
 
@@ -59,7 +60,9 @@ const updateItem = (id, newData) => {
     </section>
     <section class="tl stats">
       <div v-if="isLoading" class="tl-spinner">
+         <h1> Server is cold starting...</h1>
         <PulseLoader />
+       
       </div>
 
       <div v-else class="tl-container">

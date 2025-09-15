@@ -15,7 +15,7 @@ export default createStore({
             state.runs.push(run);
         },
         UPDATE_RUN(state, { id, newData }) {
-            const index = state.runs.findIndex(run => run.id === id)
+            const index = state.runs.findIndex(run => run._id === id)
             if (index !== -1) Object.assign(state.runs[index], newData)
         },
         SET_CLASSES(state, classes) {
@@ -57,9 +57,37 @@ export default createStore({
             const res = await axios.post(`https://hs-arena-tracker-backend.onrender.com/api/runs`, newRun);
             commit('ADD_RUN', res.data);
             return res.data;
-        }
+        },
+
+        async updateRun({ commit }, formData) {
+
+            const updateRunObject = {
+            classId: Number(formData.classId),
+            placement: formData.placement,
+            legendaryBracket: formData.legendaryBracket,
+            priceWinnings: formData.priceWinnings,
+            note: formData.note,
+
+            }
+            const res = await axios.put(`https://hs-arena-tracker-backend.onrender.com/api/runs/${formData.id}`, updateRunObject)
+            commit('UPDATE_RUN', { id: formData.id, newData: res.data })
+            return res.data
+            },
+
+
+        async refreshRuns({dispatch}) {
+            await dispatch('getRuns')
+    }
     },
+
+   
     getters: { // computed properties for the store
+
+        runs(state){
+            return state.runs
+        },
+
+
         runsWithClass(state) {
             return state.runs.map(run => {
                 const cls = state.classes.find(c => String(c.classId) === String(run.classId)) ?? {};
