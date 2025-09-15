@@ -34,7 +34,7 @@ p,
 a,
 td,
 pre {
-  font-size: clamp(0.6rem, 0.9vw, 1.4rem);
+  font-size: clamp(0.8rem, 0.9vw, 1.8rem);
   font-family: $font-stack;
   color: $secondary-color;
   text-decoration: none;
@@ -42,12 +42,12 @@ pre {
 }
 
 pre {
-  font-size: clamp(0.5rem, 0.8vw, 1.2rem);
+  font-size: clamp(0.7rem, 0.8vw, 1.4rem);
 }
 
 th,
 td {
-    font-size: clamp(0.7rem, 1vw, 1.8rem);
+    font-size: clamp(0.7rem, 2.2vw, 1.1rem);
   font-family: $font-stack;
 }
 
